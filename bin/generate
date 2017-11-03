@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+require 'fileutils'
+require 'yaml'
+
+projects = YAML.load_file('data/projects.yml')
+gh_url = "https://github.com/rom-rb/%{project}.git"
+root = Pathname(__dir__).join('..').realpath
+clone_to = root.join('gems')
+
+projects.each do |project|
+  target_dir = clone_to.join(project)
+  next if target_dir.exist?
+  system "git clone #{gh_url % { project: project }} #{target_dir}"
+end
+
+projects.each do |project| 
+  doc_output_dir = root.join('docs').join(project)
+  project_dir = root.join("gems/#{project}")
+
+  FileUtils.mkdir(doc_output_dir) unless doc_output_dir.exist?
+
+  system "cd #{project_dir} && yard -o #{doc_output_dir} && cd #{root}"
+end
