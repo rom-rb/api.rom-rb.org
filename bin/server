@@ -1,0 +1,1 @@
+yard server -m -t templates -p 4000 --docroot api rom ./gems/rom/.yardoc rom-sql ./gems/rom-sql/.yardoc
