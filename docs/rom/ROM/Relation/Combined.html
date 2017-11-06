@@ -723,13 +723,13 @@ which we could do in the future.</p>
         <p class="example_title"><div class='inline'><p>with a node identifier</p>
 </div></p>
       
-      <pre class="example code"><code><span class='id identifier rubyid_aggregate'>aggregate</span><span class='lparen'>(</span><span class='symbol'>:tasks</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='lparen'>(</span><span class='symbol'>:tasks</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_tasks'>tasks</span><span class='op'>|</span> <span class='id identifier rubyid_tasks'>tasks</span><span class='period'>.</span><span class='id identifier rubyid_prioritized'>prioritized</span> <span class='rbrace'>}</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_combine'>combine</span><span class='lparen'>(</span><span class='symbol'>:tasks</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='lparen'>(</span><span class='symbol'>:tasks</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_tasks'>tasks</span><span class='op'>|</span> <span class='id identifier rubyid_tasks'>tasks</span><span class='period'>.</span><span class='id identifier rubyid_prioritized'>prioritized</span> <span class='rbrace'>}</span></code></pre>
     
       
         <p class="example_title"><div class='inline'><p>with a nested path</p>
 </div></p>
       
-      <pre class="example code"><code><span class='id identifier rubyid_aggregate'>aggregate</span><span class='lparen'>(</span><span class='label'>tasks:</span> <span class='symbol'>:tags</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='lparen'>(</span><span class='label'>tasks:</span> <span class='symbol'>:tags</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_tags'>tags</span><span class='op'>|</span> <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>red</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_combine'>combine</span><span class='lparen'>(</span><span class='label'>tasks:</span> <span class='symbol'>:tags</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='lparen'>(</span><span class='label'>tasks:</span> <span class='symbol'>:tags</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_tags'>tags</span><span class='op'>|</span> <span class='id identifier rubyid_tags'>tags</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>red</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -868,7 +868,7 @@ which we could do in the future.</p>
 </div>
 
       <div id="footer">
-  Generated on Fri Nov  3 20:31:05 2017 by
+  Generated on Mon Nov  6 13:22:37 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
