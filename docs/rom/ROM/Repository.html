@@ -385,7 +385,7 @@ against the root relation.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#commands-class_method" title="#commands (class method)">.<strong>commands</strong>(*names, mapper: nil, use: nil, **opts)  &#x21d2; Array&lt;Symbol&gt; </a>
+      <a href="#commands-class_method" title="#commands (class method)">.<strong>commands</strong>(*names, mapper: nil, use: nil, plugins_options: EMPTY_HASH, **opts)  &#x21d2; Array&lt;Symbol&gt; </a>
     
 
     
@@ -572,10 +572,10 @@ against the root relation.</p>
       <pre class="lines">
 
 
-92</pre>
+94</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 92</span>
+      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 94</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:auto_struct</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_auto_struct'>auto_struct</span> <span class='rbrace'>}</span></pre>
     </td>
@@ -627,10 +627,10 @@ against the root relation.</p>
       <pre class="lines">
 
 
-84</pre>
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 86</span>
 
 <span class='id identifier rubyid_param'>param</span> <span class='symbol'>:container</span><span class='comma'>,</span> <span class='label'>allow:</span> <span class='const'><span class='object_link'><a href="../ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Container.html" title="ROM::Container (class)">Container</a></span></span></pre>
     </td>
@@ -664,12 +664,12 @@ against the root relation.</p>
       <pre class="lines">
 
 
-96
-97
-98</pre>
+98
+99
+100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 96</span>
+      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_relations'>relations</span>
   <span class='ivar'>@relations</span>
@@ -723,10 +723,10 @@ against the root relation.</p>
       <pre class="lines">
 
 
-88</pre>
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 88</span>
+      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 90</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:struct_namespace</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_struct_namespace'>struct_namespace</span> <span class='rbrace'>}</span></pre>
     </td>
@@ -839,10 +839,10 @@ against the root relation.</p>
       <pre class="lines">
 
 
-67</pre>
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 69</span>
 
 <span class='id identifier rubyid_defines'>defines</span> <span class='symbol'>:auto_struct</span></pre>
     </td>
@@ -853,7 +853,7 @@ against the root relation.</p>
       <div class="method_details ">
   <h3 class="signature " id="commands-class_method">
   
-    .<strong>commands</strong>(*names, mapper: nil, use: nil, **opts)  &#x21d2; <tt>Array&lt;Symbol&gt;</tt> 
+    .<strong>commands</strong>(*names, mapper: nil, use: nil, plugins_options: EMPTY_HASH, **opts)  &#x21d2; <tt>Array&lt;Symbol&gt;</tt> 
   
 
   
@@ -883,7 +883,7 @@ against the root relation.</p>
 
 <span class='comment'># with custom command plugin
 </span><span class='kw'>class</span> <span class='const'>UserRepo</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="ROM::Repository (class)">Repository</a></span></span><span class='lbracket'>[</span><span class='symbol'>:users</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_commands'>commands</span> <span class='symbol'>:create</span><span class='comma'>,</span> <span class='label'>plugin:</span> <span class='symbol'>:my_command_plugin</span>
+  <span class='id identifier rubyid_commands'>commands</span> <span class='symbol'>:create</span><span class='comma'>,</span> <span class='label'>use:</span> <span class='symbol'>:my_command_plugin</span>
 <span class='kw'>end</span>
 
 <span class='comment'># with custom mapper
@@ -943,6 +943,8 @@ against the root relation.</p>
 </ul>
 
   
+    
+    
     
     
     
@@ -1109,10 +1111,10 @@ against the root relation.</p>
       <pre class="lines">
 
 
-78</pre>
+80</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 78</span>
+      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 80</span>
 
 <span class='id identifier rubyid_defines'>defines</span> <span class='symbol'>:relation_reader</span></pre>
     </td>
@@ -1164,12 +1166,12 @@ against the root relation.</p>
       <pre class="lines">
 
 
-138
-139
-140</pre>
+140
+141
+142</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 138</span>
+      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 140</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span>
   <span class='tstring'><span class='tstring_beg'>%(</span><span class='tstring_content'>#&lt;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'> struct_namespace=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_struct_namespace'>struct_namespace</span><span class='embexpr_end'>}</span><span class='tstring_content'> auto_struct=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_auto_struct'>auto_struct</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>)</span></span>
@@ -1232,12 +1234,12 @@ against the root relation.</p>
       <pre class="lines">
 
 
-129
-130
-131</pre>
+131
+132
+133</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 129</span>
+      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository.rb', line 131</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_transaction'>transaction</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_container'>container</span><span class='period'>.</span><span class='id identifier rubyid_gateways'>gateways</span><span class='lbracket'>[</span><span class='symbol'>:default</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_transaction'>transaction</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
@@ -1252,7 +1254,7 @@ against the root relation.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Nov  6 13:22:40 2017 by
+  Generated on Fri Nov 17 13:56:10 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>

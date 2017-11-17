@@ -762,7 +762,7 @@ depending on their persistence backend.</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#command-instance_method" title="#command (instance method)">#<strong>command</strong>(type, mapper: nil, use: EMPTY_ARRAY, **opts)  &#x21d2; ROM::Command </a>
+      <a href="#command-instance_method" title="#command (instance method)">#<strong>command</strong>(type, mapper: nil, use: EMPTY_ARRAY, plugins_options: EMPTY_HASH, **opts)  &#x21d2; ROM::Command </a>
     
 
     
@@ -1277,7 +1277,7 @@ depending on their persistence backend.</p>
     <td>
       <pre class="code"><span class="info file"># File 'core/lib/rom/relation.rb', line 178</span>
 
-<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:mappers</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='const'><span class='object_link'><a href="MapperRegistry.html" title="ROM::MapperRegistry (class)">MapperRegistry</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='rbrace'>}</span></pre>
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:mappers</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_mapper_registry'>mapper_registry</span> <span class='rbrace'>}</span></pre>
     </td>
   </tr>
 </table>
@@ -2929,7 +2929,7 @@ support automatic schema projection at run-time.</p>
       <div class="method_details ">
   <h3 class="signature " id="command-instance_method">
   
-    #<strong>command</strong>(type, mapper: nil, use: EMPTY_ARRAY, **opts)  &#x21d2; <tt><span class='object_link'><a href="Command.html" title="ROM::Command (class)">ROM::Command</a></span></tt> 
+    #<strong>command</strong>(type, mapper: nil, use: EMPTY_ARRAY, plugins_options: EMPTY_HASH, **opts)  &#x21d2; <tt><span class='object_link'><a href="Command.html" title="ROM::Command (class)">ROM::Command</a></span></tt> 
   
 
   
@@ -3023,6 +3023,8 @@ AST.</p>
 </ul>
 
   
+    
+    
     
     
     
@@ -4281,7 +4283,7 @@ through relation API.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Nov  6 13:22:35 2017 by
+  Generated on Fri Nov 17 13:56:06 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>

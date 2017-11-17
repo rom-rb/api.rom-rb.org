@@ -726,7 +726,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#prefix-instance_method" title="#prefix (instance method)">#<strong>prefix</strong>(name = Dry::Core::Inflector.singularize(schema.name.dataset))  &#x21d2; Relation </a>
+      <a href="#prefix-instance_method" title="#prefix (instance method)">#<strong>prefix</strong>(name = Inflector.singularize(schema.name.dataset))  &#x21d2; Relation </a>
     
 
     
@@ -4058,7 +4058,7 @@ from tuples</p>
       <div class="method_details ">
   <h3 class="signature " id="prefix-instance_method">
   
-    #<strong>prefix</strong>(name = Dry::Core::Inflector.singularize(schema.name.dataset))  &#x21d2; <tt><span class='object_link'><a href="../Relation.html" title="ROM::SQL::Relation (class)">Relation</a></span></tt> 
+    #<strong>prefix</strong>(name = Inflector.singularize(schema.name.dataset))  &#x21d2; <tt><span class='object_link'><a href="../Relation.html" title="ROM::SQL::Relation (class)">Relation</a></span></tt> 
   
 
   
@@ -4094,7 +4094,7 @@ from tuples</p>
         <span class='type'>(<tt>Symbol</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>Dry::Core::Inflector.singularize(schema.name.dataset)</tt>)</em>
+        <em class="default">(defaults to: <tt>Inflector.singularize(schema.name.dataset)</tt>)</em>
       
       
         &mdash;
@@ -4132,7 +4132,7 @@ from tuples</p>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 93</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_prefix'>prefix</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'>Dry</span><span class='op'>::</span><span class='const'>Core</span><span class='op'>::</span><span class='const'>Inflector</span><span class='period'>.</span><span class='id identifier rubyid_singularize'>singularize</span><span class='lparen'>(</span><span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_dataset'>dataset</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_prefix'>prefix</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'>Inflector</span><span class='period'>.</span><span class='id identifier rubyid_singularize'>singularize</span><span class='lparen'>(</span><span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_dataset'>dataset</span><span class='rparen'>)</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_prefix'>prefix</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span><span class='period'>.</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -5631,7 +5631,7 @@ with additional right_join options</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Nov  6 13:22:43 2017 by
+  Generated on Fri Nov 17 13:56:13 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>

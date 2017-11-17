@@ -198,6 +198,29 @@ required interface</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#mapper_compiler-class_method" title="mapper_compiler (class method)">.<strong>mapper_compiler</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Get or set gateway-specific mapper compiler class.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#setup-class_method" title="setup (class method)">.<strong>setup</strong>(gateway_or_scheme, *args)  &#x21d2; Gateway </a>
     
 
@@ -406,12 +429,12 @@ required interface</p>
       <pre class="lines">
 
 
-37
-38
-39</pre>
+53
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 37</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_connection'>connection</span>
   <span class='ivar'>@connection</span>
@@ -541,6 +564,124 @@ required interface</p>
       <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 33</span>
 
 <span class='id identifier rubyid_defines'>defines</span> <span class='symbol'>:adapter</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mapper_compiler-class_method">
+  
+    
+      <span class="overload">.<strong>mapper_compiler</strong>  &#x21d2; <tt>Class</tt> </span>
+    
+      <span class="overload">.<strong>mapper_compiler</strong>(klass)  &#x21d2; <tt>Object</tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Get or set gateway-specific mapper compiler class</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>mapper_compiler</strong>  &#x21d2; <tt>Class</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    <p>Return mapper compiler class</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Class</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>mapper_compiler</strong>(klass)  &#x21d2; <tt>Object</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='kw'>class</span> <span class='const'>MyGateway</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="" title="ROM::Gateway (class)">Gateway</a></span></span>
+  <span class='id identifier rubyid_mapper_compiler'>mapper_compiler</span> <span class='const'>MyMapperCompiler</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>klass</span>
+      
+      
+        <span class='type'>(<tt>Class</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The mapper compiler class</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 49</span>
+
+<span class='id identifier rubyid_defines'>defines</span> <span class='symbol'>:mapper_compiler</span></pre>
     </td>
   </tr>
 </table>
@@ -714,32 +855,32 @@ For custom gateways, create an instance and pass it directly.</p>
       <pre class="lines">
 
 
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
 97
 98
 99
 100
 101
 102
-103</pre>
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 81</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 97</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_setup'>setup</span><span class='lparen'>(</span><span class='id identifier rubyid_gateway_or_scheme'>gateway_or_scheme</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>case</span> <span class='id identifier rubyid_gateway_or_scheme'>gateway_or_scheme</span>
@@ -893,15 +1034,15 @@ For custom gateways, create an instance and pass it directly.</p>
       <pre class="lines">
 
 
-131
-132
-133
-134
-135
-136</pre>
+147
+148
+149
+150
+151
+152</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 131</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 147</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_adapter'>adapter</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_adapter'>adapter</span> <span class='op'>||</span> <span class='id identifier rubyid_raise'>raise</span><span class='lparen'>(</span>
@@ -939,12 +1080,12 @@ For custom gateways, create an instance and pass it directly.</p>
       <pre class="lines">
 
 
-164
-165
-166</pre>
+180
+181
+182</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 164</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 180</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_disconnect'>disconnect</span>
   <span class='comment'># noop
@@ -995,12 +1136,12 @@ across adapters. This is a no-op by default and returns nil.</p>
       <pre class="lines">
 
 
-157
-158
-159</pre>
+173
+174
+175</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 157</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 173</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_logger'>logger</span>
   <span class='comment'># noop
@@ -1075,12 +1216,12 @@ the transaction was rolled back</p>
       <pre class="lines">
 
 
-177
-178
-179</pre>
+193
+194
+195</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 177</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 193</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_transaction'>transaction</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_transaction_runner'>transaction_runner</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
@@ -1121,12 +1262,12 @@ the transaction was rolled back</p>
       <pre class="lines">
 
 
-145
-146
-147</pre>
+161
+162
+163</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 145</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/gateway.rb', line 161</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_use_logger'>use_logger</span><span class='lparen'>(</span><span class='op'>*</span><span class='rparen'>)</span>
   <span class='comment'># noop
@@ -1141,7 +1282,7 @@ the transaction was rolled back</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Nov  6 13:22:34 2017 by
+  Generated on Fri Nov 17 13:56:05 2017 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.9 (ruby-2.4.1).
 </div>
