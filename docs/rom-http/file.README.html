@@ -6,7 +6,7 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.9.9
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -116,7 +116,7 @@
 
 <span class='kw'>class</span> <span class='const'>ResponseHandler</span>
   <span class='kw'>def</span> <span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='id identifier rubyid_dataset'>dataset</span><span class='rparen'>)</span>
-    <span class='kw'>if</span> <span class='qsymbols_beg'>%i(</span><span class='tstring_content'>post</span><span class='words_sep'> </span><span class='tstring_content'>put</span><span class='words_sep'> </span><span class='tstring_content'>patch</span><span class='words_sep'>)</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_request_method'>request_method</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='qsymbols_beg'>%i(</span><span class='tstring_content'>post</span><span class='words_sep'> </span><span class='tstring_content'>put</span><span class='words_sep'> </span><span class='tstring_content'>patch</span><span class='tstring_end'>)</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_request_method'>request_method</span><span class='rparen'>)</span>
       <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='label'>symbolize_names:</span> <span class='kw'>true</span><span class='rparen'>)</span>
     <span class='kw'>else</span>
       <span class='const'>Array</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='label'>symbolize_names:</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span>
@@ -180,7 +180,7 @@
         <span class='kw'>end</span>
 
         <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_default_response_handler'>default_response_handler</span> <span class='op'>=</span> <span class='tlambda'>-&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='comma'>,</span> <span class='id identifier rubyid_dataset'>dataset</span><span class='rparen'>)</span> <span class='kw'>do</span>
-          <span class='kw'>if</span> <span class='qsymbols_beg'>%i(</span><span class='tstring_content'>post</span><span class='words_sep'> </span><span class='tstring_content'>put</span><span class='words_sep'> </span><span class='tstring_content'>patch</span><span class='words_sep'>)</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_request_method'>request_method</span><span class='rparen'>)</span>
+          <span class='kw'>if</span> <span class='qsymbols_beg'>%i(</span><span class='tstring_content'>post</span><span class='words_sep'> </span><span class='tstring_content'>put</span><span class='words_sep'> </span><span class='tstring_content'>patch</span><span class='tstring_end'>)</span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_request_method'>request_method</span><span class='rparen'>)</span>
             <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='label'>symbolize_names:</span> <span class='kw'>true</span><span class='rparen'>)</span>
           <span class='kw'>else</span>
             <span class='const'>Array</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='label'>symbolize_names:</span> <span class='kw'>true</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span>
@@ -244,9 +244,9 @@
 </div></div>
 
       <div id="footer">
-  Generated on Fri Nov 17 13:56:23 2017 by
+  Generated on Mon Jan 15 20:05:53 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.9 (ruby-2.4.1).
+  0.9.12 (ruby-2.5.0).
 </div>
 
     </div>

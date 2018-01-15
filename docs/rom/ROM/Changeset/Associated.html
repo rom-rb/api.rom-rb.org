@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Changeset::Associated
   
-    &mdash; Documentation by YARD 0.9.9
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -467,20 +467,20 @@
         <p class="example_title"><div class='inline'><p>using existing parent data</p>
 </div></p>
       
-      <pre class="example code"><code><span class='id identifier rubyid_user_changeset'>user_changeset</span> <span class='op'>=</span> <span class='id identifier rubyid_user_repo'>user_repo</span><span class='period'>.</span><span class='id identifier rubyid_changeset'>changeset</span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Jane</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_task_changeset'>task_changeset</span> <span class='op'>=</span> <span class='id identifier rubyid_task_repo'>task_repo</span><span class='period'>.</span><span class='id identifier rubyid_changeset'>changeset</span><span class='lparen'>(</span><span class='label'>title:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Task One</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_user_changeset'>user_changeset</span> <span class='op'>=</span> <span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_changeset'>changeset</span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Jane</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_task_changeset'>task_changeset</span> <span class='op'>=</span> <span class='id identifier rubyid_tasks'>tasks</span><span class='period'>.</span><span class='id identifier rubyid_changeset'>changeset</span><span class='lparen'>(</span><span class='label'>title:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Task One</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
-<span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='id identifier rubyid_user_repo'>user_repo</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_user_changeset'>user_changeset</span><span class='rparen'>)</span>
-<span class='id identifier rubyid_task'>task</span> <span class='op'>=</span> <span class='id identifier rubyid_task_repo'>task_repo</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_task_changeset'>task_changeset</span><span class='period'>.</span><span class='id identifier rubyid_associate'>associate</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span> <span class='symbol'>:user</span><span class='rparen'>)</span><span class='rparen'>)</span></code></pre>
+<span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_user_changeset'>user_changeset</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_task'>task</span> <span class='op'>=</span> <span class='id identifier rubyid_tasks'>tasks</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_task_changeset'>task_changeset</span><span class='period'>.</span><span class='id identifier rubyid_associate'>associate</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span> <span class='symbol'>:user</span><span class='rparen'>)</span><span class='rparen'>)</span></code></pre>
     
       
         <p class="example_title"><div class='inline'><p>saving both parent and child in one go</p>
 </div></p>
       
-      <pre class="example code"><code><span class='id identifier rubyid_user_changeset'>user_changeset</span> <span class='op'>=</span> <span class='id identifier rubyid_user_repo'>user_repo</span><span class='period'>.</span><span class='id identifier rubyid_changeset'>changeset</span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Jane</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-<span class='id identifier rubyid_task_changeset'>task_changeset</span> <span class='op'>=</span> <span class='id identifier rubyid_task_repo'>task_repo</span><span class='period'>.</span><span class='id identifier rubyid_changeset'>changeset</span><span class='lparen'>(</span><span class='label'>title:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Task One</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+      <pre class="example code"><code><span class='id identifier rubyid_user_changeset'>user_changeset</span> <span class='op'>=</span> <span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_changeset'>changeset</span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Jane</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_task_changeset'>task_changeset</span> <span class='op'>=</span> <span class='id identifier rubyid_tasks'>tasks</span><span class='period'>.</span><span class='id identifier rubyid_changeset'>changeset</span><span class='lparen'>(</span><span class='label'>title:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Task One</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
-<span class='id identifier rubyid_task'>task</span> <span class='op'>=</span> <span class='id identifier rubyid_task_repo'>task_repo</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_task_changeset'>task_changeset</span><span class='period'>.</span><span class='id identifier rubyid_associate'>associate</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span> <span class='symbol'>:user</span><span class='rparen'>)</span><span class='rparen'>)</span></code></pre>
+<span class='id identifier rubyid_task'>task</span> <span class='op'>=</span> <span class='id identifier rubyid_tasks'>tasks</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_task_changeset'>task_changeset</span><span class='period'>.</span><span class='id identifier rubyid_associate'>associate</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span> <span class='symbol'>:user</span><span class='rparen'>)</span><span class='rparen'>)</span></code></pre>
     
   </div>
 
@@ -559,7 +559,7 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_task_changeset'>task_changeset</span> <span class='op'>=</span> <span class='id identifier rubyid_task_repo'>task_repo</span><span class='period'>.</span>
+      <pre class="example code"><code><span class='id identifier rubyid_task_changeset'>task_changeset</span> <span class='op'>=</span> <span class='id identifier rubyid_tasks'>tasks</span><span class='period'>.</span>
   <span class='id identifier rubyid_changeset'>changeset</span><span class='lparen'>(</span><span class='label'>title:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Task One</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span>
   <span class='id identifier rubyid_associate'>associate</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span> <span class='symbol'>:user</span><span class='rparen'>)</span><span class='period'>.</span>
   <span class='id identifier rubyid_commit'>commit</span>
@@ -607,9 +607,9 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Nov 17 13:56:10 2017 by
+  Generated on Mon Jan 15 20:05:37 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.9 (ruby-2.4.1).
+  0.9.12 (ruby-2.5.0).
 </div>
 
     </div>

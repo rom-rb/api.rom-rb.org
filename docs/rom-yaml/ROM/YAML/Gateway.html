@@ -6,7 +6,7 @@
 <title>
   Class: ROM::YAML::Gateway
   
-    &mdash; Documentation by YARD 0.9.9
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -117,14 +117,9 @@
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='const'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_setup'>setup</span><span class='lparen'>(</span><span class='symbol'>:yaml</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/path/to/data.yml</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-
-<span class='id identifier rubyid_rom'>rom</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_finalize'>finalize</span><span class='period'>.</span><span class='id identifier rubyid_env'>env</span>
-
+      <pre class="example code"><code><span class='id identifier rubyid_rom'>rom</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_container'>container</span><span class='lparen'>(</span><span class='symbol'>:yaml</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/path/to/data.yml</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='id identifier rubyid_gateway'>gateway</span> <span class='op'>=</span> <span class='id identifier rubyid_rom'>rom</span><span class='period'>.</span><span class='id identifier rubyid_gateways'>gateways</span><span class='lbracket'>[</span><span class='symbol'>:default</span><span class='rbracket'>]</span>
-
-<span class='id identifier rubyid_gateway'>gateway</span><span class='period'>.</span><span class='id identifier rubyid_dataset?'>dataset?</span><span class='lparen'>(</span><span class='symbol'>:users</span><span class='rparen'>)</span> <span class='comment'># =&gt; true
-</span><span class='id identifier rubyid_gateway'>gateway</span><span class='lbracket'>[</span><span class='symbol'>:users</span><span class='rbracket'>]</span> <span class='comment'># =&gt; data under &#39;users&#39; key from the yaml file</span></code></pre>
+<span class='id identifier rubyid_gateway'>gateway</span><span class='lbracket'>[</span><span class='symbol'>:users</span><span class='rbracket'>]</span> <span class='comment'># =&gt; data under &#39;users&#39; key from the yaml file</span></code></pre>
     
   </div>
 
@@ -440,16 +435,16 @@
   
     <li>
       
-        <span class='name'>path</span>
+        <span class='name'>sources</span>
       
       
-        <span class='type'>(<tt>String</tt>)</span>
+        <span class='type'>(<tt>Hash</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>The absolute path to yaml file</p>
+<p>The hashmap containing data loaded from files</p>
 </div>
       
     </li>
@@ -463,13 +458,13 @@
       <pre class="lines">
 
 
-81
-82
-83
-84</pre>
+76
+77
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 81</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_sources'>sources</span><span class='rparen'>)</span>
   <span class='ivar'>@sources</span> <span class='op'>=</span> <span class='id identifier rubyid_sources'>sources</span>
@@ -515,12 +510,12 @@
       <pre class="lines">
 
 
-34
-35
-36</pre>
+29
+30
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 29</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_datasets'>datasets</span>
   <span class='ivar'>@datasets</span>
@@ -560,12 +555,12 @@
       <pre class="lines">
 
 
-29
-30
-31</pre>
+24
+25
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 24</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sources'>sources</span>
   <span class='ivar'>@sources</span>
@@ -612,12 +607,12 @@
       <pre class="lines">
 
 
-74
-75
-76</pre>
+69
+70
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_load_file'>load_file</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='op'>::</span><span class='const'>YAML</span><span class='period'>.</span><span class='id identifier rubyid_load_file'>load_file</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
@@ -657,15 +652,15 @@
       <pre class="lines">
 
 
-64
-65
-66
-67
-68
-69</pre>
+59
+60
+61
+62
+63
+64</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 59</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_load_files'>load_files</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='const'>Dir</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='embexpr_end'>}</span><span class='tstring_content'>/*.yml</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_file'>file</span><span class='comma'>,</span> <span class='id identifier rubyid_h'>h</span><span class='op'>|</span>
@@ -708,16 +703,16 @@
       <pre class="lines">
 
 
+48
+49
+50
+51
+52
 53
-54
-55
-56
-57
-58
-59</pre>
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 53</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_load_from'>load_from</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_directory?'>directory?</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
@@ -798,12 +793,12 @@
       <pre class="lines">
 
 
-46
-47
-48</pre>
+41
+42
+43</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 41</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_load_from'>load_from</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -873,12 +868,12 @@
       <pre class="lines">
 
 
-93
-94
-95</pre>
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 93</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_datasets'>datasets</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -942,12 +937,12 @@
       <pre class="lines">
 
 
-104
-105
-106</pre>
+99
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 104</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 99</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dataset'>dataset</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_datasets'>datasets</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Dataset.html" title="ROM::YAML::Dataset (class)">Dataset</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_sources'>sources</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -996,12 +991,12 @@
       <pre class="lines">
 
 
-111
-112
-113</pre>
+106
+107
+108</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 111</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/yaml/gateway.rb', line 106</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dataset?'>dataset?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_datasets'>datasets</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -1016,9 +1011,9 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Nov 17 13:56:29 2017 by
+  Generated on Mon Jan 15 20:06:01 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.9 (ruby-2.4.1).
+  0.9.12 (ruby-2.5.0).
 </div>
 
     </div>

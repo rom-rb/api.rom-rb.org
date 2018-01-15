@@ -6,7 +6,7 @@
 <title>
   Class: ROM::SQL::Wrap
   
-    &mdash; Documentation by YARD 0.9.9
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -106,9 +106,10 @@
     <p>Specialized wrap relation for SQL</p>
 
 <p>This type of relations is returned when using <code>Relation#wrap</code> and it uses
-a join, unlike <code>Relation#combine</code>, which means a relation is restricted
-only to tuples which have associated tuples. It should be used in cases
-where you want to rely on this restriction.</p>
+a join, unlike <code>Relation#combine</code> which makes separate queries. This
+means a relation is restricted only to tuples which have associated
+tuples, so it should be used in cases where you want to rely on this
+restriction.</p>
 
 
   </div>
@@ -202,12 +203,12 @@ where you want to rely on this restriction.</p>
       <pre class="lines">
 
 
-19
 20
-21</pre>
+21
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/wrap.rb', line 19</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/wrap.rb', line 20</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_schema'>schema</span>
   <span class='id identifier rubyid_root'><span class='object_link'><a href="../../top-level-namespace.html" title="Top Level Namespace (root)">root</a></span></span><span class='period'>.</span><span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_nodes'>nodes</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:schema</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='symbol'>:merge</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_qualified'>qualified</span>
@@ -222,9 +223,9 @@ where you want to rely on this restriction.</p>
 </div>
 
       <div id="footer">
-  Generated on Fri Nov 17 13:56:14 2017 by
+  Generated on Mon Jan 15 20:05:43 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.9 (ruby-2.4.1).
+  0.9.12 (ruby-2.5.0).
 </div>
 
     </div>

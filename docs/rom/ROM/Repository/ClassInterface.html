@@ -6,7 +6,7 @@
 <title>
   Module: ROM::Repository::ClassInterface
   
-    &mdash; Documentation by YARD 0.9.9
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -262,19 +262,23 @@
       <pre class="lines">
 
 
-21
-22
 23
 24
-25</pre>
+25
+26
+27
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository/class_interface.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository/class_interface.rb', line 23</span>
 
 <span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_klass'>klass</span> <span class='op'>=</span> <span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Repository.html" title="ROM::Repository (class)">Repository</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Root.html" title="ROM::Repository::Root (class)">Root</a></span></span> <span class='op'>?</span> <span class='kw'>self</span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="../Repository.html" title="ROM::Repository (class)">Repository</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Root.html" title="ROM::Repository::Root (class)">Root</a></span></span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_klass'>klass</span>
+  <span class='id identifier rubyid_fetch_or_store'>fetch_or_store</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_klass'>klass</span> <span class='op'>=</span> <span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="../Repository.html" title="ROM::Repository (class)">Repository</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Root.html" title="ROM::Repository::Root (class)">Root</a></span></span> <span class='op'>?</span> <span class='kw'>self</span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="../Repository.html" title="ROM::Repository (class)">Repository</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Root.html" title="ROM::Repository::Root (class)">Root</a></span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_root'>root</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_klass'>klass</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -404,11 +408,6 @@
       <pre class="lines">
 
 
-80
-81
-82
-83
-84
 85
 86
 87
@@ -420,10 +419,15 @@
 93
 94
 95
-96</pre>
+96
+97
+98
+99
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository/class_interface.rb', line 80</span>
+      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository/class_interface.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_commands'>commands</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_names'>names</span><span class='comma'>,</span> <span class='label'>mapper:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>use:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>plugins_options:</span> <span class='const'>EMPTY_HASH</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span> <span class='op'>||</span> <span class='id identifier rubyid_opts'>opts</span><span class='period'>.</span><span class='id identifier rubyid_any?'>any?</span>
@@ -543,17 +547,17 @@
       <pre class="lines">
 
 
-36
-37
-38
-39
 40
 41
 42
-43</pre>
+43
+44
+45
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository/class_interface.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'repository/lib/rom/repository/class_interface.rb', line 40</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_container'>container</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='rparen'>)</span>
   <span class='kw'>unless</span> <span class='id identifier rubyid_relation_reader'>relation_reader</span>
@@ -573,9 +577,9 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Nov 17 13:56:04 2017 by
+  Generated on Mon Jan 15 20:05:25 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.9 (ruby-2.4.1).
+  0.9.12 (ruby-2.5.0).
 </div>
 
     </div>

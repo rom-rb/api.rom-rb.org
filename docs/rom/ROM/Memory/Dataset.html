@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Memory::Dataset
   
-    &mdash; Documentation by YARD 0.9.9
+    &mdash; Documentation by YARD 0.9.12
   
 </title>
 
@@ -134,7 +134,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#delete-instance_method" title="#delete (instance method)">#<strong>delete</strong>(uple))  &#x21d2; Object </a>
+      <a href="#delete-instance_method" title="#delete (instance method)">#<strong>delete</strong>(tuple)  &#x21d2; Dataset </a>
     
 
     
@@ -148,7 +148,8 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>Delete tuples from a dataset.</p>
+</div></span>
   
 </li>
 
@@ -156,9 +157,11 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#insert-instance_method" title="#insert (instance method)">#<strong>insert</strong>(uple))  &#x21d2; Dataset </a>
+      <a href="#insert-instance_method" title="#insert (instance method)">#<strong>insert</strong>(tuple)  &#x21d2; Dataset </a>
     
 
+    
+      (also: #&lt;&lt;)
     
   </span>
   
@@ -170,7 +173,8 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'><p>Insert tuple into a dataset.</p>
+</div></span>
   
 </li>
 
@@ -286,7 +290,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="delete-instance_method">
   
-    #<strong>delete</strong>(uple))  &#x21d2; <tt>Object</tt> 
+    #<strong>delete</strong>(tuple)  &#x21d2; <tt><span class='object_link'><a href="" title="ROM::Memory::Dataset (class)">Dataset</a></span></tt> 
   
 
   
@@ -294,12 +298,45 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    
+    <p>Delete tuples from a dataset</p>
+
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>tuple</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A new tuple for deletion</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="ROM::Memory::Dataset (class)">Dataset</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
 
 </div><table class="source_code">
   <tr>
@@ -315,10 +352,10 @@
     <td>
       <pre class="code"><span class="info file"># File 'core/lib/rom/memory/dataset.rb', line 108</span>
 
-ef delete(tuple)
-  data.delete(tuple)
-  self
-end</pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_tuple'>tuple</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_tuple'>tuple</span><span class='rparen'>)</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -327,20 +364,44 @@ end</pre>
       <div class="method_details ">
   <h3 class="signature " id="insert-instance_method">
   
-    #<strong>insert</strong>(uple))  &#x21d2; <tt><span class='object_link'><a href="" title="ROM::Memory::Dataset (class)">Dataset</a></span></tt> 
+    #<strong>insert</strong>(tuple)  &#x21d2; <tt><span class='object_link'><a href="" title="ROM::Memory::Dataset (class)">Dataset</a></span></tt> 
   
 
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='<<-instance_method'>&lt;&lt;</span></span>
+    </span>
   
 
   
 </h3><div class="docstring">
   <div class="discussion">
-    
+    <p>Insert tuple into a dataset</p>
+
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>tuple</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A new tuple for insertion</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -369,10 +430,10 @@ end</pre>
     <td>
       <pre class="code"><span class="info file"># File 'core/lib/rom/memory/dataset.rb', line 95</span>
 
-ef insert(tuple)
-  data &lt;&lt; tuple
-  self
-end</pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_insert'>insert</span><span class='lparen'>(</span><span class='id identifier rubyid_tuple'>tuple</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_data'>data</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_tuple'>tuple</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -746,9 +807,9 @@ end</pre>
 </div>
 
       <div id="footer">
-  Generated on Fri Nov 17 13:56:07 2017 by
+  Generated on Mon Jan 15 20:05:31 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.9 (ruby-2.4.1).
+  0.9.12 (ruby-2.5.0).
 </div>
 
     </div>
