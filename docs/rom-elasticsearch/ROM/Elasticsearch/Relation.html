@@ -101,7 +101,9 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/rom/elasticsearch/relation.rb</dd>
+    <dd>lib/rom/elasticsearch/relation.rb<span class="defines">,<br />
+  lib/rom/elasticsearch/relation/loaded.rb</span>
+</dd>
   </dl>
   
 </div>
@@ -164,9 +166,80 @@ and has access to commands via <code>Relation#command</code>.</p>
   </div>
 
 
-</div>
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Relation/Loaded.html" title="ROM::Elasticsearch::Relation::Loaded (class)">Loaded</a></span>
+    
+  
+</p>
 
 
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#current_page-instance_method" title="#current_page (instance method)">#<strong>current_page</strong>  &#x21d2; Integer </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Currently set page.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#per_page-instance_method" title="#per_page (instance method)">#<strong>per_page</strong>(num = Undefined)  &#x21d2; Relation </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Return a relation with per-page number set.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
 
 
 
@@ -210,6 +283,29 @@ and has access to commands via <code>Relation#command</code>.</p>
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#call-instance_method" title="#call (instance method)">#<strong>call</strong>  &#x21d2; Loaded </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Load a relation.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -321,6 +417,52 @@ and has access to commands via <code>Relation#command</code>.</p>
 
   
     <span class="summary_desc"><div class='inline'><p>Map indexed data.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#order-instance_method" title="#order (instance method)">#<strong>order</strong>(*attrs)  &#x21d2; Relation </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Return a relation with changed sorting logic.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#page-instance_method" title="#page (instance method)">#<strong>page</strong>(num)  &#x21d2; Relation </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Return a relation with page number set.</p>
 </div></span>
   
 </li>
@@ -448,6 +590,134 @@ and has access to commands via <code>Relation#command</code>.</p>
   
   
   
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="current_page-instance_method">
+  
+    #<strong>current_page</strong>  &#x21d2; <tt>Integer</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns Currently set page</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Currently set page</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 102</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:current_page</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='int'>1</span> <span class='rbrace'>}</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="per_page-instance_method">
+  
+    #<strong>per_page</strong>(num = Undefined)  &#x21d2; <tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Relation (class)">Relation</a></span></tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Return a relation with per-page number set</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>num</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>Undefined</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Relation (class)">Relation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 106</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:per_page</span><span class='comma'>,</span> <span class='label'>reader:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='label'>optional:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='int'>10</span> <span class='rbrace'>}</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
 
   <div id="class_method_details" class="method_details_list">
     <h2>Class Method Details</h2>
@@ -585,10 +855,10 @@ and has access to commands via <code>Relation#command</code>.</p>
       <pre class="lines">
 
 
-90</pre>
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 90</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 91</span>
 
 <span class='id identifier rubyid_defines'>defines</span> <span class='symbol'>:index_settings</span></pre>
     </td>
@@ -603,7 +873,60 @@ and has access to commands via <code>Relation#command</code>.</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="create_index-instance_method">
+  <h3 class="signature first" id="call-instance_method">
+  
+    #<strong>call</strong>  &#x21d2; <tt><span class='object_link'><a href="Relation/Loaded.html" title="ROM::Elasticsearch::Relation::Loaded (class)">Loaded</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Load a relation</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Relation/Loaded.html" title="ROM::Elasticsearch::Relation::Loaded (class)">Loaded</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+128
+129
+130</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 128</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_call'>call</span>
+  <span class='const'><span class='object_link'><a href="Relation/Loaded.html" title="ROM::Elasticsearch::Relation::Loaded (class)">Loaded</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_index-instance_method">
   
     #<strong>create_index</strong>  &#x21d2; <tt>Hash</tt> 
   
@@ -644,12 +967,12 @@ and has access to commands via <code>Relation#command</code>.</p>
       <pre class="lines">
 
 
-192
-193
-194</pre>
+247
+248
+249</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 192</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 247</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_index'>create_index</span>
   <span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_create_index'>create_index</span><span class='lparen'>(</span><span class='id identifier rubyid_index_params'>index_params</span><span class='rparen'>)</span>
@@ -701,12 +1024,12 @@ and has access to commands via <code>Relation#command</code>.</p>
       <pre class="lines">
 
 
-210
-211
-212</pre>
+265
+266
+267</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 210</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 265</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span>
   <span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span>
@@ -758,12 +1081,12 @@ and has access to commands via <code>Relation#command</code>.</p>
       <pre class="lines">
 
 
-201
-202
-203</pre>
+256
+257
+258</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 201</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 256</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_index'>delete_index</span>
   <span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_delete_index'>delete_index</span>
@@ -811,12 +1134,12 @@ and has access to commands via <code>Relation#command</code>.</p>
       <pre class="lines">
 
 
-141
-142
-143</pre>
+196
+197
+198</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 141</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 196</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -879,15 +1202,151 @@ and has access to commands via <code>Relation#command</code>.</p>
       <pre class="lines">
 
 
-121
-122
-123</pre>
+176
+177
+178</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 121</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 176</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="order-instance_method">
+  
+    #<strong>order</strong>(*attrs)  &#x21d2; <tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Relation (class)">Relation</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Return a relation with changed sorting logic</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>attrs</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;Symbol,<span class='object_link'><a href="Attribute.html" title="ROM::Elasticsearch::Attribute (class)">Attribute</a></span>&gt;</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Relation (class)">Relation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+139
+140
+141</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 139</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_order'>order</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_project'>project</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_attrs'>attrs</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='symbol'>:to_sort_expr</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="page-instance_method">
+  
+    #<strong>page</strong>(num)  &#x21d2; <tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Relation (class)">Relation</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Return a relation with page number set</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>num</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Relation (class)">Relation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+150
+151
+152</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 150</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_page'>page</span><span class='lparen'>(</span><span class='id identifier rubyid_num'>num</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_from'>from</span><span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_num'>num</span> <span class='op'>-</span> <span class='int'>1</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='id identifier rubyid_per_page'>per_page</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='label'>current_page:</span> <span class='id identifier rubyid_num'>num</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -951,12 +1410,12 @@ and has access to commands via <code>Relation#command</code>.</p>
       <pre class="lines">
 
 
-132
-133
-134</pre>
+187
+188
+189</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 132</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 187</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_pluck'>pluck</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_t'>t</span><span class='op'>|</span> <span class='id identifier rubyid_t'>t</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
@@ -1031,12 +1490,12 @@ and has access to commands via <code>Relation#command</code>.</p>
       <pre class="lines">
 
 
-169
-170
-171</pre>
+224
+225
+226</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 169</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 224</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_query'>query</span><span class='lparen'>(</span><span class='id identifier rubyid_query'>query</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_query'>query</span><span class='lparen'>(</span><span class='id identifier rubyid_query'>query</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -1111,12 +1570,12 @@ and has access to commands via <code>Relation#command</code>.</p>
       <pre class="lines">
 
 
-183
-184
-185</pre>
+238
+239
+240</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 183</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 238</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_query_string'>query_string</span><span class='lparen'>(</span><span class='id identifier rubyid_expr'>expr</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_query_string'>query_string</span><span class='lparen'>(</span><span class='id identifier rubyid_expr'>expr</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -1172,12 +1631,12 @@ and has access to commands via <code>Relation#command</code>.</p>
       <pre class="lines">
 
 
-222
-223
-224</pre>
+277
+278
+279</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 222</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 277</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_refresh'>refresh</span>
   <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_refresh'>refresh</span><span class='rparen'>)</span>
@@ -1252,12 +1711,12 @@ and has access to commands via <code>Relation#command</code>.</p>
       <pre class="lines">
 
 
-155
-156
-157</pre>
+210
+211
+212</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 155</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/relation.rb', line 210</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_search'>search</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -1272,7 +1731,7 @@ and has access to commands via <code>Relation#command</code>.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Jan 15 20:05:49 2018 by
+  Generated on Tue Jan 23 16:48:08 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.5.0).
 </div>

@@ -129,6 +129,20 @@
       </dt>
       <dd><pre class="code"><span class='qsymbols_beg'>%i[</span><span class='tstring_content'>name</span><span class='words_sep'> </span><span class='tstring_content'>source</span><span class='words_sep'> </span><span class='tstring_content'>primary_key</span><span class='tstring_end'>]</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
     
+      <dt id="DEFAULT_SORT_DIRECTION-constant" class="">DEFAULT_SORT_DIRECTION =
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+      </dt>
+      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>asc</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+    
   </dl>
 
 
@@ -144,6 +158,52 @@
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#asc-instance_method" title="#asc (instance method)">#<strong>asc</strong>  &#x21d2; Attribute </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Return attribute with direction set to ascending.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#desc-instance_method" title="#desc (instance method)">#<strong>desc</strong>  &#x21d2; Attribute </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Return attribute with direction set to descending.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -202,7 +262,113 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="properties-instance_method">
+  <h3 class="signature first" id="asc-instance_method">
+  
+    #<strong>asc</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Attribute (class)">Attribute</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Return attribute with direction set to ascending</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Attribute (class)">Attribute</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/attribute.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_asc'>asc</span>
+  <span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>direction:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>asc</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="desc-instance_method">
+  
+    #<strong>desc</strong>  &#x21d2; <tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Attribute (class)">Attribute</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Return attribute with direction set to descending</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Attribute (class)">Attribute</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/attribute.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_desc'>desc</span>
+  <span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>direction:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>desc</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="properties-instance_method">
   
     #<strong>properties</strong>  &#x21d2; <tt>Hash</tt> 
   
@@ -239,12 +405,12 @@
       <pre class="lines">
 
 
-16
 17
-18</pre>
+18
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/attribute.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/attribute.rb', line 17</span>
 
 <span class='id identifier rubyid_memoize'>memoize</span> <span class='kw'>def</span> <span class='id identifier rubyid_properties'>properties</span>
   <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_k'>k</span><span class='comma'>,</span> <span class='id identifier rubyid__'>_</span><span class='op'>|</span> <span class='const'><span class='object_link'><a href="#INTERNAL_META_KEYS-constant" title="ROM::Elasticsearch::Attribute::INTERNAL_META_KEYS (constant)">INTERNAL_META_KEYS</a></span></span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_k'>k</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -292,12 +458,12 @@
       <pre class="lines">
 
 
-25
 26
-27</pre>
+27
+28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/attribute.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/attribute.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_properties?'>properties?</span>
   <span class='id identifier rubyid_properties'>properties</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>0</span>
@@ -312,7 +478,7 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Jan 15 20:05:49 2018 by
+  Generated on Tue Jan 23 16:48:09 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.5.0).
 </div>

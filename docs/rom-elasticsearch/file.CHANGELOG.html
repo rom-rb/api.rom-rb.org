@@ -57,7 +57,20 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h2>v0.1.1 2017-11-18</h2>
+      <div id="content"><div id='filecontents'><h2>v0.2.0 2018-01-23</h2>
+
+<h2>Added</h2>
+
+<ul>
+<li><code>Relation#order</code> which sets <code>:sort</code> (solnic)</li>
+<li><code>Relation#page</code> which sets <code>:from</code> offset (solnic)</li>
+<li><code>Relation#per_page</code> which sets <code>:size</code> (solnic)</li>
+<li><code>Relation#call</code> returns custom <code>ROM::Elasticsearch::Relation::Loaded</code> object, which provides access to <code>#total_hits</code> and raw client response (solnic)</li>
+</ul>
+
+<p><a href="https://github.com/rom-rb/rom/compare/v0.1.1...v0.2.0">Compare v0.1.1...v0.2.0</a></p>
+
+<h2>v0.1.1 2017-11-18</h2>
 
 <h2>Changed</h2>
 
@@ -71,7 +84,7 @@
 </div></div>
 
       <div id="footer">
-  Generated on Mon Jan 15 20:05:48 2018 by
+  Generated on Tue Jan 23 16:48:08 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.5.0).
 </div>
