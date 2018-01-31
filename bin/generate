@@ -15,7 +15,7 @@ projects.each do |project|
     puts "Updating #{target_dir}"
     system "cd #{target_dir} && git pull > /dev/null"
   else
-    puts "Cloning #{project.name} to #{target_dir}"
+    puts "Cloning #{project} to #{target_dir}"
     system "git clone #{gh_url % { project: project }} #{target_dir} > /dev/null"
   end
 end
