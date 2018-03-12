@@ -303,12 +303,12 @@
       <pre class="lines">
 
 
-48
 49
-50</pre>
+50
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/gateway.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/gateway.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_client'>client</span>
   <span class='ivar'>@client</span>
@@ -344,12 +344,12 @@
       <pre class="lines">
 
 
-44
 45
-46</pre>
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/gateway.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/gateway.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_url'>url</span>
   <span class='ivar'>@url</span>
@@ -427,15 +427,17 @@
       <pre class="lines">
 
 
-75
 76
-77</pre>
+77
+78
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/gateway.rb', line 75</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/gateway.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dataset'>dataset</span><span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Dataset.html" title="ROM::Elasticsearch::Dataset (class)">Dataset</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='comma'>,</span> <span class='label'>params:</span> <span class='lbrace'>{</span> <span class='label'>index:</span> <span class='id identifier rubyid_index'>index</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='const'>Inflector</span><span class='period'>.</span><span class='id identifier rubyid_singularize'>singularize</span><span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_idx_name'>idx_name</span> <span class='op'>=</span> <span class='const'>IndexName</span><span class='lbracket'>[</span><span class='id identifier rubyid_index'>index</span><span class='rbracket'>]</span>
+  <span class='const'><span class='object_link'><a href="Dataset.html" title="ROM::Elasticsearch::Dataset (class)">Dataset</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_client'>client</span><span class='comma'>,</span> <span class='label'>params:</span> <span class='lbrace'>{</span> <span class='label'>index:</span> <span class='id identifier rubyid_idx_name'>idx_name</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='comma'>,</span> <span class='label'>type:</span> <span class='id identifier rubyid_idx_name'>idx_name</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -503,12 +505,12 @@
       <pre class="lines">
 
 
-63
 64
-65</pre>
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/gateway.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/gateway.rb', line 64</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dataset?'>dataset?</span><span class='lparen'>(</span><span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_indices'>indices</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='label'>index:</span> <span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span>
@@ -523,7 +525,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed Jan 31 18:27:48 2018 by
+  Generated on Mon Mar 12 17:39:22 2018 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.12 (ruby-2.5.0).
 </div>
