@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Struct
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -96,7 +96,7 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>mapper/lib/rom/struct.rb</dd>
+    <dd>core/lib/rom/struct.rb</dd>
   </dl>
   
 </div>
@@ -154,11 +154,11 @@ pre-define the parent class.</p>
 </span>
 <span class='comment'># see struct&#39;s schema attributes
 </span>
-<span class='comment'># model.schema[:id]
-</span><span class='comment'># =&gt; #&lt;Dry::Types::Constrained type=#&lt;Dry::Types::Definition primitive=Integer options={}&gt; options={:rule=&gt;#&lt;Dry::Logic::Rule::Predicate predicate=#&lt;Method: Module(Dry::Logic::Predicates::Methods)#gt?&gt; options={:args=&gt;[0]}&gt;, :meta=&gt;{:primary_key=&gt;true, :name=&gt;:id, :source=&gt;ROM::Relation::Name(users)}} rule=#&lt;Dry::Logic::Rule::Predicate predicate=#&lt;Method: Module(Dry::Logic::Predicates::Methods)#gt?&gt; options={:args=&gt;[0]}&gt;&gt;
+<span class='comment'># model.schema.key(:id)
+</span><span class='comment'># =&gt; #&lt;Dry::Types[id: Nominal&lt;Integer meta={primary_key: true, source: :users}&gt;]&gt;
 </span>
 <span class='id identifier rubyid_model'>model</span><span class='period'>.</span><span class='id identifier rubyid_schema'>schema</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span>
-<span class='comment'># =&gt; #&lt;Dry::Types::Sum left=#&lt;Dry::Types::Constrained type=#&lt;Dry::Types::Definition primitive=NilClass options={}&gt; options={:rule=&gt;#&lt;Dry::Logic::Rule::Predicate predicate=#&lt;Method: Module(Dry::Logic::Predicates::Methods)#type?&gt; options={:args=&gt;[NilClass]}&gt;} rule=#&lt;Dry::Logic::Rule::Predicate predicate=#&lt;Method: Module(Dry::Logic::Predicates::Methods)#type?&gt; options={:args=&gt;[NilClass]}&gt;&gt; right=#&lt;Dry::Types::Definition primitive=String options={}&gt; options={:meta=&gt;{:name=&gt;:name, :source=&gt;ROM::Relation::Name(users)}}&gt;</span></code></pre>
+<span class='comment'># =&gt; #&lt;Dry::Types[name: Sum&lt;Nominal&lt;NilClass&gt; | Nominal&lt;String&gt; meta={source: :users}&gt;]&gt;</span></code></pre>
     
       
         <p class="example_title"><div class='inline'><p>passing a namespace with an existing parent class</p>
@@ -194,11 +194,16 @@ pre-define the parent class.</p>
   </ul>
 
 </div>
-  <h2>Constant Summary</h2>
-  <dl class="constants">
-    
-      <dt id="MissingAttribute-constant" class="">MissingAttribute =
-        <div class="docstring">
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="MissingAttribute-constant" class="">MissingAttribute =
+          <div class="docstring">
   <div class="discussion">
     
 
@@ -208,8 +213,8 @@ pre-define the parent class.</p>
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>NameError</span><span class='rparen'>)</span> <span class='kw'>do</span>
+        </dt>
+        <dd><pre class="code"><span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>NameError</span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
     <span class='kw'>super</span>
     <span class='ivar'>@message_proc</span> <span class='op'>=</span> <span class='id identifier rubyid_block'>block</span>
@@ -219,8 +224,9 @@ pre-define the parent class.</p>
     <span class='ivar'>@message_proc</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre></dd>
-    
-  </dl>
+      
+    </dl>
+  
 
 
 
@@ -254,29 +260,6 @@ pre-define the parent class.</p>
 
   
     <span class="summary_desc"><div class='inline'><p>Return attribute value.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; String </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'><p>Returns a short string representation.</p>
 </div></span>
   
 </li>
@@ -317,14 +300,14 @@ pre-define the parent class.</p>
       <pre class="lines">
 
 
-109
-110
-111
-112
-113</pre>
+102
+103
+104
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mapper/lib/rom/struct.rb', line 109</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/struct.rb', line 102</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='op'>*</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
@@ -387,68 +370,15 @@ pre-define the parent class.</p>
       <pre class="lines">
 
 
-98
-99
-100</pre>
+91
+92
+93</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'mapper/lib/rom/struct.rb', line 98</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/struct.rb', line 91</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid___send__'>__send__</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="to_s-instance_method">
-  
-    #<strong>to_s</strong>  &#x21d2; <tt>String</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    <p>Returns a short string representation</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-<p class="tag_title">Returns:</p>
-<ul class="return">
-  
-    <li>
-      
-      
-        <span class='type'>(<tt>String</tt>)</span>
-      
-      
-      
-    </li>
-  
-</ul>
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-89
-90
-91</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'mapper/lib/rom/struct.rb', line 89</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
-  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#&lt;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'>:0x</span><span class='embexpr_beg'>#{</span><span class='lparen'>(</span><span class='id identifier rubyid_object_id'>object_id</span> <span class='op'>&lt;&lt;</span> <span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='lparen'>(</span><span class='int'>16</span><span class='rparen'>)</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -460,9 +390,9 @@ pre-define the parent class.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:39:09 2018 by
+  Generated on Mon Apr 29 13:51:11 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

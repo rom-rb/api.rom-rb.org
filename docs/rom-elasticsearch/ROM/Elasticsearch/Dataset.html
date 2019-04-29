@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Elasticsearch::Dataset
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -94,7 +94,7 @@
   
   <dl>
       <dt>Includes:</dt>
-      <dd><span class='object_link'><a href="QueryMethods.html" title="ROM::Elasticsearch::QueryMethods (module)">QueryMethods</a></span></dd>
+      <dd><span class='object_link'><a href="QueryMethods.html" title="ROM::Elasticsearch::QueryMethods (module)">QueryMethods</a></span>, <span class='object_link'><a href="ScrollMethods.html" title="ROM::Elasticsearch::ScrollMethods (module)">ScrollMethods</a></span></dd>
   </dl>
   
   
@@ -127,11 +127,16 @@ settings and mappings.</p>
   
 
 </div>
-  <h2>Constant Summary</h2>
-  <dl class="constants">
-    
-      <dt id="SORT_VALUES_SEPARATOR-constant" class="">SORT_VALUES_SEPARATOR =
-        <div class="docstring">
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="SORT_VALUES_SEPARATOR-constant" class="">SORT_VALUES_SEPARATOR =
+          <div class="docstring">
   <div class="discussion">
     <p>Sort values separator</p>
 
@@ -142,11 +147,11 @@ settings and mappings.</p>
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-      <dt id="ALL-constant" class="">ALL =
-        <div class="docstring">
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>,</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="ALL-constant" class="">ALL =
+          <div class="docstring">
   <div class="discussion">
     <p>Default query options</p>
 
@@ -157,11 +162,11 @@ settings and mappings.</p>
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='lbrace'>{</span> <span class='label'>query:</span> <span class='lbrace'>{</span> <span class='label'>match_all:</span> <span class='const'>EMPTY_HASH</span> <span class='rbrace'>}</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-      <dt id="SOURCE_KEY-constant" class="">SOURCE_KEY =
-        <div class="docstring">
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span> <span class='label'>query:</span> <span class='lbrace'>{</span> <span class='label'>match_all:</span> <span class='const'>EMPTY_HASH</span> <span class='rbrace'>}</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="SOURCE_KEY-constant" class="">SOURCE_KEY =
+          <div class="docstring">
   <div class="discussion">
     <p>The source key in raw results</p>
 
@@ -172,11 +177,11 @@ settings and mappings.</p>
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>_source</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-      <dt id="TUPLE_PROC-constant" class="">TUPLE_PROC =
-        <div class="docstring">
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>_source</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="TUPLE_PROC-constant" class="">TUPLE_PROC =
+          <div class="docstring">
   <div class="discussion">
     <p>default tuple proc which extracts raw source data from response item</p>
 
@@ -187,11 +192,11 @@ settings and mappings.</p>
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='tlambda'>-&gt;</span> <span class='id identifier rubyid_t'>t</span> <span class='tlambeg'>{</span> <span class='id identifier rubyid_t'>t</span><span class='lbracket'>[</span><span class='const'><span class='object_link'><a href="#SOURCE_KEY-constant" title="ROM::Elasticsearch::Dataset::SOURCE_KEY (constant)">SOURCE_KEY</a></span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre></dd>
-    
-      <dt id="TUPLE_PROC_WITH_METADATA-constant" class="">TUPLE_PROC_WITH_METADATA =
-        <div class="docstring">
+        </dt>
+        <dd><pre class="code"><span class='tlambda'>-&gt;</span> <span class='id identifier rubyid_t'>t</span> <span class='tlambeg'>{</span> <span class='id identifier rubyid_t'>t</span><span class='lbracket'>[</span><span class='const'><span class='object_link'><a href="#SOURCE_KEY-constant" title="ROM::Elasticsearch::Dataset::SOURCE_KEY (constant)">SOURCE_KEY</a></span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre></dd>
+      
+        <dt id="TUPLE_PROC_WITH_METADATA-constant" class="">TUPLE_PROC_WITH_METADATA =
+          <div class="docstring">
   <div class="discussion">
     <p>tuple proc used when :include_metadata is enabled, resulting tuples
 will include raw response hash under _metadata key</p>
@@ -203,10 +208,11 @@ will include raw response hash under _metadata key</p>
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='tlambda'>-&gt;</span> <span class='id identifier rubyid_t'>t</span> <span class='tlambeg'>{</span> <span class='const'><span class='object_link'><a href="#TUPLE_PROC-constant" title="ROM::Elasticsearch::Dataset::TUPLE_PROC (constant)">TUPLE_PROC</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_t'>t</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='label'>_metadata:</span> <span class='id identifier rubyid_t'>t</span><span class='rparen'>)</span> <span class='rbrace'>}</span></pre></dd>
-    
-  </dl>
+        </dt>
+        <dd><pre class="code"><span class='tlambda'>-&gt;</span> <span class='id identifier rubyid_t'>t</span> <span class='tlambeg'>{</span> <span class='const'><span class='object_link'><a href="#TUPLE_PROC-constant" title="ROM::Elasticsearch::Dataset::TUPLE_PROC (constant)">TUPLE_PROC</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_t'>t</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='label'>_metadata:</span> <span class='id identifier rubyid_t'>t</span><span class='rparen'>)</span> <span class='rbrace'>}</span></pre></dd>
+      
+    </dl>
+  
 
 
 
@@ -700,6 +706,34 @@ will include raw response hash under _metadata key</p>
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#scroll-instance_method" title="#scroll (instance method)">#<strong>scroll</strong>(ttl)  &#x21d2; Dataset </a>
+    
+
+    
+  </span>
+  
+    <span class="note title not_defined_here">
+      included
+      from <span class='object_link'><a href="ScrollMethods.html#scroll-instance_method" title="ROM::Elasticsearch::ScrollMethods#scroll (method)">ScrollMethods</a></span>
+    </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Return dataset with :scroll set.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#search-instance_method" title="#search (instance method)">#<strong>search</strong>(options)  &#x21d2; Dataset </a>
     
 
@@ -847,6 +881,8 @@ will include raw response hash under _metadata key</p>
   
   
   
+  
+  
   <div id="instance_attr_details" class="attr_details">
     <h2>Instance Attribute Details</h2>
     
@@ -894,10 +930,10 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-34</pre>
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 34</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 38</span>
 
 <span class='id identifier rubyid_param'>param</span> <span class='symbol'>:client</span></pre>
     </td>
@@ -944,10 +980,10 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-46</pre>
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 46</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 50</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:include_metadata</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='kw'>false</span> <span class='rbrace'>}</span></pre>
     </td>
@@ -1016,10 +1052,10 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-38</pre>
+42</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 42</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:params</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='const'>EMPTY_HASH</span> <span class='rbrace'>}</span></pre>
     </td>
@@ -1053,12 +1089,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-54
-55
-56</pre>
+58
+59
+60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_tuple_proc'>tuple_proc</span>
   <span class='ivar'>@tuple_proc</span>
@@ -1134,16 +1170,16 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-174
-175
-176
-177
 178
 179
-180</pre>
+180
+181
+182
+183
+184</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 174</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 178</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_body'>body</span><span class='lparen'>(</span><span class='id identifier rubyid_new'>new</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -1195,12 +1231,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-265
-266
-267</pre>
+269
+270
+271</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 265</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 269</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_call'>call</span>
   <span class='id identifier rubyid_with'>with</span><span class='lparen'>(</span><span class='label'>response:</span> <span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -1269,12 +1305,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-245
-246
-247</pre>
+249
+250
+251</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 245</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 249</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create_index'>create_index</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_indices'>indices</span><span class='period'>.</span><span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -1328,18 +1364,18 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-105
-106
-107
-108
 109
 110
 111
 112
-113</pre>
+113
+114
+115
+116
+117</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 105</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete'>delete</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_body'>body</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span>
@@ -1414,12 +1450,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-256
-257
-258</pre>
+260
+261
+262</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 256</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 260</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_delete_index'>delete_index</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_indices'>indices</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -1486,15 +1522,15 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-131
-132
-133
-134
 135
-136</pre>
+136
+137
+138
+139
+140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 131</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 135</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each'>each</span>
   <span class='kw'>return</span> <span class='id identifier rubyid_to_enum'>to_enum</span> <span class='kw'>unless</span> <span class='id identifier rubyid_block_given?'>block_given?</span>
@@ -1560,12 +1596,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-223
-224
-225</pre>
+227
+228
+229</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 223</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 227</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_from'>from</span><span class='lparen'>(</span><span class='id identifier rubyid_num'>num</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_params'>params</span><span class='lparen'>(</span><span class='label'>from:</span> <span class='id identifier rubyid_num'>num</span><span class='rparen'>)</span>
@@ -1675,12 +1711,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-163
-164
-165</pre>
+167
+168
+169</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 163</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 167</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_index'>index</span>
   <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:index</span><span class='rbracket'>]</span>
@@ -1743,12 +1779,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-145
-146
-147</pre>
+149
+150
+151</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 145</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 149</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
@@ -1796,12 +1832,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-94
-95
-96</pre>
+98
+99
+100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 94</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_mappings'>mappings</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_indices'>indices</span><span class='period'>.</span><span class='id identifier rubyid_get_mapping'>get_mapping</span><span class='lbracket'>[</span><span class='id identifier rubyid_index'>index</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>mappings</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbracket'>]</span>
@@ -1864,12 +1900,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-76
-77
-78</pre>
+80
+81
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 76</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='op'>**</span><span class='id identifier rubyid_params'>params</span><span class='comma'>,</span> <span class='label'>body:</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
@@ -2049,13 +2085,13 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-202
-203
-204
-205</pre>
+206
+207
+208
+209</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 202</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 206</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_refresh'>refresh</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_indices'>indices</span><span class='period'>.</span><span class='id identifier rubyid_refresh'>refresh</span><span class='lparen'>(</span><span class='label'>index:</span> <span class='id identifier rubyid_index'>index</span><span class='rparen'>)</span>
@@ -2064,6 +2100,61 @@ will include raw response hash under _metadata key</p>
     </td>
   </tr>
 </table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="scroll-instance_method">
+  
+    #<strong>scroll</strong>(ttl)  &#x21d2; <tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Dataset (class)">Dataset</a></span></tt> 
+  
+
+  
+
+  
+    <span class="not_defined_here">
+      Originally defined in module
+        <span class='object_link'><a href="ScrollMethods.html#scroll-instance_method" title="ROM::Elasticsearch::ScrollMethods#scroll (method)">ScrollMethods</a></span>
+    </span>
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Return dataset with :scroll set</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>ttl</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="ROM::Elasticsearch::Dataset (class)">Dataset</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
 </div>
     
       <div class="method_details ">
@@ -2170,12 +2261,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-85
-86
-87</pre>
+89
+90
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 85</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_settings'>settings</span>
   <span class='id identifier rubyid_client'>client</span><span class='period'>.</span><span class='id identifier rubyid_indices'>indices</span><span class='period'>.</span><span class='id identifier rubyid_get_settings'>get_settings</span><span class='lbracket'>[</span><span class='id identifier rubyid_index'>index</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>settings</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>index</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span>
@@ -2238,12 +2329,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-234
-235
-236</pre>
+238
+239
+240</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 234</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 238</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_size'>size</span><span class='lparen'>(</span><span class='id identifier rubyid_num'>num</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_params'>params</span><span class='lparen'>(</span><span class='label'>size:</span> <span class='id identifier rubyid_num'>num</span><span class='rparen'>)</span>
@@ -2291,12 +2382,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-212
-213
-214</pre>
+216
+217
+218</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 212</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 216</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_sort'>sort</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_fields'>fields</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_params'>params</span><span class='lparen'>(</span><span class='label'>sort:</span> <span class='id identifier rubyid_fields'>fields</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#SORT_VALUES_SEPARATOR-constant" title="ROM::Elasticsearch::Dataset::SORT_VALUES_SEPARATOR (constant)">SORT_VALUES_SEPARATOR</a></span></span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -2344,12 +2435,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-120
-121
-122</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 120</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_a'>to_a</span>
   <span class='id identifier rubyid_to_enum'>to_enum</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span>
@@ -2397,12 +2488,12 @@ will include raw response hash under _metadata key</p>
       <pre class="lines">
 
 
-154
-155
-156</pre>
+158
+159
+160</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 154</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/elasticsearch/dataset.rb', line 158</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_type'>type</span>
   <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span>
@@ -2417,9 +2508,9 @@ will include raw response hash under _metadata key</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:39:22 2018 by
+  Generated on Mon Apr 29 13:51:34 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

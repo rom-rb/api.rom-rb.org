@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Changeset::Associated
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -307,10 +307,10 @@
       <pre class="lines">
 
 
-17</pre>
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/associated.rb', line 17</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/associated.rb', line 19</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:associations</span></pre>
     </td>
@@ -362,10 +362,10 @@
       <pre class="lines">
 
 
-13</pre>
+15</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/associated.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/associated.rb', line 15</span>
 
 <span class='id identifier rubyid_param'>param</span> <span class='symbol'>:left</span></pre>
     </td>
@@ -425,12 +425,12 @@
       <pre class="lines">
 
 
-63
-64
-65</pre>
+65
+66
+67</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/associated.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/associated.rb', line 65</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_associate'>associate</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="" title="ROM::Changeset::Associated (class)">Associated</a></span></span><span class='period'>.</span><span class='id identifier rubyid_infer_assoc_name'>infer_assoc_name</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_left'>left</span><span class='comma'>,</span> <span class='label'>associations:</span> <span class='id identifier rubyid_associations'>associations</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -504,8 +504,6 @@
       <pre class="lines">
 
 
-87
-88
 89
 90
 91
@@ -515,10 +513,12 @@
 95
 96
 97
-98</pre>
+98
+99
+100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/associated.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/associated.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_command'>command</span>
   <span class='id identifier rubyid_associations'>associations</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='id identifier rubyid_left'>left</span><span class='period'>.</span><span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_curry'>curry</span><span class='lparen'>(</span><span class='id identifier rubyid_left'>left</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='comma'>,</span> <span class='lparen'>(</span><span class='id identifier rubyid_assoc'>assoc</span><span class='comma'>,</span> <span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span><span class='op'>|</span>
@@ -587,12 +587,12 @@
       <pre class="lines">
 
 
-52
-53
-54</pre>
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/associated.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/associated.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_commit'>commit</span>
   <span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span>
@@ -607,9 +607,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:39:09 2018 by
+  Generated on Mon Apr 29 13:51:22 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

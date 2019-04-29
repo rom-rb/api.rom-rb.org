@@ -6,7 +6,7 @@
 <title>
   Module: ROM::Types::Methods
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -111,7 +111,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#ForeignKey-instance_method" title="#ForeignKey (instance method)">#<strong>ForeignKey</strong>(relation, type = Types::Int)  &#x21d2; Dry::Types::Definition </a>
+      <a href="#ForeignKey-instance_method" title="#ForeignKey (instance method)">#<strong>ForeignKey</strong>(relation, type = Types::Integer)  &#x21d2; Dry::Types::Nominal </a>
     
 
     
@@ -143,7 +143,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="ForeignKey-instance_method">
   
-    #<strong>ForeignKey</strong>(relation, type = Types::Int)  &#x21d2; <tt>Dry::Types::Definition</tt> 
+    #<strong>ForeignKey</strong>(relation, type = Types::Integer)  &#x21d2; <tt>Dry::Types::Nominal</tt> 
   
 
   
@@ -183,7 +183,7 @@
         <span class='type'>(<tt>Object</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>Types::Int</tt>)</em>
+        <em class="default">(defaults to: <tt>Types::Integer</tt>)</em>
       
       
         &mdash;
@@ -200,7 +200,7 @@
     <li>
       
       
-        <span class='type'>(<tt>Dry::Types::Definition</tt>)</span>
+        <span class='type'>(<tt>Dry::Types::Nominal</tt>)</span>
       
       
       
@@ -214,14 +214,14 @@
       <pre class="lines">
 
 
-29
-30
-31</pre>
+33
+34
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/types.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/types.rb', line 33</span>
 
-<span class='kw'>def</span> <span class='const'>ForeignKey</span><span class='lparen'>(</span><span class='id identifier rubyid_relation'>relation</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Types.html" title="ROM::Types (module)">Types</a></span></span><span class='op'>::</span><span class='const'>Int</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='const'>ForeignKey</span><span class='lparen'>(</span><span class='id identifier rubyid_relation'>relation</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../Types.html" title="ROM::Types (module)">Types</a></span></span><span class='op'>::</span><span class='const'>Integer</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_type'>type</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>foreign_key:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>target:</span> <span class='id identifier rubyid_relation'>relation</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -234,9 +234,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:38:54 2018 by
+  Generated on Mon Apr 29 13:51:08 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

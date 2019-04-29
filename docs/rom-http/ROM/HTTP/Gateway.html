@@ -6,7 +6,7 @@
 <title>
   Class: ROM::HTTP::Gateway
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -129,6 +129,65 @@
 </div>
 
 
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#config-instance_method" title="#config (instance method)">#<strong>config</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#datasets-instance_method" title="#datasets (instance method)">#<strong>datasets</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+    
+  </ul>
 
 
 
@@ -278,8 +337,7 @@
       
         &mdash;
         <div class='inline'>
-<p>configuration options @option config [String] :uri The base API for the
-HTTP service @option config [Hash] :headers Default request headers</p>
+<p>configuration options @option config [String] :uri The base API for the HTTP service @option config [Hash] :headers Default request headers</p>
 </div>
       
     </li>
@@ -300,13 +358,13 @@ HTTP service @option config [Hash] :headers Default request headers</p>
       <pre class="lines">
 
 
-33
-34
-35
-36</pre>
+37
+38
+39
+40</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/http/gateway.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/http/gateway.rb', line 37</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span>
   <span class='ivar'>@datasets</span> <span class='op'>=</span> <span class='const'>Concurrent</span><span class='op'>::</span><span class='const'>Map</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -318,6 +376,93 @@ HTTP service @option config [Hash] :headers Default request headers</p>
 </div>
   
 </div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="config-instance_method">
+  
+    #<strong>config</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/http/gateway.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_config'>config</span>
+  <span class='ivar'>@config</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="datasets-instance_method">
+  
+    #<strong>datasets</strong>  &#x21d2; <tt>Object</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/http/gateway.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_datasets'>datasets</span>
+  <span class='ivar'>@datasets</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
 
 
   <div id="instance_method_details" class="method_details_list">
@@ -383,12 +528,12 @@ HTTP service @option config [Hash] :headers Default request headers</p>
       <pre class="lines">
 
 
-45
-46
-47</pre>
+49
+50
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/http/gateway.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/http/gateway.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_datasets'>datasets</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -457,17 +602,15 @@ HTTP service @option config [Hash] :headers Default request headers</p>
       <pre class="lines">
 
 
-56
-57
-58
-59</pre>
+60
+61
+62</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/http/gateway.rb', line 56</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/http/gateway.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dataset'>dataset</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_dataset_klass'>dataset_klass</span> <span class='op'>=</span> <span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_const_defined?'>const_defined?</span><span class='lparen'>(</span><span class='symbol'>:Dataset</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_namespace'>namespace</span><span class='period'>.</span><span class='id identifier rubyid_const_get'>const_get</span><span class='lparen'>(</span><span class='symbol'>:Dataset</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="Dataset.html" title="ROM::HTTP::Dataset (class)">Dataset</a></span></span>
-  <span class='id identifier rubyid_datasets'>datasets</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_dataset_klass'>dataset_klass</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='label'>name:</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_datasets'>datasets</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_dataset_class'>dataset_class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset_options'>dataset_options</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -533,12 +676,12 @@ HTTP service @option config [Hash] :headers Default request headers</p>
       <pre class="lines">
 
 
-66
-67
-68</pre>
+69
+70
+71</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/http/gateway.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/http/gateway.rb', line 69</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_dataset?'>dataset?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_datasets'>datasets</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -553,9 +696,9 @@ HTTP service @option config [Hash] :headers Default request headers</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:39:28 2018 by
+  Generated on Mon Apr 29 13:51:39 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

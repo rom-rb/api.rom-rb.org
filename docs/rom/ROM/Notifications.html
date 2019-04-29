@@ -6,7 +6,7 @@
 <title>
   Module: ROM::Notifications
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -151,15 +151,21 @@ different modules from each other.</p>
   
 </p>
 
-  <h2>Constant Summary</h2>
-  <dl class="constants">
-    
-      <dt id="LISTENERS_HASH-constant" class="">LISTENERS_HASH =
-        
-      </dt>
-      <dd><pre class="code"><span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_h'>h</span><span class='comma'>,</span> <span class='id identifier rubyid_k'>k</span><span class='op'>|</span> <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre></dd>
-    
-  </dl>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="LISTENERS_HASH-constant" class="">LISTENERS_HASH =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_h'>h</span><span class='comma'>,</span> <span class='id identifier rubyid_k'>k</span><span class='op'>|</span> <span class='id identifier rubyid_h'>h</span><span class='lbracket'>[</span><span class='id identifier rubyid_k'>k</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre></dd>
+      
+    </dl>
+  
 
 
 
@@ -358,12 +364,12 @@ different modules from each other.</p>
       <pre class="lines">
 
 
-178
-179
-180</pre>
+180
+181
+182</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/support/notifications.rb', line 178</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/support/notifications.rb', line 180</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_event_bus'>event_bus</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="Notifications/EventBus.html" title="ROM::Notifications::EventBus (class)">EventBus</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Notifications/EventBus.html#initialize-instance_method" title="ROM::Notifications::EventBus#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='label'>events:</span> <span class='id identifier rubyid_events'>events</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span><span class='comma'>,</span> <span class='label'>listeners:</span> <span class='id identifier rubyid_listeners'>listeners</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span><span class='rparen'>)</span>
@@ -597,12 +603,12 @@ If the query parameter is provided, filters events by payload.</p>
       <pre class="lines">
 
 
-158
-159
-160</pre>
+160
+161
+162</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/support/notifications.rb', line 158</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/support/notifications.rb', line 160</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_event'>register_event</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_info'>info</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="" title="ROM::Notifications (module)">Notifications</a></span></span><span class='period'>.</span><span class='id identifier rubyid_events'>events</span><span class='lbracket'>[</span><span class='id identifier rubyid_id'>id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Notifications/Event.html" title="ROM::Notifications::Event (class)">Event</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_info'>info</span><span class='rparen'>)</span>
@@ -617,9 +623,9 @@ If the query parameter is provided, filters events by payload.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:38:54 2018 by
+  Generated on Mon Apr 29 13:51:08 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

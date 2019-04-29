@@ -6,7 +6,7 @@
 <title>
   Class: ROM::SQL::Function
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -129,6 +129,29 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#case-instance_method" title="#case (instance method)">#<strong>case</strong>(mapping)  &#x21d2; ROM::SQL::Attribute </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Add a CASE clause for handling if/then logic.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#cast-instance_method" title="#cast (instance method)">#<strong>cast</strong>(expr, db_type = TypeSerializer[:default].call(type))  &#x21d2; ROM::SQL::Attribute </a>
     
 
@@ -239,6 +262,29 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#within_group-instance_method" title="#within_group (instance method)">#<strong>within_group</strong>(*args) {|block| ... } &#x21d2; SQL::Function </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Add a WITHIN GROUP clause to aggregate function (supported by PostgreSQL) Establishes an order for an ordered-set aggregate, see the docs for more details.</p>
+</div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -278,20 +324,20 @@
       <pre class="lines">
 
 
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184</pre>
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 174</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 225</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_func'>func</span>
@@ -317,7 +363,99 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="cast-instance_method">
+  <h3 class="signature first" id="case-instance_method">
+  
+    #<strong>case</strong>(mapping)  &#x21d2; <tt><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">ROM::SQL::Attribute</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Add a CASE clause for handling if/then logic. This version of CASE search for the first
+branch which evaluates to <code>true</code>. See SQL::Attriubte#case if you&#39;re looking for the
+version that matches an expression result</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_bool'>bool</span><span class='op'>::</span><span class='id identifier rubyid_case'>case</span><span class='lparen'>(</span><span class='id identifier rubyid_status'>status</span><span class='period'>.</span><span class='id identifier rubyid_is'>is</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>active</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>else:</span> <span class='kw'>false</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as'>as</span><span class='lparen'>(</span><span class='symbol'>:activated</span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>mapping</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>mapping between boolean SQL expressions to arbitrary SQL expressions</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">ROM::SQL::Attribute</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+153
+154
+155
+156
+157
+158
+159
+160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 153</span>
+
+<span class='kw'>def</span> <span class='kw'>case</span><span class='lparen'>(</span><span class='id identifier rubyid_mapping'>mapping</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_mapping'>mapping</span> <span class='op'>=</span> <span class='id identifier rubyid_mapping'>mapping</span><span class='period'>.</span><span class='id identifier rubyid_dup'>dup</span>
+  <span class='id identifier rubyid_otherwise'>otherwise</span> <span class='op'>=</span> <span class='id identifier rubyid_mapping'>mapping</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:else</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>provide the default case using the :else keyword</span><span class='tstring_end'>&#39;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='const'><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">Attribute</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_type'>type</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>sql_expr:</span> <span class='op'>::</span><span class='const'>Sequel</span><span class='period'>.</span><span class='id identifier rubyid_case'>case</span><span class='lparen'>(</span><span class='id identifier rubyid_mapping'>mapping</span><span class='comma'>,</span> <span class='id identifier rubyid_otherwise'>otherwise</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="cast-instance_method">
   
     #<strong>cast</strong>(expr, db_type = TypeSerializer[:default].call(type))  &#x21d2; <tt><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">ROM::SQL::Attribute</a></span></tt> 
   
@@ -399,12 +537,12 @@
       <pre class="lines">
 
 
-131
-132
-133</pre>
+138
+139
+140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 131</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 138</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cast'>cast</span><span class='lparen'>(</span><span class='id identifier rubyid_expr'>expr</span><span class='comma'>,</span> <span class='id identifier rubyid_db_type'>db_type</span> <span class='op'>=</span> <span class='const'>TypeSerializer</span><span class='lbracket'>[</span><span class='symbol'>:default</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">Attribute</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_type'>type</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>sql_expr:</span> <span class='op'>::</span><span class='const'>Sequel</span><span class='period'>.</span><span class='id identifier rubyid_cast'>cast</span><span class='lparen'>(</span><span class='id identifier rubyid_expr'>expr</span><span class='comma'>,</span> <span class='id identifier rubyid_db_type'>db_type</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -437,8 +575,8 @@ Filter aggregate using the specified conditions</p>
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code>users.project { int::count(:id).filter(name.is(&quot;Jack&quot;)).as(:jacks) }.order(nil)
-users.project { int::count(:id).filter { name.is(&quot;John&quot;) }).as(:johns) }.order(nil)</code></pre>
+      <pre class="example code"><code>users.project { integer::count(:id).filter(name.is(&quot;Jack&quot;)).as(:jacks) }.order(nil)
+users.project { integer::count(:id).filter { name.is(&quot;John&quot;) }).as(:johns) }.order(nil)</code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -501,19 +639,19 @@ users.project { int::count(:id).filter { name.is(&quot;John&quot;) }).as(:johns)
       <pre class="lines">
 
 
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159</pre>
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 150</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 177</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_filter'>filter</span><span class='lparen'>(</span><span class='id identifier rubyid_condition'>condition</span> <span class='op'>=</span> <span class='const'>Undefined</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
@@ -561,18 +699,18 @@ users.project { int::count(:id).filter { name.is(&quot;John&quot;) }).as(:johns)
       <pre class="lines">
 
 
-66
-67
-68
-69
-70</pre>
+73
+74
+75
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 73</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_is'>is</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
   <span class='op'>::</span><span class='const'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../SQL.html" title="ROM::SQL (module)">SQL</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">Attribute</a></span></span><span class='lbracket'>[</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../SQL.html" title="ROM::SQL (module)">SQL</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Types.html" title="ROM::SQL::Types (module)">Types</a></span></span><span class='op'>::</span><span class='const'>Bool</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span>
-    <span class='label'>sql_expr:</span> <span class='op'>::</span><span class='const'>Sequel</span><span class='op'>::</span><span class='const'>SQL</span><span class='op'>::</span><span class='const'>BooleanExpression</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:=</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_func'>func</span><span class='comma'>,</span> <span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
+    <span class='label'>sql_expr:</span> <span class='op'>::</span><span class='const'>Sequel</span><span class='op'>::</span><span class='const'>SQL</span><span class='op'>::</span><span class='const'>BooleanExpression</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:&#39;=&#39;</span><span class='comma'>,</span> <span class='id identifier rubyid_func'>func</span><span class='comma'>,</span> <span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
   <span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -611,12 +749,12 @@ users.project { int::count(:id).filter { name.is(&quot;John&quot;) }).as(:johns)
       <pre class="lines">
 
 
-75
-76
-77</pre>
+82
+83
+84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 75</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 82</span>
 
 <span class='kw'>def</span> <span class='kw'>not</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
   <span class='op'>!</span><span class='id identifier rubyid_is'>is</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
@@ -648,8 +786,8 @@ users.project { int::count(:id).filter { name.is(&quot;John&quot;) }).as(:johns)
     <p class="tag_title">Examples:</p>
     
       
-      <pre class="example code"><code><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='lbracket'>[</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_int'>int</span><span class='op'>::</span><span class='id identifier rubyid_row_number'>row_number</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>partition:</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>order:</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as'>as</span><span class='lparen'>(</span><span class='symbol'>:row_no</span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
-<span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='lbracket'>[</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_int'>int</span><span class='op'>::</span><span class='id identifier rubyid_row_number'>row_number</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>partition:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_first_name'>first_name</span><span class='comma'>,</span> <span class='id identifier rubyid_last_name'>last_name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>order:</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as'>as</span><span class='lparen'>(</span><span class='symbol'>:row_no</span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></code></pre>
+      <pre class="example code"><code><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='lbracket'>[</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_integer'>integer</span><span class='op'>::</span><span class='id identifier rubyid_row_number'>row_number</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>partition:</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>order:</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as'>as</span><span class='lparen'>(</span><span class='symbol'>:row_no</span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='lbracket'>[</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_integer'>integer</span><span class='op'>::</span><span class='id identifier rubyid_row_number'>row_number</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>partition:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_first_name'>first_name</span><span class='comma'>,</span> <span class='id identifier rubyid_last_name'>last_name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>order:</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as'>as</span><span class='lparen'>(</span><span class='symbol'>:row_no</span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></code></pre>
     
       
         <p class="example_title"><div class='inline'><p>frame variants</p>
@@ -766,15 +904,132 @@ users.project { int::count(:id).filter { name.is(&quot;John&quot;) }).as(:johns)
       <pre class="lines">
 
 
-115
-116
-117</pre>
+122
+123
+124</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 115</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>partition:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>order:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>frame:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span><span class='label'>partition:</span> <span class='id identifier rubyid_partition'>partition</span><span class='comma'>,</span> <span class='label'>order:</span> <span class='id identifier rubyid_order'>order</span><span class='comma'>,</span> <span class='label'>frame:</span> <span class='const'>WINDOW_FRAMES</span><span class='lbracket'>[</span><span class='id identifier rubyid_frame'>frame</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="within_group-instance_method">
+  
+    #<strong>within_group</strong>(*args) {|block| ... } &#x21d2; <tt><span class='object_link'><a href="" title="ROM::SQL::Function (class)">SQL::Function</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Add a WITHIN GROUP clause to aggregate function (supported by PostgreSQL)
+Establishes an order for an ordered-set aggregate, see the docs for more details</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_households'>households</span><span class='period'>.</span><span class='id identifier rubyid_project'>project</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_fload'>fload</span><span class='op'>::</span><span class='id identifier rubyid_percentile_cont'>percentile_cont</span><span class='lparen'>(</span><span class='float'>0.5</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_within_group'>within_group</span><span class='lparen'>(</span><span class='id identifier rubyid_income'>income</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as'>as</span><span class='lparen'>(</span><span class='symbol'>:percentile</span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>A</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>list of expressions for sorting within a group</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>block</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A block for getting the expressions using the Order DSL</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="ROM::SQL::Function (class)">SQL::Function</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://www.postgresql.org/docs/current/static/sql-expressions.html#SYNTAX-AGGREGATES" target="_parent" title="https://www.postgresql.org/docs/current/static/sql-expressions.html#SYNTAX-AGGREGATES">https://www.postgresql.org/docs/current/static/sql-expressions.html#SYNTAX-AGGREGATES</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+202
+203
+204
+205
+206
+207
+208
+209
+210</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 202</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_within_group'>within_group</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span> <span class='op'>+</span> <span class='op'>::</span><span class='const'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../SQL.html" title="ROM::SQL (module)">SQL</a></span></span><span class='op'>::</span><span class='const'>OrderDSL</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_schema'>schema</span><span class='rparen'>)</span><span class='period'>.</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_group'>group</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_group'>group</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -786,9 +1041,9 @@ users.project { int::count(:id).filter { name.is(&quot;John&quot;) }).as(:johns)
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:39:17 2018 by
+  Generated on Mon Apr 29 13:51:29 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

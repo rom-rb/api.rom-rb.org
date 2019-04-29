@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Associations::Abstract
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -562,10 +562,10 @@
       <pre class="lines">
 
 
-21</pre>
+23</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 23</span>
 
 <span class='id identifier rubyid_param'>param</span> <span class='symbol'>:definition</span></pre>
     </td>
@@ -617,10 +617,10 @@
       <pre class="lines">
 
 
-25</pre>
+27</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 25</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 27</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:relations</span><span class='comma'>,</span> <span class='label'>reader:</span> <span class='kw'>true</span></pre>
     </td>
@@ -672,10 +672,10 @@
       <pre class="lines">
 
 
-29</pre>
+31</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 31</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:source</span><span class='comma'>,</span> <span class='label'>reader:</span> <span class='kw'>true</span></pre>
     </td>
@@ -727,10 +727,10 @@
       <pre class="lines">
 
 
-33</pre>
+35</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 33</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 35</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:target</span><span class='comma'>,</span> <span class='label'>reader:</span> <span class='kw'>true</span></pre>
     </td>
@@ -804,17 +804,17 @@
       <pre class="lines">
 
 
-41
-42
 43
 44
 45
 46
 47
-48</pre>
+48
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 41</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 43</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_definition'>definition</span><span class='comma'>,</span> <span class='id identifier rubyid_relations'>relations</span><span class='rparen'>)</span>
   <span class='kw'>super</span><span class='lparen'>(</span>
@@ -873,12 +873,12 @@
       <pre class="lines">
 
 
-55
-56
-57</pre>
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_aliased?'>aliased?</span>
   <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_aliased?'>aliased?</span>
@@ -926,13 +926,13 @@
       <pre class="lines">
 
 
-130
-131
 132
-133</pre>
+133
+134
+135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 130</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 132</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_apply_view'>apply_view</span><span class='lparen'>(</span><span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_relation'>relation</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_view_rel'>view_rel</span> <span class='op'>=</span> <span class='id identifier rubyid_relation'>relation</span><span class='period'>.</span><span class='id identifier rubyid_public_send'>public_send</span><span class='lparen'>(</span><span class='id identifier rubyid_view'>view</span><span class='rparen'>)</span>
@@ -981,12 +981,12 @@
       <pre class="lines">
 
 
-64
-65
-66</pre>
+66
+67
+68</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 64</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 66</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_as'>as</span>
   <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_as'>as</span>
@@ -1037,12 +1037,12 @@ are the same as fk&lt;=&gt;pk mapping</p>
       <pre class="lines">
 
 
-143
-144
-145</pre>
+145
+146
+147</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 143</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 145</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_combine_keys'>combine_keys</span>
   <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_combine_keys'>combine_keys</span> <span class='op'>||</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_source_key'>source_key</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_target_key'>target_key</span> <span class='rbrace'>}</span>
@@ -1090,12 +1090,12 @@ are the same as fk&lt;=&gt;pk mapping</p>
       <pre class="lines">
 
 
-92
-93
-94</pre>
+94
+95
+96</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 92</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 94</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_foreign_key'>foreign_key</span>
   <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_foreign_key'>foreign_key</span>
@@ -1143,12 +1143,12 @@ are the same as fk&lt;=&gt;pk mapping</p>
       <pre class="lines">
 
 
-121
-122
-123</pre>
+123
+124
+125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 121</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 123</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_key'>key</span>
   <span class='id identifier rubyid_as'>as</span> <span class='op'>||</span> <span class='id identifier rubyid_name'>name</span>
@@ -1196,12 +1196,12 @@ are the same as fk&lt;=&gt;pk mapping</p>
       <pre class="lines">
 
 
-73
-74
-75</pre>
+75
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
   <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
@@ -1249,12 +1249,12 @@ are the same as fk&lt;=&gt;pk mapping</p>
       <pre class="lines">
 
 
-112
-113
-114</pre>
+114
+115
+116</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_override?'>override?</span>
   <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_override'>override</span>
@@ -1304,12 +1304,12 @@ are the same as fk&lt;=&gt;pk mapping</p>
       <pre class="lines">
 
 
-103
-104
-105</pre>
+105
+106
+107</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 103</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 105</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_result'>result</span>
   <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_result'>result</span>
@@ -1358,12 +1358,12 @@ extend or override default association view</p>
       <pre class="lines">
 
 
-83
-84
-85</pre>
+85
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/associations/abstract.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_view'>view</span>
   <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_view'>view</span>
@@ -1378,9 +1378,9 @@ extend or override default association view</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:39:06 2018 by
+  Generated on Mon Apr 29 13:51:20 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

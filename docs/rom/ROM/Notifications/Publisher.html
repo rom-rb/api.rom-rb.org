@@ -6,7 +6,7 @@
 <title>
   Module: ROM::Notifications::Publisher
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -264,13 +264,13 @@ If the query parameter is provided, filters events by payload.</p>
       <pre class="lines">
 
 
-54
-55
 56
-57</pre>
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/support/notifications.rb', line 54</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/support/notifications.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_subscribe'>subscribe</span><span class='lparen'>(</span><span class='id identifier rubyid_event_id'>event_id</span><span class='comma'>,</span> <span class='id identifier rubyid_query'>query</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_listeners'>listeners</span><span class='lbracket'>[</span><span class='id identifier rubyid_event_id'>event_id</span><span class='rbracket'>]</span> <span class='op'>&lt;&lt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_block'>block</span><span class='comma'>,</span> <span class='id identifier rubyid_query'>query</span><span class='rbracket'>]</span>
@@ -342,16 +342,16 @@ If the query parameter is provided, filters events by payload.</p>
       <pre class="lines">
 
 
-65
-66
 67
 68
 69
 70
-71</pre>
+71
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/support/notifications.rb', line 65</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/support/notifications.rb', line 67</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_trigger'>trigger</span><span class='lparen'>(</span><span class='id identifier rubyid_event_id'>event_id</span><span class='comma'>,</span> <span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_event'>event</span> <span class='op'>=</span> <span class='id identifier rubyid_events'>events</span><span class='lbracket'>[</span><span class='id identifier rubyid_event_id'>event_id</span><span class='rbracket'>]</span>
@@ -370,9 +370,9 @@ If the query parameter is provided, filters events by payload.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:38:54 2018 by
+  Generated on Mon Apr 29 13:51:08 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

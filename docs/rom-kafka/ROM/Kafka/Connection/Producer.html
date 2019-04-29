@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Kafka::Connection::Producer
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -110,12 +110,9 @@
 
 <p>The producer-specific connection to Kafka cluster</p>
 
-<p>It is wrapped around `Poseidon::Producer` driver, and responsible for
-adopting poseidon API to ROM::Gateway via [#initializer] and [#publish]
-methods.</p>
+<p>It is wrapped around `Poseidon::Producer` driver, and responsible for adopting poseidon API to ROM::Gateway via [#initializer] and [#publish] methods.</p>
 
-<p>ROM::Kafka producer deals with tuples, hiding poseidon-specific
-implementation of messages from the rest of the gem.</p>
+<p>ROM::Kafka producer deals with tuples, hiding poseidon-specific implementation of messages from the rest of the gem.</p>
 
 
   </div>
@@ -124,11 +121,16 @@ implementation of messages from the rest of the gem.</p>
   
 
 </div>
-  <h2>Constant Summary</h2>
-  <dl class="constants">
-    
-      <dt id="DRIVER-constant" class="">DRIVER =
-        <div class="docstring">
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="DRIVER-constant" class="">DRIVER =
+          <div class="docstring">
   <div class="discussion">
     <p class="note private">
   <strong>This constant is part of a private API.</strong>
@@ -157,11 +159,11 @@ implementation of messages from the rest of the gem.</p>
 </ul>
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='const'>Poseidon</span><span class='op'>::</span><span class='const'>Producer</span></pre></dd>
-    
-      <dt id="MESSAGE-constant" class="">MESSAGE =
-        <div class="docstring">
+        </dt>
+        <dd><pre class="code"><span class='const'>Poseidon</span><span class='op'>::</span><span class='const'>Producer</span></pre></dd>
+      
+        <dt id="MESSAGE-constant" class="">MESSAGE =
+          <div class="docstring">
   <div class="discussion">
     <p class="note private">
   <strong>This constant is part of a private API.</strong>
@@ -190,10 +192,11 @@ implementation of messages from the rest of the gem.</p>
 </ul>
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='const'>Poseidon</span><span class='op'>::</span><span class='const'>MessageToSend</span></pre></dd>
-    
-  </dl>
+        </dt>
+        <dd><pre class="code"><span class='const'>Poseidon</span><span class='op'>::</span><span class='const'>MessageToSend</span></pre></dd>
+      
+    </dl>
+  
 
 
 
@@ -324,8 +327,7 @@ implementation of messages from the rest of the gem.</p>
 
 <p>Initializes a producer connection</p>
 
-<p>The initializer is attributes-agnostic. This means it doesn&#39;t validate
-attributes, but skips unused.</p>
+<p>The initializer is attributes-agnostic. This means it doesn&#39;t validate attributes, but skips unused.</p>
 
 
   </div>
@@ -456,8 +458,7 @@ attributes, but skips unused.</p>
           </span>
           
             &mdash; <div class='inline'>
-<p>An amount of time (in milliseconds) to wait before refreshing the metadata
-after we are unable to send messages.</p>
+<p>An amount of time (in milliseconds) to wait before refreshing the metadata after we are unable to send messages.</p>
 </div>
           
         </li>
@@ -711,9 +712,9 @@ after we are unable to send messages.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:39:30 2018 by
+  Generated on Mon Apr 29 13:51:42 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

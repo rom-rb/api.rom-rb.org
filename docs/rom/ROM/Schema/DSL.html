@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Schema::DSL
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -102,11 +102,16 @@
   
 
 </div>
-  <h2>Constant Summary</h2>
-  <dl class="constants">
-    
-      <dt id="KERNEL_METHODS-constant" class="">KERNEL_METHODS =
-        <div class="docstring">
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="KERNEL_METHODS-constant" class="">KERNEL_METHODS =
+          <div class="docstring">
   <div class="discussion">
     
 
@@ -116,10 +121,11 @@
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='qsymbols_beg'>%i(</span><span class='tstring_content'>extend</span><span class='words_sep'> </span><span class='tstring_content'>method</span><span class='tstring_end'>)</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-  </dl>
+        </dt>
+        <dd><pre class="code"><span class='qsymbols_beg'>%i(</span><span class='tstring_content'>extend</span><span class='words_sep'> </span><span class='tstring_content'>method</span><span class='tstring_end'>)</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
 
 
 
@@ -414,7 +420,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#attribute-instance_method" title="#attribute (instance method)">#<strong>attribute</strong>(name, type, options = EMPTY_HASH)  &#x21d2; Object </a>
+      <a href="#attribute-instance_method" title="#attribute (instance method)">#<strong>attribute</strong>(name, type_or_options, options = EMPTY_HASH)  &#x21d2; Object </a>
     
 
     
@@ -428,7 +434,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Defines a relation attribute with its type.</p>
+    <span class="summary_desc"><div class='inline'><p>Defines a relation attribute with its type and options.</p>
 </div></span>
   
 </li>
@@ -533,10 +539,10 @@
       <pre class="lines">
 
 
-36</pre>
+38</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 38</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:adapter</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='symbol'>:default</span> <span class='rbrace'>}</span></pre>
     </td>
@@ -570,12 +576,12 @@
       <pre class="lines">
 
 
-52
-53
-54</pre>
+57
+58
+59</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_associations_dsl'>associations_dsl</span>
   <span class='ivar'>@associations_dsl</span>
@@ -629,10 +635,10 @@
       <pre class="lines">
 
 
-32</pre>
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 34</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:attr_class</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='const'><span class='object_link'><a href="../Attribute.html" title="ROM::Attribute (class)">Attribute</a></span></span> <span class='rbrace'>}</span></pre>
     </td>
@@ -666,12 +672,12 @@
       <pre class="lines">
 
 
-40
-41
-42</pre>
+45
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 40</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_attributes'>attributes</span>
   <span class='ivar'>@attributes</span>
@@ -707,12 +713,12 @@
       <pre class="lines">
 
 
-48
-49
-50</pre>
+53
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_definition'>definition</span>
   <span class='ivar'>@definition</span>
@@ -766,10 +772,10 @@
       <pre class="lines">
 
 
-24</pre>
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 26</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:inferrer</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='const'><span class='object_link'><a href="../Schema.html#DEFAULT_INFERRER-constant" title="ROM::Schema::DEFAULT_INFERRER (constant)">DEFAULT_INFERRER</a></span></span> <span class='rbrace'>}</span></pre>
     </td>
@@ -803,12 +809,12 @@
       <pre class="lines">
 
 
-44
-45
-46</pre>
+49
+50
+51</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_plugins'>plugins</span>
   <span class='ivar'>@plugins</span>
@@ -862,10 +868,10 @@
       <pre class="lines">
 
 
-20</pre>
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 22</span>
 
 <span class='id identifier rubyid_param'>param</span> <span class='symbol'>:relation</span></pre>
     </td>
@@ -917,10 +923,10 @@
       <pre class="lines">
 
 
-28</pre>
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 30</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:schema_class</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='const'><span class='object_link'><a href="../Schema.html" title="ROM::Schema (class)">Schema</a></span></span> <span class='rbrace'>}</span></pre>
     </td>
@@ -1002,12 +1008,12 @@
       <pre class="lines">
 
 
-107
-108
-109</pre>
+116
+117
+118</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 116</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_associations'>associations</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='ivar'>@associations_dsl</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="AssociationsDSL.html" title="ROM::Schema::AssociationsDSL (class)">AssociationsDSL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_relation'>relation</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
@@ -1020,7 +1026,7 @@
       <div class="method_details ">
   <h3 class="signature " id="attribute-instance_method">
   
-    #<strong>attribute</strong>(name, type, options = EMPTY_HASH)  &#x21d2; <tt>Object</tt> 
+    #<strong>attribute</strong>(name, type_or_options, options = EMPTY_HASH)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1028,7 +1034,11 @@
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Defines a relation attribute with its type</p>
+    <p>Defines a relation attribute with its type and options.</p>
+
+<p>When only options are given, type is left as nil. It makes
+sense when it is used alongside an schema inferrer, which will
+populate the type.</p>
 
 
   </div>
@@ -1049,25 +1059,25 @@
       <pre class="lines">
 
 
-69
-70
-71
-72
-73
-74
-75
-76</pre>
+78
+79
+80
+81
+82
+83
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 69</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 78</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_attribute'>attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_attribute'>attribute</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_type_or_options'>type_or_options</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='period'>.</span><span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
     <span class='op'>::</span><span class='const'>Kernel</span><span class='period'>.</span><span class='id identifier rubyid_raise'>raise</span> <span class='op'>::</span><span class='const'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../ROM.html#AttributeAlreadyDefinedError-constant" title="ROM::AttributeAlreadyDefinedError (constant)">AttributeAlreadyDefinedError</a></span></span><span class='comma'>,</span>
                    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Attribute </span><span class='embexpr_beg'>#{</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span> <span class='embexpr_end'>}</span><span class='tstring_content'> already defined</span><span class='tstring_end'>&quot;</span></span>
   <span class='kw'>end</span>
 
-  <span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_build_type'>build_type</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_build_attribute_info'>build_attribute_info</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_type_or_options'>type_or_options</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1099,19 +1109,21 @@
       <pre class="lines">
 
 
-129
-130
-131
-132
-133
-134</pre>
+158
+159
+160
+161
+162
+163
+164</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 129</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 158</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_primary_key'>primary_key</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_names'>names</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='op'>|</span>
-    <span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>primary_key:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span> <span class='op'>=</span>
+      <span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>primary_key:</span> <span class='kw'>true</span><span class='rparen'>)</span>
   <span class='kw'>end</span>
   <span class='kw'>self</span>
 <span class='kw'>end</span></pre>
@@ -1181,13 +1193,13 @@
       <pre class="lines">
 
 
-142
-143
-144
-145</pre>
+172
+173
+174
+175</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 142</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/schema/dsl.rb', line 172</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_use'>use</span><span class='lparen'>(</span><span class='id identifier rubyid_plugin'>plugin</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'>EMPTY_HASH</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_mod'>mod</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_plugin_registry'>plugin_registry</span><span class='period'>.</span><span class='id identifier rubyid_schemas'>schemas</span><span class='period'>.</span><span class='id identifier rubyid_adapter'>adapter</span><span class='lparen'>(</span><span class='id identifier rubyid_adapter'>adapter</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_plugin'>plugin</span><span class='rparen'>)</span>
@@ -1203,9 +1215,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:39:02 2018 by
+  Generated on Mon Apr 29 13:51:16 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

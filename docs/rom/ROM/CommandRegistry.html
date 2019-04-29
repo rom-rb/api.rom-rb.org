@@ -6,7 +6,7 @@
 <title>
   Class: ROM::CommandRegistry
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -333,16 +333,16 @@
       <pre class="lines">
 
 
-109
-110
-111
-112
-113
-114
-115</pre>
+115
+116
+117
+118
+119
+120
+121</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 109</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='op'>*</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_key?'>key?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
@@ -405,10 +405,10 @@
       <pre class="lines">
 
 
-32</pre>
+34</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 32</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 34</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:compiler</span><span class='comma'>,</span> <span class='label'>optional:</span> <span class='kw'>true</span></pre>
     </td>
@@ -460,10 +460,10 @@
       <pre class="lines">
 
 
-28</pre>
+30</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 30</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:mapper</span><span class='comma'>,</span> <span class='label'>optional:</span> <span class='kw'>true</span></pre>
     </td>
@@ -515,10 +515,10 @@
       <pre class="lines">
 
 
-24</pre>
+26</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 24</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 26</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:mappers</span><span class='comma'>,</span> <span class='label'>optional:</span> <span class='kw'>true</span></pre>
     </td>
@@ -570,10 +570,10 @@
       <pre class="lines">
 
 
-20</pre>
+22</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 22</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:relation_name</span></pre>
     </td>
@@ -591,7 +591,11 @@
       <div class="method_details first">
   <h3 class="signature first" id="[]-instance_method">
   
-    #<strong>[]</strong>(*args)  &#x21d2; <tt><span class='object_link'><a href="Command.html" title="ROM::Command (class)">Command</a></span></tt>, <tt><span class='object_link'><a href="Commands/Composite.html" title="ROM::Commands::Composite (class)">Command::Composite</a></span></tt> 
+    
+      <span class="overload">#<strong>[]</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="Command.html" title="ROM::Command (class)">Command</a></span></tt>, <tt><span class='object_link'><a href="Commands/Composite.html" title="ROM::Commands::Composite (class)">Command::Composite</a></span></tt> </span>
+    
+      <span class="overload">#<strong>[]</strong>(*args)  &#x21d2; <tt><span class='object_link'><a href="Command.html" title="ROM::Command (class)">Command</a></span></tt>, <tt><span class='object_link'><a href="Commands/Composite.html" title="ROM::Commands::Composite (class)">Command::Composite</a></span></tt> </span>
+    
   
 
   
@@ -609,6 +613,20 @@ auto-mapping</p>
 </div>
 <div class="tags">
   
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>[]</strong>(name)  &#x21d2; <tt><span class='object_link'><a href="Command.html" title="ROM::Command (class)">Command</a></span></tt>, <tt><span class='object_link'><a href="Commands/Composite.html" title="ROM::Commands::Composite (class)">Command::Composite</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
   <div class="examples">
     <p class="tag_title">Examples:</p>
     
@@ -618,7 +636,7 @@ auto-mapping</p>
 
 <span class='comment'># with mapping, assuming :entity mapper is registered for :users relation
 </span><span class='id identifier rubyid_create_user'>create_user</span> <span class='op'>=</span> <span class='id identifier rubyid_rom'>rom</span><span class='period'>.</span><span class='id identifier rubyid_commands'>commands</span><span class='lbracket'>[</span><span class='symbol'>:users</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_map_with'>map_with</span><span class='lparen'>(</span><span class='symbol'>:entity</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='symbol'>:create</span><span class='rbracket'>]</span>
-<span class='id identifier rubyid_create_user'>create_user</span><span class='lbracket'>[</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Jane</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='comment'># =&gt; result is send through :entity mapper</span></code></pre>
+<span class='id identifier rubyid_create_user'>create_user</span><span class='lbracket'>[</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Jane</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='comment'># =&gt; result is sent through :entity mapper</span></code></pre>
     
   </div>
 <p class="tag_title">Parameters:</p>
@@ -634,12 +652,59 @@ auto-mapping</p>
       
       
         &mdash;
-        <div class='inline'><p>The name of a registered command</p>
+        <div class='inline'><p>The command identifier from the registry</p>
 </div>
       
     </li>
   
 </ul>
+
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">#<strong>[]</strong>(*args)  &#x21d2; <tt><span class='object_link'><a href="Command.html" title="ROM::Command (class)">Command</a></span></tt>, <tt><span class='object_link'><a href="Commands/Composite.html" title="ROM::Commands::Composite (class)">Command::Composite</a></span></tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>*args</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p><span class='object_link'>ROM::CommandCompiler</span> arguments</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'>ROM::CommandCompiler#call</span></li>
+    
+  </ul>
+
+</div>
+      </li>
+    
+  </ul>
 
 <p class="tag_title">Returns:</p>
 <ul class="return">
@@ -661,12 +726,6 @@ auto-mapping</p>
       <pre class="lines">
 
 
-57
-58
-59
-60
-61
-62
 63
 64
 65
@@ -674,10 +733,16 @@ auto-mapping</p>
 67
 68
 69
-70</pre>
+70
+71
+72
+73
+74
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 57</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='op'>[]</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='period'>.</span><span class='id identifier rubyid_equal?'>equal?</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span>
@@ -763,12 +828,12 @@ auto-mapping</p>
       <pre class="lines">
 
 
-83
-84
-85</pre>
+89
+90
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/command_registry.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_map_with'>map_with</span><span class='lparen'>(</span><span class='id identifier rubyid_mapper_name'>mapper_name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_with'>with</span><span class='lparen'>(</span><span class='label'>mapper:</span> <span class='id identifier rubyid_mappers'>mappers</span><span class='lbracket'>[</span><span class='id identifier rubyid_mapper_name'>mapper_name</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -783,9 +848,9 @@ auto-mapping</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:39:04 2018 by
+  Generated on Mon Apr 29 13:51:18 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

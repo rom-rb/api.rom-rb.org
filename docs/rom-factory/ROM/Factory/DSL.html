@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Factory::DSL
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -286,7 +286,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#association-instance_method" title="#association (instance method)">#<strong>association</strong>(name, options = {})  &#x21d2; Object </a>
+      <a href="#association-instance_method" title="#association (instance method)">#<strong>association</strong>(name, *traits, **options)  &#x21d2; Object </a>
     
 
     
@@ -489,12 +489,12 @@
       <pre class="lines">
 
 
-28
-29
-30</pre>
+30
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__attributes'>_attributes</span>
   <span class='ivar'>@_attributes</span>
@@ -530,12 +530,12 @@
       <pre class="lines">
 
 
-28
-29
-30</pre>
+30
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__factories'>_factories</span>
   <span class='ivar'>@_factories</span>
@@ -571,12 +571,12 @@
       <pre class="lines">
 
 
-28
-29
-30</pre>
+30
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__name'>_name</span>
   <span class='ivar'>@_name</span>
@@ -612,12 +612,12 @@
       <pre class="lines">
 
 
-28
-29
-30</pre>
+30
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__relation'>_relation</span>
   <span class='ivar'>@_relation</span>
@@ -653,12 +653,12 @@
       <pre class="lines">
 
 
-29
-30
-31</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 29</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 31</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__traits'>_traits</span>
   <span class='ivar'>@_traits</span>
@@ -694,12 +694,12 @@
       <pre class="lines">
 
 
-28
-29
-30</pre>
+30
+31
+32</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 28</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid__valid_names'>_valid_names</span>
   <span class='ivar'>@_valid_names</span>
@@ -719,7 +719,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="association-instance_method">
   
-    #<strong>association</strong>(name, options = {})  &#x21d2; <tt>Object</tt> 
+    #<strong>association</strong>(name, *traits, **options)  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -776,8 +776,6 @@
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>{}</tt>)</em>
-      
       
         &mdash;
         <div class='inline'><p>Additional options</p>
@@ -792,7 +790,9 @@
     
     
     
-    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    
+    
+    <p class="tag_title">Options Hash (<tt>**options</tt>):</p>
     <ul class="option">
       
         <li>
@@ -827,11 +827,11 @@
     <td>
       <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 130</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_association'>association</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_association'>association</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_traits'>traits</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_assoc'>assoc</span> <span class='op'>=</span> <span class='id identifier rubyid__relation'>_relation</span><span class='period'>.</span><span class='id identifier rubyid_associations'>associations</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_builder'>builder</span> <span class='op'>=</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='id identifier rubyid__factories'>_factories</span><span class='period'>.</span><span class='id identifier rubyid_for_relation'>for_relation</span><span class='lparen'>(</span><span class='id identifier rubyid_assoc'>assoc</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
 
-  <span class='id identifier rubyid__attributes'>_attributes</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='op'>::</span><span class='const'>Association</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_assoc'>assoc</span><span class='comma'>,</span> <span class='id identifier rubyid_builder'>builder</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid__attributes'>_attributes</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='op'>::</span><span class='const'>Association</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_assoc'>assoc</span><span class='comma'>,</span> <span class='id identifier rubyid_builder'>builder</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_traits'>traits</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -882,12 +882,12 @@
       <pre class="lines">
 
 
-52
-53
-54</pre>
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 52</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/factory/dsl.rb', line 54</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_create'>create</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid__factories'>_factories</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rbracket'>]</span>
@@ -1228,9 +1228,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:39:11 2018 by
+  Generated on Mon Apr 29 13:51:23 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

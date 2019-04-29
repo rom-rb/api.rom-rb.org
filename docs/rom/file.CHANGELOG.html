@@ -6,7 +6,7 @@
 <title>
   File: CHANGELOG
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -57,13 +57,83 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1>4.1.3 2018-02-03</h1>
+      <div id="content"><div id='filecontents'><h1>5.0.1 2019-04-24</h1>
+
+<h2>rom</h2>
 
 <ul>
-<li><code>rom-core</code> updated to <code>[&#39;~&gt; 4.1&#39;, &#39;&gt;= 4.1.2&#39;]</code></li>
+<li>Dependency on <code>rom-core</code> was bumped to <code>~&gt; 5.0</code>, <code>&gt;= 5.0.1</code> (solnic)</li>
 </ul>
 
-<p><a href="https://github.com/rom-rb/rom/compare/v4.1.2...v4.1.3">Compare v4.1.2...v4.1.3</a></p>
+<h2>rom-core</h2>
+
+<ul>
+<li>Missing dependency on <code>transproc</code> was added (solnic)</li>
+</ul>
+
+<h1>5.0.0 2019-04-24</h1>
+
+<ul>
+<li>All version numbers have been inlined to <code>5.0.0</code></li>
+<li><code>rom-mapper</code> gem has been retired and <code>ROM::Mapper</code> is now part of <code>rom-core</code></li>
+</ul>
+
+<h2>rom</h2>
+
+<ul>
+<li><code>rom-core</code> bumped to <code>5.0.0</code> (solnic)</li>
+<li><code>rom-changeset</code> bumped to <code>5.0.0</code> (solnic)</li>
+<li><code>rom-repository</code> bumped to <code>5.0.0</code> (solnic)</li>
+<li><code>rom-mapper</code> was moved to <code>core</code> under <code>rom/mapper</code> so it&#39;s no longer a runtime dependency (solnic)</li>
+</ul>
+
+<h2>rom-core</h2>
+
+<ul>
+<li>[BREAKING] <code>Types::Int</code> is now <code>Types::Integer</code> (flash-gordon)</li>
+<li>[BREAKING] Attribute aliases are no longer stored in attribute&#39;s type meta (waiting-for-dev)</li>
+<li>Updated to work with <code>dry-types 1.0.0</code> (flash-gordon)</li>
+<li>Updated to work with <code>dry-struct 1.0.0</code> (flash-gordon)</li>
+<li>Updated to work with <code>dry-initializer 3.0.0</code> (solnic)</li>
+</ul>
+
+<h2>rom-repository</h2>
+
+<ul>
+<li>[BREAKING] Support for ruby &lt;= <code>2.4</code> was dropped (flash-gordon)</li>
+<li>[BREAKING] <code>Repository::Root#aggregate</code> was removed in favor of <code>Relation#combine</code> (v-kolesnikov)</li>
+</ul>
+
+<h2>rom-changeset</h2>
+
+<p><em>No changes</em></p>
+
+<p><a href="https://github.com/rom-rb/rom/compare/v4.2.1...v5.0.0">Compare v4.2.1...v5.0.0</a></p>
+
+<h1>4.2.1 2018-05-03</h1>
+
+<ul>
+<li><code>rom-core</code> updated to <code>[&#39;~&gt; 4.2&#39;, &#39;&gt;= 4.2.1&#39;]</code></li>
+</ul>
+
+<p><a href="https://github.com/rom-rb/rom/compare/v4.2.0...v4.2.1">Compare v4.2.0...v4.2.1</a></p>
+
+<h1>4.2.0 2018-03-29</h1>
+
+<ul>
+<li><code>rom-core</code> updated to <code>[&#39;~&gt; 4.2&#39;, &#39;&gt;= 4.2.0&#39;]</code></li>
+<li><code>rom-changeset</code> updated to <code>[&#39;~&gt; 1.0&#39;, &#39;&gt;= 1.0.2&#39;]</code></li>
+</ul>
+
+<p><a href="https://github.com/rom-rb/rom/compare/v4.1.3...v4.2.0">Compare v4.1.3...v4.2.0</a></p>
+
+<h1>4.1.3 2018-02-03</h1>
+
+<ul>
+<li><code>rom-core</code> updated to <code>[&#39;~&gt; 4.1&#39;, &#39;&gt;= 4.1.3&#39;]</code></li>
+</ul>
+
+<p><a href="https://github.com/rom-rb/rom/compare/v4.1.2...v4.1.3">Compare v4.1.2...v4.2.0</a></p>
 
 <h1>4.1.2 2018-01-15</h1>
 
@@ -124,9 +194,9 @@
 </div></div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:38:53 2018 by
+  Generated on Mon Apr 29 13:51:08 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>

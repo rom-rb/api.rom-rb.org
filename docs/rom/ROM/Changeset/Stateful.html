@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Changeset::Stateful
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.19
   
 </title>
 
@@ -121,11 +121,16 @@ a different structure compatible with a persistence backend</p>
   <p class="children"><span class='object_link'><a href="Create.html" title="ROM::Changeset::Create (class)">Create</a></span>, <span class='object_link'><a href="Update.html" title="ROM::Changeset::Update (class)">Update</a></span></p>
 </div>
 
-  <h2>Constant Summary</h2>
-  <dl class="constants">
-    
-      <dt id="EMPTY_PIPE-constant" class="">EMPTY_PIPE =
-        <div class="docstring">
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="EMPTY_PIPE-constant" class="">EMPTY_PIPE =
+          <div class="docstring">
   <div class="discussion">
     <p>Default no-op pipe</p>
 
@@ -136,10 +141,11 @@ a different structure compatible with a persistence backend</p>
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='const'>Pipe</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>use_for_diff:</span> <span class='kw'>false</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-  </dl>
+        </dt>
+        <dd><pre class="code"><span class='const'>Pipe</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>use_for_diff:</span> <span class='kw'>false</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
 
 
 
@@ -487,8 +493,6 @@ a different structure compatible with a persistence backend</p>
       <pre class="lines">
 
 
-266
-267
 268
 269
 270
@@ -499,10 +503,12 @@ a different structure compatible with a persistence backend</p>
 275
 276
 277
-278</pre>
+278
+279
+280</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 266</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 268</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid___data__'>__data__</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='rparen'>)</span>
@@ -569,12 +575,12 @@ a different structure compatible with a persistence backend</p>
       <pre class="lines">
 
 
-87
-88
-89</pre>
+89
+90
+91</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 87</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_default_pipe'>default_pipe</span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_pipes'>pipes</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>&gt;</span> <span class='int'>0</span> <span class='op'>?</span> <span class='id identifier rubyid_pipes'>pipes</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_p'>p</span><span class='op'>|</span> <span class='id identifier rubyid_p'>p</span><span class='period'>.</span><span class='id identifier rubyid_bind'>bind</span><span class='lparen'>(</span><span class='id identifier rubyid_context'>context</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_reduce'>reduce</span><span class='lparen'>(</span><span class='symbol'>:&gt;&gt;</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='const'><span class='object_link'><a href="#EMPTY_PIPE-constant" title="ROM::Changeset::Stateful::EMPTY_PIPE (constant)">EMPTY_PIPE</a></span></span>
@@ -635,16 +641,16 @@ a different structure compatible with a persistence backend</p>
       <pre class="lines">
 
 
-74
-75
 76
 77
 78
 79
-80</pre>
+80
+81
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 74</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_extend'>extend</span><span class='lparen'>(</span><span class='op'>*</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
@@ -749,16 +755,16 @@ and applied in the order they way defined</p>
       <pre class="lines">
 
 
-58
-59
 60
 61
 62
 63
-64</pre>
+64
+65
+66</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 58</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 60</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span><span class='period'>.</span><span class='id identifier rubyid_parameters'>parameters</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
@@ -838,11 +844,13 @@ and applied in the order they way defined</p>
   
     <li>
       
-        <span class='name'>assoc</span>
+        <span class='name'>name</span>
       
       
         <span class='type'>(<tt>Symbol</tt>)</span>
       
+      
+        <em class="default">(defaults to: <tt>Associated.infer_assoc_name(other)</tt>)</em>
       
       
         &mdash;
@@ -860,12 +868,12 @@ and applied in the order they way defined</p>
       <pre class="lines">
 
 
-222
-223
-224</pre>
+224
+225
+226</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 222</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 224</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_associate'>associate</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Associated.html" title="ROM::Changeset::Associated (class)">Associated</a></span></span><span class='period'>.</span><span class='id identifier rubyid_infer_assoc_name'>infer_assoc_name</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="Associated.html" title="ROM::Changeset::Associated (class)">Associated</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Changeset.html#new-instance_method" title="ROM::Changeset#new (method)">new</a></span></span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='label'>associations:</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_other'>other</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
@@ -899,12 +907,12 @@ and applied in the order they way defined</p>
       <pre class="lines">
 
 
-236
-237
-238</pre>
+238
+239
+240</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 236</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 238</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_command'>command</span>
   <span class='id identifier rubyid_relation'>relation</span><span class='period'>.</span><span class='id identifier rubyid_command'>command</span><span class='lparen'>(</span><span class='id identifier rubyid_command_type'>command_type</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="../Changeset.html#DEFAULT_COMMAND_OPTS-constant" title="ROM::Changeset::DEFAULT_COMMAND_OPTS (constant)">DEFAULT_COMMAND_OPTS</a></span></span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='label'>result:</span> <span class='id identifier rubyid_result'>result</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -946,12 +954,12 @@ and applied in the order they way defined</p>
       <pre class="lines">
 
 
-200
-201
-202</pre>
+202
+203
+204</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 200</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 202</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_commit'>commit</span>
   <span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span>
@@ -1014,12 +1022,12 @@ and applied in the order they way defined</p>
       <pre class="lines">
 
 
-167
-168
-169</pre>
+169
+170
+171</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 169</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_data'>data</span><span class='lparen'>(</span><span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_with'>with</span><span class='lparen'>(</span><span class='label'>__data__:</span> <span class='id identifier rubyid_data'>data</span><span class='rparen'>)</span>
@@ -1080,8 +1088,6 @@ from the diff.</p>
       <pre class="lines">
 
 
-148
-149
 150
 151
 152
@@ -1090,10 +1096,12 @@ from the diff.</p>
 155
 156
 157
-158</pre>
+158
+159
+160</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 150</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_extend'>extend</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_steps'>steps</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
@@ -1149,12 +1157,12 @@ from the diff.</p>
       <pre class="lines">
 
 
-245
-246
-247</pre>
+247
+248
+249</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 245</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 247</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span>
   <span class='tstring'><span class='tstring_beg'>%(</span><span class='tstring_content'>#&lt;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'> relation=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_relation'>relation</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'> data=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid___data__'>__data__</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>)</span></span>
@@ -1323,12 +1331,12 @@ from the diff.</p>
       <pre class="lines">
 
 
-131
-132
-133</pre>
+133
+134
+135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 131</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 133</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_steps'>steps</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_extend'>extend</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_steps'>steps</span><span class='comma'>,</span> <span class='label'>for_diff:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
@@ -1382,12 +1390,12 @@ from the diff.</p>
       <pre class="lines">
 
 
-190
-191
-192</pre>
+192
+193
+194</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 190</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 192</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_a'>to_a</span>
   <span class='id identifier rubyid_result'>result</span> <span class='op'>==</span> <span class='symbol'>:one</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='id identifier rubyid_to_h'>to_h</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='id identifier rubyid___data__'>__data__</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_element'>element</span><span class='op'>|</span> <span class='id identifier rubyid_pipe'>pipe</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_element'>element</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -1441,12 +1449,12 @@ from the diff.</p>
       <pre class="lines">
 
 
-178
-179
-180</pre>
+180
+181
+182</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 178</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/stateful.rb', line 180</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_h'>to_h</span>
   <span class='id identifier rubyid_pipe'>pipe</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid___data__'>__data__</span><span class='rparen'>)</span>
@@ -1461,9 +1469,9 @@ from the diff.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Mar 12 17:39:09 2018 by
+  Generated on Mon Apr 29 13:51:22 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.0).
+  0.9.19 (ruby-2.6.3).
 </div>
 
     </div>
