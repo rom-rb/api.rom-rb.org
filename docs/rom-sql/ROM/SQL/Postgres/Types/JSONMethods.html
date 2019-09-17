@@ -6,7 +6,7 @@
 <title>
   Module: ROM::SQL::Postgres::Types::JSONMethods
   
-    &mdash; Documentation by YARD 0.9.19
+    &mdash; Documentation by YARD 0.9.20
   
 </title>
 
@@ -197,17 +197,17 @@
       <pre class="lines">
 
 
-167
-168
-169
-170
-171
-172
-173
-174</pre>
+196
+197
+198
+199
+200
+201
+202
+203</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/extensions/postgres/types/json.rb', line 167</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/extensions/postgres/types/json.rb', line 196</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_wrap'>wrap</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_parent'>parent</span> <span class='op'>=</span> <span class='kw'>self</span>
@@ -243,12 +243,12 @@
       <pre class="lines">
 
 
-176
-177
-178</pre>
+205
+206
+207</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/extensions/postgres/types/json.rb', line 176</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/extensions/postgres/types/json.rb', line 205</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_expr'>expr</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../../Attribute.html" title="ROM::SQL::Attribute (class)">Attribute</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_json_type'>json_type</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>sql_expr:</span> <span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='id identifier rubyid_expr'>expr</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='id identifier rubyid_path_args'>path_args</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rparen'>)</span>
@@ -273,12 +273,12 @@
       <pre class="lines">
 
 
-180
-181
-182</pre>
+209
+210
+211</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/extensions/postgres/types/json.rb', line 180</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/extensions/postgres/types/json.rb', line 209</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_text'>get_text</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_expr'>expr</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
   <span class='const'><span class='object_link'><a href="../../Attribute.html" title="ROM::SQL::Attribute (class)">Attribute</a></span></span><span class='lbracket'>[</span><span class='const'><span class='object_link'><a href="../../../SQL.html" title="ROM::SQL (module)">SQL</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Types.html" title="ROM::SQL::Types (module)">Types</a></span></span><span class='op'>::</span><span class='const'>String</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>sql_expr:</span> <span class='id identifier rubyid_wrap'>wrap</span><span class='lparen'>(</span><span class='id identifier rubyid_expr'>expr</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_get_text'>get_text</span><span class='lparen'>(</span><span class='id identifier rubyid_path_args'>path_args</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -293,9 +293,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Apr 29 13:51:28 2019 by
+  Generated on Tue Sep 17 21:21:22 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.19 (ruby-2.6.3).
+  0.9.20 (ruby-2.6.3).
 </div>
 
     </div>

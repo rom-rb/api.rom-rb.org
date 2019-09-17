@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Changeset::Associated
   
-    &mdash; Documentation by YARD 0.9.19
+    &mdash; Documentation by YARD 0.9.20
   
 </title>
 
@@ -515,7 +515,9 @@
 97
 98
 99
-100</pre>
+100
+101
+102</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/associated.rb', line 89</span>
@@ -527,6 +529,8 @@
       <span class='id identifier rubyid_a'>a</span> <span class='op'>&gt;&gt;</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_with_association'>with_association</span><span class='lparen'>(</span><span class='id identifier rubyid_assoc'>assoc</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_curry'>curry</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
     <span class='kw'>when</span> <span class='const'><span class='object_link'><a href="" title="ROM::Changeset::Associated (class)">Associated</a></span></span>
       <span class='id identifier rubyid_a'>a</span> <span class='op'>&gt;&gt;</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_with_association'>with_association</span><span class='lparen'>(</span><span class='id identifier rubyid_assoc'>assoc</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='const'>Array</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Changeset::Associate does not support arrays yet</span><span class='tstring_end'>&#39;</span></span>
     <span class='kw'>else</span>
       <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_with_association'>with_association</span><span class='lparen'>(</span><span class='id identifier rubyid_assoc'>assoc</span><span class='comma'>,</span> <span class='label'>parent:</span> <span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
     <span class='kw'>end</span>
@@ -607,9 +611,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Apr 29 13:51:22 2019 by
+  Generated on Tue Sep 17 21:21:17 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.19 (ruby-2.6.3).
+  0.9.20 (ruby-2.6.3).
 </div>
 
     </div>

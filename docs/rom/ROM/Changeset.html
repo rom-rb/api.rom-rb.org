@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Changeset
   
-    &mdash; Documentation by YARD 0.9.19
+    &mdash; Documentation by YARD 0.9.20
   
 </title>
 
@@ -100,7 +100,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>changeset/lib/rom/changeset.rb<span class="defines">,<br />
-  changeset/lib/rom/changeset/pipe.rb,<br /> changeset/lib/rom/changeset/create.rb,<br /> changeset/lib/rom/changeset/delete.rb,<br /> changeset/lib/rom/changeset/update.rb,<br /> changeset/lib/rom/changeset/version.rb,<br /> changeset/lib/rom/changeset/stateful.rb,<br /> changeset/lib/rom/changeset/associated.rb</span>
+  changeset/lib/rom/changeset/pipe.rb,<br /> changeset/lib/rom/changeset/create.rb,<br /> changeset/lib/rom/changeset/delete.rb,<br /> changeset/lib/rom/changeset/update.rb,<br /> changeset/lib/rom/changeset/version.rb,<br /> changeset/lib/rom/changeset/stateful.rb,<br /> changeset/lib/rom/changeset/associated.rb,<br /> changeset/lib/rom/changeset/extensions/relation.rb</span>
 </dd>
   </dl>
   
@@ -143,6 +143,8 @@
 <p class="children">
   
     
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Changeset/Extensions.html" title="ROM::Changeset::Extensions (module)">Extensions</a></span>
+    
   
     
       <strong class="classes">Classes:</strong> <span class='object_link'><a href="Changeset/Associated.html" title="ROM::Changeset::Associated (class)">Associated</a></span>, <span class='object_link'><a href="Changeset/Create.html" title="ROM::Changeset::Create (class)">Create</a></span>, <span class='object_link'><a href="Changeset/Delete.html" title="ROM::Changeset::Delete (class)">Delete</a></span>, <span class='object_link'><a href="Changeset/Stateful.html" title="ROM::Changeset::Stateful (class)">Stateful</a></span>, <span class='object_link'><a href="Changeset/Update.html" title="ROM::Changeset::Update (class)">Update</a></span>
@@ -158,15 +160,10 @@
 
     <dl class="constants">
       
-        <dt id="DEFAULT_COMMAND_OPTS-constant" class="">DEFAULT_COMMAND_OPTS =
-          
-        </dt>
-        <dd><pre class="code"><span class='lbrace'>{</span> <span class='label'>mapper:</span> <span class='kw'>false</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-      
         <dt id="VERSION-constant" class="">VERSION =
           
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>5.0.0</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>5.1.2</span><span class='tstring_end'>&#39;</span></span></pre></dd>
       
     </dl>
   
@@ -176,6 +173,62 @@
 
   <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
   <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#command_options-instance_method" title="#command_options (instance method)">#<strong>command_options</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Configured options for the command.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#command_plugins-instance_method" title="#command_plugins (instance method)">#<strong>command_plugins</strong>  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Configured plugin options for the command.</p>
+</div></span>
+  
+</li>
+
     
       <li class="public ">
   <span class="summary_signature">
@@ -272,6 +325,52 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#command_options-class_method" title="command_options (class method)">.<strong>command_options</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Get or set command options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#command_plugins-class_method" title="command_plugins (class method)">.<strong>command_plugins</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Get or set command plugins options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#command_type-class_method" title="command_type (class method)">.<strong>command_type</strong>  &#x21d2; Object </a>
     
 
@@ -310,6 +409,29 @@
 
   
     <span class="summary_desc"><div class='inline'><p>Get or set changeset relation identifier.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#use-class_method" title="use (class method)">.<strong>use</strong>(plugin, options = EMPTY_HASH)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Enable a plugin for the changeset.</p>
 </div></span>
   
 </li>
@@ -407,7 +529,117 @@
       
       <span id=""></span>
       <div class="method_details first">
-  <h3 class="signature first" id="command_type-instance_method">
+  <h3 class="signature first" id="command_options-instance_method">
+  
+    #<strong>command_options</strong>  &#x21d2; <tt>Hash</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns Configured options for the command</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Configured options for the command</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 87</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:command_options</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_command_options'>command_options</span> <span class='rbrace'>}</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="command_plugins-instance_method">
+  
+    #<strong>command_plugins</strong>  &#x21d2; <tt>Hash</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns Configured plugin options for the command</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Configured plugin options for the command</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 91</span>
+
+<span class='id identifier rubyid_option'>option</span> <span class='symbol'>:command_plugins</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_command_plugins'>command_plugins</span> <span class='rbrace'>}</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id=""></span>
+      <div class="method_details ">
+  <h3 class="signature " id="command_type-instance_method">
   
     #<strong>command_type</strong>  &#x21d2; <tt>Symbol</tt>  <span class="extras">(readonly)</span>
   
@@ -448,10 +680,10 @@
       <pre class="lines">
 
 
-59</pre>
+83</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 83</span>
 
 <span class='id identifier rubyid_option'>option</span> <span class='symbol'>:command_type</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='tlambda'>-&gt;</span> <span class='tlambeg'>{</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_command_type'>command_type</span> <span class='rbrace'>}</span></pre>
     </td>
@@ -503,10 +735,10 @@
       <pre class="lines">
 
 
-55</pre>
+79</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 79</span>
 
 <span class='id identifier rubyid_param'>param</span> <span class='symbol'>:relation</span></pre>
     </td>
@@ -557,20 +789,264 @@
       <pre class="lines">
 
 
-70
-71
-72
-73
-74</pre>
+108
+109
+110
+111
+112</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 108</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='op'>[]</span><span class='lparen'>(</span><span class='id identifier rubyid_relation_name'>relation_name</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_fetch_or_store'>fetch_or_store</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_relation_name'>relation_name</span><span class='comma'>,</span> <span class='kw'>self</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='lbrace'>{</span>
     <span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_relation'>relation</span><span class='lparen'>(</span><span class='id identifier rubyid_relation_name'>relation_name</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
   <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="command_options-class_method">
+  
+    
+      <span class="overload">.<strong>command_options</strong>  &#x21d2; <tt>Hash</tt><sup>?</sup> </span>
+    
+      <span class="overload">.<strong>command_options</strong>(**options)  &#x21d2; <tt>Hash</tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Get or set command options</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>command_options</strong>  &#x21d2; <tt>Hash</tt><sup>?</sup> </span>
+        <div class="docstring">
+  <div class="discussion">
+    <p>Return configured command_options</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>command_options</strong>(**options)  &#x21d2; <tt>Hash</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    <p>Set command options</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The command options</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 49</span>
+
+<span class='id identifier rubyid_defines'>defines</span> <span class='symbol'>:command_options</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="command_plugins-class_method">
+  
+    
+      <span class="overload">.<strong>command_plugins</strong>  &#x21d2; <tt>Hash</tt><sup>?</sup> </span>
+    
+      <span class="overload">.<strong>command_plugins</strong>(**options)  &#x21d2; <tt>Hash</tt> </span>
+    
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Get or set command plugins options</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <p class="tag_title">Overloads:</p>
+  <ul class="overload">
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>command_plugins</strong>  &#x21d2; <tt>Hash</tt><sup>?</sup> </span>
+        <div class="docstring">
+  <div class="discussion">
+    <p>Return configured command_plugins</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+      
+      <li class="overload_item">
+        <span class="signature">.<strong>command_plugins</strong>(**options)  &#x21d2; <tt>Hash</tt> </span>
+        <div class="docstring">
+  <div class="discussion">
+    <p>Set command plugin options</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The command plugin options</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+      </li>
+    
+  </ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 62</span>
+
+<span class='id identifier rubyid_defines'>defines</span> <span class='symbol'>:command_plugins</span></pre>
     </td>
   </tr>
 </table>
@@ -687,10 +1163,10 @@
       <pre class="lines">
 
 
-38</pre>
+36</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 38</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 36</span>
 
 <span class='id identifier rubyid_defines'>defines</span> <span class='symbol'>:command_type</span></pre>
     </td>
@@ -809,12 +1285,52 @@
       <pre class="lines">
 
 
-51</pre>
+75</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 51</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 75</span>
 
 <span class='id identifier rubyid_defines'>defines</span> <span class='symbol'>:relation</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="use-class_method">
+  
+    .<strong>use</strong>(plugin, options = EMPTY_HASH)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Enable a plugin for the changeset</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+117
+118
+119</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 117</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_use'>use</span><span class='lparen'>(</span><span class='id identifier rubyid_plugin'>plugin</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="../ROM.html" title="ROM (module)">ROM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_plugin_registry'>plugin_registry</span><span class='lbracket'>[</span><span class='symbol'>:changeset</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_plugin'>plugin</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_apply_to'>apply_to</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
@@ -874,12 +1390,12 @@
       <pre class="lines">
 
 
-100
-101
-102</pre>
+145
+146
+147</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 100</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 145</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_commit'>commit</span>
   <span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span>
@@ -927,12 +1443,12 @@
       <pre class="lines">
 
 
-109
-110
-111</pre>
+154
+155
+156</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 109</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 154</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span>
   <span class='tstring'><span class='tstring_beg'>%(</span><span class='tstring_content'>#&lt;</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_content'> relation=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_relation'>relation</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_inspect'>inspect</span><span class='embexpr_end'>}</span><span class='tstring_content'>&gt;</span><span class='tstring_end'>)</span></span>
@@ -1010,12 +1526,12 @@
       <pre class="lines">
 
 
-86
-87
-88</pre>
+131
+132
+133</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset.rb', line 131</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_relation'>relation</span><span class='comma'>,</span> <span class='id identifier rubyid_new_options'>new_options</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_relation'>relation</span><span class='comma'>,</span> <span class='id identifier rubyid_new_options'>new_options</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>?</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_new_options'>new_options</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -1030,9 +1546,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Apr 29 13:51:21 2019 by
+  Generated on Tue Sep 17 21:21:16 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.19 (ruby-2.6.3).
+  0.9.20 (ruby-2.6.3).
 </div>
 
     </div>

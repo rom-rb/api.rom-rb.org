@@ -6,7 +6,7 @@
 <title>
   Module: ROM::SQL::Relation::Reading
   
-    &mdash; Documentation by YARD 0.9.19
+    &mdash; Documentation by YARD 0.9.20
   
 </title>
 
@@ -686,6 +686,29 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#nullify-instance_method" title="#nullify (instance method)">#<strong>nullify</strong>  &#x21d2; SQL::Relation </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Returns a relation that will never issue a query to the database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#offset-instance_method" title="#offset (instance method)">#<strong>offset</strong>(num)  &#x21d2; Relation </a>
     
 
@@ -1189,12 +1212,12 @@ the key of each the provided attribute</p>
       <pre class="lines">
 
 
-971
-972
-973</pre>
+980
+981
+982</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 971</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 980</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_as_hash'>as_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span> <span class='op'>=</span> <span class='id identifier rubyid_primary_key'>primary_key</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_as_hash'>as_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_attribute'>attribute</span><span class='rparen'>)</span>
@@ -1561,15 +1584,6 @@ end</code></pre>
       <pre class="lines">
 
 
-934
-935
-936
-937
-938
-939
-940
-941
-942
 943
 944
 945
@@ -1582,10 +1596,19 @@ end</code></pre>
 952
 953
 954
-955</pre>
+955
+956
+957
+958
+959
+960
+961
+962
+963
+964</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 934</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 943</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_each_batch'>each_batch</span><span class='lparen'>(</span><span class='label'>size:</span> <span class='int'>1000</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_pks'>pks</span> <span class='op'>=</span> <span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_primary_key'>primary_key</span>
@@ -1742,12 +1765,12 @@ end</code></pre>
       <pre class="lines">
 
 
-828
-829
-830</pre>
+837
+838
+839</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 828</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 837</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_exist?'>exist?</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='op'>!</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_limit'>limit</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span><span class='period'>.</span><span class='id identifier rubyid_zero?'>zero?</span>
@@ -1850,13 +1873,13 @@ clause under the hood</p>
       <pre class="lines">
 
 
-913
-914
-915
-916</pre>
+922
+923
+924
+925</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 913</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 922</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_exists'>exists</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='comma'>,</span> <span class='id identifier rubyid_condition'>condition</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_join_condition'>join_condition</span> <span class='op'>=</span> <span class='id identifier rubyid_condition'>condition</span> <span class='op'>||</span> <span class='id identifier rubyid_associations'>associations</span><span class='lbracket'>[</span><span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_join_keys'>join_keys</span>
@@ -3682,20 +3705,20 @@ the block gets executed.</p>
       <pre class="lines">
 
 
-885
-886
-887
-888
-889
-890
-891
-892
-893
 894
-895</pre>
+895
+896
+897
+898
+899
+900
+901
+902
+903
+904</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 885</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 894</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_lock'>lock</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_clause'>clause</span> <span class='op'>=</span> <span class='id identifier rubyid_lock_clause'>lock_clause</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
@@ -3957,6 +3980,78 @@ from tuples</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_min'>min</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid___send__'>__send__</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="nullify-instance_method">
+  
+    #<strong>nullify</strong>  &#x21d2; <tt><span class='object_link'><a href="../Relation.html" title="ROM::SQL::Relation (class)">SQL::Relation</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Returns a relation that will never issue a query to the database. It
+implements the null object pattern for relations.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+        <p class="example_title"><div class='inline'><p>result will always be empty, regardless if records exists</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Alice</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_nullify'>nullify</span></code></pre>
+    
+  </div>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="../Relation.html" title="ROM::SQL::Relation (class)">SQL::Relation</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="http://sequel.jeremyevans.net/rdoc-plugins/files/lib/sequel/extensions/null_dataset_rb.html" target="_parent" title="http://sequel.jeremyevans.net/rdoc-plugins/files/lib/sequel/extensions/null_dataset_rb.html">http://sequel.jeremyevans.net/rdoc-plugins/files/lib/sequel/extensions/null_dataset_rb.html</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+1024
+1025
+1026</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 1024</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_nullify'>nullify</span>
+  <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid___send__'>__send__</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -4575,18 +4670,18 @@ restricting the result set with a IN (SELECT ...) condtion.</p>
       <pre class="lines">
 
 
-987
-988
-989
-990
-991</pre>
+996
+997
+998
+999
+1000</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 987</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 996</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_query'>query</span>
   <span class='id identifier rubyid_attr'>attr</span> <span class='op'>=</span> <span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_subquery'>subquery</span> <span class='op'>=</span> <span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_project'>project</span><span class='lparen'>(</span><span class='id identifier rubyid_attr'>attr</span><span class='rparen'>)</span><span class='period'>.</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_unordered'>unordered</span>
+  <span class='id identifier rubyid_subquery'>subquery</span> <span class='op'>=</span> <span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_project'>project</span><span class='lparen'>(</span><span class='id identifier rubyid_attr'>attr</span><span class='rparen'>)</span><span class='period'>.</span><span class='lparen'>(</span><span class='kw'>self</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_dataset'>dataset</span>
   <span class='const'><span class='object_link'><a href="../../SQL.html" title="ROM::SQL (module)">SQL</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Attribute.html" title="ROM::SQL::Attribute (class)">Attribute</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_attr'>attr</span><span class='period'>.</span><span class='id identifier rubyid_type'>type</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>sql_expr:</span> <span class='id identifier rubyid_subquery'>subquery</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -4659,12 +4754,12 @@ restricting the result set with a IN (SELECT ...) condtion.</p>
       <pre class="lines">
 
 
-860
-861
-862</pre>
+869
+870
+871</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 860</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 869</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='id identifier rubyid_sql'>sql</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid_db'>db</span><span class='lbracket'>[</span><span class='id identifier rubyid_sql'>sql</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>schema:</span> <span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_empty'>empty</span><span class='rparen'>)</span>
@@ -5637,12 +5732,12 @@ with additional right_join options</p>
       <pre class="lines">
 
 
-1001
-1002
-1003</pre>
+1010
+1011
+1012</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 1001</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 1010</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unfiltered'>unfiltered</span>
   <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid___send__'>__send__</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -5775,13 +5870,31 @@ with additional right_join options</p>
 
 809
 810
-811</pre>
+811
+812
+813
+814
+815
+816
+817
+818
+819
+820</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 809</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_union'>union</span><span class='lparen'>(</span><span class='id identifier rubyid_relation'>relation</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid___send__'>__send__</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_relation'>relation</span><span class='period'>.</span><span class='id identifier rubyid_dataset'>dataset</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='comment'># We use the original relation name here if both relations have the
+</span>  <span class='comment'># same name. This makes it so if the user at some point references
+</span>  <span class='comment'># the relation directly by name later on things won&#39;t break in
+</span>  <span class='comment'># confusing ways.
+</span>  <span class='id identifier rubyid_same_relation'>same_relation</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='id identifier rubyid_relation'>relation</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span>
+  <span class='id identifier rubyid_alias_name'>alias_name</span> <span class='op'>=</span>  <span class='id identifier rubyid_same_relation'>same_relation</span> <span class='op'>?</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='embexpr_end'>}</span><span class='tstring_content'>__</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_relation'>relation</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_opts'>opts</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>alias:</span> <span class='id identifier rubyid_alias_name'>alias_name</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='comma'>,</span> <span class='op'>**</span><span class='id identifier rubyid_options'>options</span> <span class='rbrace'>}</span>
+
+  <span class='id identifier rubyid_new_schema'>new_schema</span> <span class='op'>=</span> <span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_qualified'>qualified</span><span class='lparen'>(</span><span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:alias</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_new_schema'>new_schema</span><span class='period'>.</span><span class='lparen'>(</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_dataset'>dataset</span><span class='period'>.</span><span class='id identifier rubyid___send__'>__send__</span><span class='lparen'>(</span><span class='id identifier rubyid___method__'>__method__</span><span class='comma'>,</span> <span class='id identifier rubyid_relation'>relation</span><span class='period'>.</span><span class='id identifier rubyid_dataset'>dataset</span><span class='comma'>,</span> <span class='id identifier rubyid_opts'>opts</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -5857,12 +5970,12 @@ with additional right_join options</p>
       <pre class="lines">
 
 
-846
-847
-848</pre>
+855
+856
+857</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 846</span>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/relation/reading.rb', line 855</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_unique?'>unique?</span><span class='lparen'>(</span><span class='id identifier rubyid_criteria'>criteria</span><span class='rparen'>)</span>
   <span class='op'>!</span><span class='id identifier rubyid_exist?'>exist?</span><span class='lparen'>(</span><span class='id identifier rubyid_criteria'>criteria</span><span class='rparen'>)</span>
@@ -6068,9 +6181,9 @@ with additional right_join options</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Apr 29 13:51:27 2019 by
+  Generated on Tue Sep 17 21:21:22 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.19 (ruby-2.6.3).
+  0.9.20 (ruby-2.6.3).
 </div>
 
     </div>

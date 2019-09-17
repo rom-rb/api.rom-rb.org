@@ -6,7 +6,7 @@
 <title>
   Module: ROM::ConfigurationDSL
   
-    &mdash; Documentation by YARD 0.9.19
+    &mdash; Documentation by YARD 0.9.20
   
 </title>
 
@@ -84,7 +84,7 @@
   <dl>
     <dt>Defined in:</dt>
     <dd>core/lib/rom/configuration_dsl.rb<span class="defines">,<br />
-  core/lib/rom/configuration_dsl/command.rb,<br /> core/lib/rom/configuration_dsl/relation.rb,<br /> core/lib/rom/configuration_dsl/command_dsl.rb</span>
+  core/lib/rom/configuration_dsl/command.rb,<br /> core/lib/rom/configuration_dsl/relation.rb,<br /> core/lib/rom/configuration_dsl/mapper_dsl.rb,<br /> core/lib/rom/configuration_dsl/command_dsl.rb</span>
 </dd>
   </dl>
   
@@ -106,7 +106,7 @@
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ConfigurationDSL/Command.html" title="ROM::ConfigurationDSL::Command (class)">Command</a></span>, <span class='object_link'><a href="ConfigurationDSL/CommandDSL.html" title="ROM::ConfigurationDSL::CommandDSL (class)">CommandDSL</a></span>, <span class='object_link'><a href="ConfigurationDSL/Relation.html" title="ROM::ConfigurationDSL::Relation (class)">Relation</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ConfigurationDSL/Command.html" title="ROM::ConfigurationDSL::Command (class)">Command</a></span>, <span class='object_link'><a href="ConfigurationDSL/CommandDSL.html" title="ROM::ConfigurationDSL::CommandDSL (class)">CommandDSL</a></span>, <span class='object_link'><a href="ConfigurationDSL/MapperDSL.html" title="ROM::ConfigurationDSL::MapperDSL (class)">MapperDSL</a></span>, <span class='object_link'><a href="ConfigurationDSL/Relation.html" title="ROM::ConfigurationDSL::Relation (class)">Relation</a></span>
     
   
 </p>
@@ -143,6 +143,29 @@
 
   
     <span class="summary_desc"><div class='inline'><p>Command definition DSL.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mappers-instance_method" title="#mappers (instance method)">#<strong>mappers</strong>(&amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Mapper definition DSL.</p>
 </div></span>
   
 </li>
@@ -250,15 +273,55 @@
       <pre class="lines">
 
 
-50
 51
-52</pre>
+52
+53</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/configuration_dsl.rb', line 50</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/configuration_dsl.rb', line 51</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_commands'>commands</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_command'>register_command</span><span class='lparen'>(</span><span class='op'>*</span><span class='const'><span class='object_link'><a href="ConfigurationDSL/CommandDSL.html" title="ROM::ConfigurationDSL::CommandDSL (class)">CommandDSL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_default_adapter'>default_adapter</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_command_classes'><span class='object_link'><a href="ConfigurationDSL/CommandDSL.html#command_classes-instance_method" title="ROM::ConfigurationDSL::CommandDSL#command_classes (method)">command_classes</a></span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="mappers-instance_method">
+  
+    #<strong>mappers</strong>(&amp;block)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Mapper definition DSL</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58
+59
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/configuration_dsl.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_mappers'>mappers</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_mapper'>register_mapper</span><span class='lparen'>(</span><span class='op'>*</span><span class='const'><span class='object_link'><a href="ConfigurationDSL/MapperDSL.html" title="ROM::ConfigurationDSL::MapperDSL (class)">MapperDSL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='id identifier rubyid_mapper_classes'>mapper_classes</span><span class='comma'>,</span> <span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_mapper_classes'><span class='object_link'><a href="ConfigurationDSL/MapperDSL.html#mapper_classes-instance_method" title="ROM::ConfigurationDSL::MapperDSL#mapper_classes (method)">mapper_classes</a></span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -351,23 +414,27 @@
       <pre class="lines">
 
 
-71
-72
-73
-74
-75
-76
-77
-78
 79
-80</pre>
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/configuration_dsl.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/configuration_dsl.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_plugin'>plugin</span><span class='lparen'>(</span><span class='id identifier rubyid_adapter'>adapter</span><span class='comma'>,</span> <span class='id identifier rubyid_spec'>spec</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_spec'>spec</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_plugin'>plugin</span> <span class='op'>=</span> <span class='id identifier rubyid_plugin_registry'>plugin_registry</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_adapter'>adapter</span><span class='lparen'>(</span><span class='id identifier rubyid_adapter'>adapter</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_plugin_registry'>plugin_registry</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_plugin'>plugin</span> <span class='op'>=</span> <span class='id identifier rubyid_plugin_registry'>plugin_registry</span><span class='lbracket'>[</span><span class='id identifier rubyid_type'>type</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_adapter'>adapter</span><span class='lparen'>(</span><span class='id identifier rubyid_adapter'>adapter</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_plugin_registry'>plugin_registry</span><span class='lbracket'>[</span><span class='id identifier rubyid_type'>type</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
 
   <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
     <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='id identifier rubyid_plugin'>plugin</span><span class='period'>.</span><span class='id identifier rubyid_configure'>configure</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -417,17 +484,17 @@
       <pre class="lines">
 
 
-21
 22
 23
 24
 25
 26
 27
-28</pre>
+28
+29</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'core/lib/rom/configuration_dsl.rb', line 21</span>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/configuration_dsl.rb', line 22</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_relation'>relation</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_klass_opts'>klass_opts</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>adapter:</span> <span class='id identifier rubyid_default_adapter'>default_adapter</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
@@ -447,9 +514,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Apr 29 13:51:08 2019 by
+  Generated on Tue Sep 17 21:21:02 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.19 (ruby-2.6.3).
+  0.9.20 (ruby-2.6.3).
 </div>
 
     </div>

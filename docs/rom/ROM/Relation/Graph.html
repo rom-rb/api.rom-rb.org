@@ -6,7 +6,7 @@
 <title>
   Class: ROM::Relation::Graph
   
-    &mdash; Documentation by YARD 0.9.19
+    &mdash; Documentation by YARD 0.9.20
   
 </title>
 
@@ -99,14 +99,16 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>core/lib/rom/relation/graph.rb</dd>
+    <dd>core/lib/rom/relation/graph.rb<span class="defines">,<br />
+  changeset/lib/rom/changeset/extensions/relation.rb</span>
+</dd>
   </dl>
   
 </div>
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>Abstract relation graph class</p>
+    <p>Changeset extenions for combined relations</p>
 
 
   </div>
@@ -197,6 +199,29 @@
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#changeset-instance_method" title="#changeset (instance method)">#<strong>changeset</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Build a changeset for a combined relation.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -564,7 +589,64 @@
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="each-instance_method">
+  <h3 class="signature first" id="changeset-instance_method">
+  
+    #<strong>changeset</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Build a changeset for a combined relation</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><p>NotImplementedError</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'changeset/lib/rom/changeset/extensions/relation.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_changeset'>changeset</span><span class='lparen'>(</span><span class='op'>*</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Changeset doesn&#39;t support combined relations yet</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="each-instance_method">
   
     #<strong>each</strong> {|Hash, Object| ... } &#x21d2; <tt>Object</tt> 
   
@@ -974,9 +1056,9 @@
 </div>
 
       <div id="footer">
-  Generated on Mon Apr 29 13:51:17 2019 by
+  Generated on Tue Sep 17 21:21:12 2019 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.19 (ruby-2.6.3).
+  0.9.20 (ruby-2.6.3).
 </div>
 
     </div>
