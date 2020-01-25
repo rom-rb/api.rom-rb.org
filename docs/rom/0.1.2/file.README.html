@@ -57,23 +57,21 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'>
-<h1 id="label-Ruby+Object+Mapper">Ruby Object Mapper</h1>
+      <div id="content"><div id='filecontents'><h1>Ruby Object Mapper</h1>
 
 <p>This is a meta-project grouping pieces of ROM&#39;s default stack:</p>
-<ul><li>
-<p><a href="https://github.com/rom-rb/rom-relation">rom-relation</a></p>
-</li><li>
-<p><a href="https://github.com/rom-rb/rom-mapper">rom-mapper</a></p>
-</li><li>
-<p><a href="https://github.com/rom-rb/rom-session">rom-session</a></p>
-</li></ul>
 
-<h2 id="label-Getting+started">Getting started</h2>
+<ul>
+<li><a href="https://github.com/rom-rb/rom-relation">rom-relation</a></li>
+<li><a href="https://github.com/rom-rb/rom-mapper">rom-mapper</a></li>
+<li><a href="https://github.com/rom-rb/rom-session">rom-session</a></li>
+</ul>
 
-<h3 id="label-1.+Set+up+environment+and+define+schema">1. Set up environment and define schema</h3>
+<h2>Getting started</h2>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rom</span><span class='tstring_end'>&#39;</span></span>
+<h3>1. Set up environment and define schema</h3>
+
+<pre class="code ruby"><code class="ruby">  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rom</span><span class='tstring_end'>&#39;</span></span>
 
   <span class='id identifier rubyid_env'>env</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'>Environment</span><span class='period'>.</span><span class='id identifier rubyid_setup'>setup</span><span class='lparen'>(</span><span class='label'>memory:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>memory://test</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
@@ -89,9 +87,9 @@
   <span class='kw'>end</span>
 </code></pre>
 
-<h3 id="label-2.+Set+up+mapping">2. Set up mapping</h3>
+<h3>2. Set up mapping</h3>
 
-<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>User</span>
+<pre class="code ruby"><code class="ruby">  <span class='kw'>class</span> <span class='const'>User</span>
     <span class='id identifier rubyid_attr_reader'>attr_reader</span> <span class='symbol'>:id</span><span class='comma'>,</span> <span class='symbol'>:name</span>
 
     <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span>
@@ -107,9 +105,9 @@
   <span class='kw'>end</span>
 </code></pre>
 
-<h3 id="label-3.+Work+with+Plain+Old+Ruby+Objects">3. Work with Plain Old Ruby Objects</h3>
+<h3>3. Work with Plain Old Ruby Objects</h3>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_env'>env</span><span class='period'>.</span><span class='id identifier rubyid_session'>session</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_session'>session</span><span class='op'>|</span>
+<pre class="code ruby"><code class="ruby">  <span class='id identifier rubyid_env'>env</span><span class='period'>.</span><span class='id identifier rubyid_session'>session</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_session'>session</span><span class='op'>|</span>
     <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:users</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span><span class='lparen'>(</span><span class='const'>User</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>id:</span> <span class='int'>1</span><span class='comma'>,</span> <span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Jane</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_session'>session</span><span class='period'>.</span><span class='id identifier rubyid_commit'>commit</span>
   <span class='kw'>end</span>
@@ -117,24 +115,22 @@
   <span class='id identifier rubyid_jane'>jane</span> <span class='op'>=</span> <span class='id identifier rubyid_env'>env</span><span class='lbracket'>[</span><span class='symbol'>:users</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_restrict'>restrict</span><span class='lparen'>(</span><span class='label'>name:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Jane</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_one'>one</span>
 </code></pre>
 
-<h2 id="label-Authors">Authors</h2>
-<ul><li>
-<p><a href="https://github.com/dkubb">Dan Kubb</a></p>
-</li><li>
-<p><a href="https://github.com/mbj">Markus Schirp</a></p>
-</li><li>
-<p><a href="https://github.com/snusnu">Martin Gamsjaeger</a></p>
-</li><li>
-<p><a href="https://github.com/solnic">Piotr Solnica</a></p>
-</li></ul>
+<h2>Authors</h2>
 
-<h2 id="label-Licence">Licence</h2>
+<ul>
+<li><a href="https://github.com/dkubb">Dan Kubb</a></li>
+<li><a href="https://github.com/mbj">Markus Schirp</a></li>
+<li><a href="https://github.com/snusnu">Martin Gamsjaeger</a></li>
+<li><a href="https://github.com/solnic">Piotr Solnica</a></li>
+</ul>
+
+<h2>Licence</h2>
 
 <p>See <code>LICENSE</code> file.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Sat Jan 25 18:58:45 2020 by
+  Generated on Sat Jan 25 19:17:30 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.5).
 </div>

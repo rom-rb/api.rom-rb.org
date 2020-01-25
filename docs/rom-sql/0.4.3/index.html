@@ -57,18 +57,22 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'>
-<h1 id="label-ROM-3A-3ASQL">ROM::SQL</h1>
+      <div id="content"><div id='filecontents'><h1>ROM::SQL</h1>
 
-<p><a href="https://rubygems.org/gems/rom-sql"><img src="https://badge.fury.io/rb/rom-sql.svg"></a> <a href="https://travis-ci.org/rom-rb/rom-sql"><img src="https://travis-ci.org/rom-rb/rom-sql.svg?branch=master"></a> <a href="https://gemnasium.com/rom-rb/rom-sql"><img src="https://gemnasium.com/rom-rb/rom-sql.png"></a> <a href="https://codeclimate.com/github/rom-rb/rom-sql"><img src="https://codeclimate.com/github/rom-rb/rom-sql/badges/gpa.svg"></a> <a href="https://codeclimate.com/github/rom-rb/rom-sql"><img src="https://codeclimate.com/github/rom-rb/rom-sql/badges/coverage.svg"></a> <a href="http://inch-ci.org/github/rom-rb/rom-sql"><img src="http://inch-ci.org/github/rom-rb/rom-sql.svg?branch=master"></a></p>
+<p><a href="https://rubygems.org/gems/rom-sql"><img src="https://badge.fury.io/rb/rom-sql.svg" alt="Gem Version"></a>
+<a href="https://travis-ci.org/rom-rb/rom-sql"><img src="https://travis-ci.org/rom-rb/rom-sql.svg?branch=master" alt="Build Status"></a>
+<a href="https://gemnasium.com/rom-rb/rom-sql"><img src="https://gemnasium.com/rom-rb/rom-sql.png" alt="Dependency Status"></a>
+<a href="https://codeclimate.com/github/rom-rb/rom-sql"><img src="https://codeclimate.com/github/rom-rb/rom-sql/badges/gpa.svg" alt="Code Climate"></a>
+<a href="https://codeclimate.com/github/rom-rb/rom-sql"><img src="https://codeclimate.com/github/rom-rb/rom-sql/badges/coverage.svg" alt="Test Coverage"></a>
+<a href="http://inch-ci.org/github/rom-rb/rom-sql"><img src="http://inch-ci.org/github/rom-rb/rom-sql.svg?branch=master" alt="Inline docs"></a></p>
 
 <p>RDBMS support for <a href="https://github.com/rom-rb/rom">Ruby Object Mapper</a>.</p>
 
-<h2 id="label-Issues">Issues</h2>
+<h2>Issues</h2>
 
 <p>Please report any issues in the main <a href="https://github.com/rom-rb/rom/issues">rom-rb/rom</a> issue tracker.</p>
 
-<h2 id="label-Installation">Installation</h2>
+<h2>Installation</h2>
 
 <p>Add this line to your application&#39;s Gemfile:</p>
 
@@ -85,9 +89,13 @@
 <pre class="code ruby"><code class="ruby">$ gem install rom-sql
 </code></pre>
 
-<h2 id="label-Setup">Setup</h2>
+<h2>Setup</h2>
 
-<p>ROM uses <a href="http://sequel.jeremyevans.net">Sequel</a> under the hood and exposes its <a href="http://sequel.jeremyevans.net/rdoc/files/doc/dataset_basics_rdoc.html">Dataset API</a> in relation objects. For schema migrations you can use its <a href="http://sequel.jeremyevans.net/rdoc/files/doc/migration_rdoc.html">Migration API</a> which is available via repositories.</p>
+<p>ROM uses <a href="http://sequel.jeremyevans.net">Sequel</a> under the hood and exposes its
+<a href="http://sequel.jeremyevans.net/rdoc/files/doc/dataset_basics_rdoc.html">Dataset API</a>
+in relation objects. For schema migrations you can use its
+<a href="http://sequel.jeremyevans.net/rdoc/files/doc/migration_rdoc.html">Migration API</a>
+which is available via repositories.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>rom-sql</span><span class='tstring_end'>&quot;</span></span>
 <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sqlite3</span><span class='tstring_end'>&quot;</span></span>
@@ -107,7 +115,7 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<h2 id="label-Relations">Relations</h2>
+<h2>Relations</h2>
 
 <pre class="code ruby"><code class="ruby">
 <span class='kw'>class</span> <span class='const'>Users</span> <span class='op'>&lt;</span> <span class='const'><span class='object_link'><a href="ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'>Relation</span><span class='lbracket'>[</span><span class='symbol'>:sql</span><span class='rbracket'>]</span>
@@ -131,13 +139,19 @@
 <span class='comment'># =&gt; [{:id=&gt;1, :name=&gt;&quot;Piotr&quot;, :user_id=&gt;1}]
 </span></code></pre>
 
-<h2 id="label-Mapping+joins+to+aggregates">Mapping joins to aggregates</h2>
+<h2>Mapping joins to aggregates</h2>
 
-<p>ROM doesn&#39;t have a relationship concept like in ActiveRecord or Sequel. Instead it provides a convenient interface for building joined relations that can be mapped to <a href="http://martinfowler.com/bliki/Aggregate.html">aggregate objects</a>.</p>
+<p>ROM doesn&#39;t have a relationship concept like in ActiveRecord or Sequel. Instead
+it provides a convenient interface for building joined relations that can be
+mapped to <a href="http://martinfowler.com/bliki/Aggregate.html">aggregate objects</a>.</p>
 
-<p>There&#39;s no lazy-loading, eager-loading or any other magic happening behind the scenes. You&#39;re in full control of how data are fetched from the database and it&#39;s an explicit operation.</p>
+<p>There&#39;s no lazy-loading, eager-loading or any other magic happening behind the
+scenes. You&#39;re in full control of how data are fetched from the database and it&#39;s
+an explicit operation.</p>
 
-<p>Sequel&#39;s association DSL is available in relation definitions which enables <code>association_join</code> interface inside relations. To map joined results to aggregate objects <code>wrap</code> and <code>group</code> mapping transformation can be used</p>
+<p>Sequel&#39;s association DSL is available in relation definitions which enables
+<code>association_join</code> interface inside relations. To map joined results to
+aggregate objects <code>wrap</code> and <code>group</code> mapping transformation can be used</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'><span class='object_link'><a href="ROM.html" title="ROM (module)">ROM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_setup'>setup</span><span class='lparen'>(</span><span class='symbol'>:sql</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>sqlite::memory</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 
@@ -177,17 +191,17 @@
 <span class='comment'># =&gt; [#&lt;User:0x007fb31542a098 @id=1, @name=&quot;Piotr&quot;, @tasks=[{:title=&gt;&quot;Be happy&quot;}]&gt;]
 </span></code></pre>
 
-<h2 id="label-ROADMAP">ROADMAP</h2>
+<h2>ROADMAP</h2>
 
 <p>For details please refer to <a href="https://github.com/rom-rb/rom-sql/issues">issues</a>.</p>
 
-<h2 id="label-License">License</h2>
+<h2>License</h2>
 
 <p>See <code>LICENSE</code> file.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Sat Jan 25 19:01:33 2020 by
+  Generated on Sat Jan 25 19:20:10 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.5).
 </div>

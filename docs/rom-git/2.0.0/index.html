@@ -57,12 +57,12 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'>
-<h1 id="label-ROM-3A-3AGit+rdoc-image-3Ahttps-3A-2F-2Fsecure.travis-ci.org-2From-rb-2From-git.png">ROM::Git <a href="http://travis-ci.org/rom-rb/rom-git"><img src="https://secure.travis-ci.org/rom-rb/rom-git.png"></a></h1>
+      <div id="content"><div id='filecontents'><h1>ROM::Git <a href="http://travis-ci.org/rom-rb/rom-git"><img src="https://secure.travis-ci.org/rom-rb/rom-git.png" alt="Travis"></a></h1>
 
-<p>Minimal Git support for <a href="https://github.com/rom-rb/rom">Ruby Object Mapper</a>. Currently only supports reading from the repository.</p>
+<p>Minimal Git support for <a href="https://github.com/rom-rb/rom">Ruby Object Mapper</a>.
+Currently only supports reading from the repository.</p>
 
-<h2 id="label-Installation">Installation</h2>
+<h2>Installation</h2>
 
 <p>Add this line to your application&#39;s Gemfile:</p>
 
@@ -84,9 +84,9 @@
 <pre class="code ruby"><code class="ruby">$ rake console
 </code></pre>
 
-<h2 id="label-Usage">Usage</h2>
+<h2>Usage</h2>
 
-<h3 id="label-Set+up+the+adapter-2C+relation+and+mapper">Set up the adapter, relation and mapper</h3>
+<h3>Set up the adapter, relation and mapper</h3>
 
 <pre class="code ruby"><code class="ruby">setup = ROM.setup(&quot;git://path/to_some_git_repo&quot;, branch: &#39;refs/heads/master&#39;)
 
@@ -124,7 +124,7 @@ end
 rom = setup.finalize
 </code></pre>
 
-<h3 id="label-Find+commits+by+committer">Find commits by committer</h3>
+<h3>Find commits by committer</h3>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_commit'>commit</span> <span class='op'>=</span> <span class='id identifier rubyid_rom'>rom</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='symbol'>:commits</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_by_committer'>by_committer</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Franck Verrot</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
 
@@ -133,12 +133,12 @@ rom = setup.finalize
 </span><span class='id identifier rubyid_commit'>commit</span><span class='period'>.</span><span class='id identifier rubyid_committer'>committer</span> <span class='comment'># =&gt; &#39;Franck Verrot&#39;
 </span></code></pre>
 
-<h3 id="label-Get+a+relation-27s+attributes">Get a relation&#39;s attributes</h3>
+<h3>Get a relation&#39;s attributes</h3>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_rom'>rom</span><span class='period'>.</span><span class='id identifier rubyid_relations'>relations</span><span class='period'>.</span><span class='id identifier rubyid_commits'>commits</span><span class='period'>.</span><span class='id identifier rubyid_header'>header</span> <span class='comment'># =&gt; %w(sha1 message committer)
 </span></code></pre>
 
-<h3 id="label-Find+a+commit+by+its+SHA1">Find a commit by its SHA1</h3>
+<h3>Find a commit by its SHA1</h3>
 
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_sha1'>sha1</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>fe326fd5cb986e6ef3d83f02857fb5bc10333aa4</span><span class='tstring_end'>&#39;</span></span>
 <span class='id identifier rubyid_commit'>commit</span> <span class='op'>=</span> <span class='id identifier rubyid_subject'>subject</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='symbol'>:commits</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_find_commit'>find_commit</span><span class='lparen'>(</span><span class='id identifier rubyid_sha1'>sha1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span><span class='period'>.</span><span class='id identifier rubyid_first'>first</span>
@@ -148,26 +148,24 @@ rom = setup.finalize
 </span><span class='id identifier rubyid_commit'>commit</span><span class='period'>.</span><span class='id identifier rubyid_committer'>committer</span> <span class='comment'># =&gt; &#39;Franck Verrot&#39;
 </span></code></pre>
 
-<h2 id="label-Contributing">Contributing</h2>
-<ol><li>
-<p>Fork it ( <a href="https://github.com/franckverrot/rom-git/fork">github.com/franckverrot/rom-git/fork</a> )</p>
-</li><li>
-<p>Create your feature branch (<code>git checkout -b my-new-feature</code>)</p>
-</li><li>
-<p>Commit your changes (<code>git commit -am &#39;Add some feature&#39;</code>)</p>
-</li><li>
-<p>Push to the branch (<code>git push origin my-new-feature</code>)</p>
-</li><li>
-<p>Create new Pull Request</p>
-</li></ol>
+<h2>Contributing</h2>
 
-<h2 id="label-License">License</h2>
+<ol>
+<li>Fork it ( <a href="https://github.com/franckverrot/rom-git/fork">https://github.com/franckverrot/rom-git/fork</a> )</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am &#39;Add some feature&#39;</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
 
-<p>MIT License - Copyright 2015 Franck Verrot See LICENSE.txt for details.</p>
+<h2>License</h2>
+
+<p>MIT License - Copyright 2015 Franck Verrot
+See LICENSE.txt for details.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Sat Jan 25 19:03:10 2020 by
+  Generated on Sat Jan 25 19:20:43 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.5).
 </div>

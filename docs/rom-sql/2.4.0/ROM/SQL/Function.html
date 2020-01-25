@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: ROM::SQL::Function
+  
+    &mdash; Documentation by YARD 0.9.24
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "ROM::SQL::Function";
+  relpath = '../../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../../_index.html">Index (F)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../SQL.html" title="ROM::SQL (module)">SQL</a></span></span>
+     &raquo; 
+    <span class="title">Function</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: ROM::SQL::Function
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Attribute</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Attribute</li>
+          
+            <li class="next">ROM::SQL::Function</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/rom/sql/function.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Specialized attribute type for defining SQL functions</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#cast-instance_method" title="#cast (instance method)">#<strong>cast</strong>(expr, db_type = TypeSerializer[:default].call(type))  &#x21d2; ROM::SQL::Attribute </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Convert an expression result to another data type.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#filter-instance_method" title="#filter (instance method)">#<strong>filter</strong>(condition = Undefined) {|block| ... } &#x21d2; SQL::Function </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Add a FILTER clause to aggregate function (supported by PostgreSQL 9.4+) Filter aggregate using the specified conditions.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#is-instance_method" title="#is (instance method)">#<strong>is</strong>(other)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#not-instance_method" title="#not (instance method)">#<strong>not</strong>(other)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#over-instance_method" title="#over (instance method)">#<strong>over</strong>(partition: nil, order: nil, frame: nil)  &#x21d2; SQL::Function </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Add an OVER clause making a window function call.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="method_missing_details" class="method_details_list">
+  <h2>Dynamic Method Handling</h2>
+  <p class="notice this">
+    This class handles dynamic methods through the <tt>method_missing</tt> method
+    
+  </p>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="method_missing-instance_method">
+  
+    #<strong>method_missing</strong>(meth, *args)  &#x21d2; <tt>Object</tt>  <span class="extras">(private)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p class="note private">
+  <strong>This method is part of a private API.</strong>
+  You should avoid using this method if possible, as it may be removed or be changed in the future.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 174</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_method_missing'>method_missing</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_func'>func</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_func'>func</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>func:</span> <span class='id identifier rubyid_func'>func</span><span class='period'>.</span><span class='id identifier rubyid___send__'>__send__</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='kw'>super</span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>func:</span> <span class='const'>Sequel</span><span class='op'>::</span><span class='const'>SQL</span><span class='op'>::</span><span class='const'>Function</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_meth'>meth</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span><span class='comma'>,</span> <span class='op'>*</span><span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="cast-instance_method">
+  
+    #<strong>cast</strong>(expr, db_type = TypeSerializer[:default].call(type))  &#x21d2; <tt><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">ROM::SQL::Attribute</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Convert an expression result to another data type</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_bool'>bool</span><span class='op'>::</span><span class='id identifier rubyid_cast'>cast</span><span class='lparen'>(</span><span class='id identifier rubyid_json_data'>json_data</span><span class='period'>.</span><span class='id identifier rubyid_get_text'>get_text</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>activated</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='symbol'>:boolean</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as'>as</span><span class='lparen'>(</span><span class='symbol'>:activated</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_bool'>bool</span><span class='op'>::</span><span class='id identifier rubyid_cast'>cast</span><span class='lparen'>(</span><span class='id identifier rubyid_json_data'>json_data</span><span class='period'>.</span><span class='id identifier rubyid_get_text'>get_text</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>activated</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as'>as</span><span class='lparen'>(</span><span class='symbol'>:activated</span><span class='rparen'>)</span> <span class='rbrace'>}</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>expr</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">ROM::SQL::Attribute</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Expression to be cast</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>db_type</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>TypeSerializer[:default].call(type)</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>Target database type (usually can be inferred from the target data type)</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">ROM::SQL::Attribute</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+131
+132
+133</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 131</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_cast'>cast</span><span class='lparen'>(</span><span class='id identifier rubyid_expr'>expr</span><span class='comma'>,</span> <span class='id identifier rubyid_db_type'>db_type</span> <span class='op'>=</span> <span class='const'>TypeSerializer</span><span class='lbracket'>[</span><span class='symbol'>:default</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">Attribute</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_type'>type</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span><span class='label'>sql_expr:</span> <span class='op'>::</span><span class='const'>Sequel</span><span class='period'>.</span><span class='id identifier rubyid_cast'>cast</span><span class='lparen'>(</span><span class='id identifier rubyid_expr'>expr</span><span class='comma'>,</span> <span class='id identifier rubyid_db_type'>db_type</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="filter-instance_method">
+  
+    #<strong>filter</strong>(condition = Undefined) {|block| ... } &#x21d2; <tt><span class='object_link'><a href="" title="ROM::SQL::Function (class)">SQL::Function</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Add a FILTER clause to aggregate function (supported by PostgreSQL 9.4+)
+Filter aggregate using the specified conditions</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code>users.project { int::count(:id).filter(name.is(&quot;Jack&quot;)).as(:jacks) }.order(nil)
+users.project { int::count(:id).filter { name.is(&quot;John&quot;) }).as(:johns) }.order(nil)</code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>Conditions</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>, <tt><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">SQL::Attribute</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Yields:</p>
+<ul class="yield">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>block</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A block with restrictions</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="ROM::SQL::Function (class)">SQL::Function</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://www.postgresql.org/docs/current/static/sql-expressions.html" target="_parent" title="https://www.postgresql.org/docs/current/static/sql-expressions.html">https://www.postgresql.org/docs/current/static/sql-expressions.html</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 150</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_filter'>filter</span><span class='lparen'>(</span><span class='id identifier rubyid_condition'>condition</span> <span class='op'>=</span> <span class='const'>Undefined</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>=</span> <span class='id identifier rubyid_schema'>schema</span><span class='period'>.</span><span class='id identifier rubyid_restriction'>restriction</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>=</span> <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>&amp;</span> <span class='id identifier rubyid_condition'>condition</span> <span class='kw'>unless</span> <span class='id identifier rubyid_condition'>condition</span><span class='period'>.</span><span class='id identifier rubyid_equal?'>equal?</span><span class='lparen'>(</span><span class='const'>Undefined</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_conditions'>conditions</span> <span class='op'>=</span> <span class='id identifier rubyid_condition'>condition</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='id identifier rubyid_conditions'>conditions</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="is-instance_method">
+  
+    #<strong>is</strong>(other)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Attribute.html#is-instance_method" title="ROM::SQL::Attribute#is (method)">Attribute#is</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66
+67
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 66</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_is'>is</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
+  <span class='op'>::</span><span class='const'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../SQL.html" title="ROM::SQL (module)">SQL</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Attribute.html" title="ROM::SQL::Attribute (class)">Attribute</a></span></span><span class='lbracket'>[</span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../SQL.html" title="ROM::SQL (module)">SQL</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Types.html" title="ROM::SQL::Types (module)">Types</a></span></span><span class='op'>::</span><span class='const'>Bool</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_meta'>meta</span><span class='lparen'>(</span>
+    <span class='label'>sql_expr:</span> <span class='op'>::</span><span class='const'>Sequel</span><span class='op'>::</span><span class='const'>SQL</span><span class='op'>::</span><span class='const'>BooleanExpression</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:&#39;=&#39;</span><span class='comma'>,</span> <span class='id identifier rubyid_func'>func</span><span class='comma'>,</span> <span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
+  <span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="not-instance_method">
+  
+    #<strong>not</strong>(other)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Attribute.html#not-instance_method" title="ROM::SQL::Attribute#not (method)">Attribute#not</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75
+76
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='kw'>not</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
+  <span class='op'>!</span><span class='id identifier rubyid_is'>is</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="over-instance_method">
+  
+    #<strong>over</strong>(partition: nil, order: nil, frame: nil)  &#x21d2; <tt><span class='object_link'><a href="" title="ROM::SQL::Function (class)">SQL::Function</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Add an OVER clause making a window function call</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='lbracket'>[</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_int'>int</span><span class='op'>::</span><span class='id identifier rubyid_row_number'>row_number</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>partition:</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>order:</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as'>as</span><span class='lparen'>(</span><span class='symbol'>:row_no</span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_users'>users</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span> <span class='lbracket'>[</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_int'>int</span><span class='op'>::</span><span class='id identifier rubyid_row_number'>row_number</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>partition:</span> <span class='lbracket'>[</span><span class='id identifier rubyid_first_name'>first_name</span><span class='comma'>,</span> <span class='id identifier rubyid_last_name'>last_name</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>order:</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_as'>as</span><span class='lparen'>(</span><span class='symbol'>:row_no</span><span class='rparen'>)</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'><p>frame variants</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='comment'># ROWS BETWEEN 3 PRECEDING AND CURRENT ROW
+</span><span class='id identifier rubyid_row_number'>row_number</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>frame:</span> <span class='lbrace'>{</span> <span class='label'>rows:</span> <span class='lbracket'>[</span><span class='op'>-</span><span class='int'>3</span><span class='comma'>,</span> <span class='symbol'>:current</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+
+<span class='comment'># ROWS BETWEEN 3 PRECEDING AND 3 FOLLOWING
+</span><span class='id identifier rubyid_row_number'>row_number</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>frame:</span> <span class='lbrace'>{</span> <span class='label'>rows:</span> <span class='lbracket'>[</span><span class='op'>-</span><span class='int'>3</span><span class='comma'>,</span> <span class='int'>3</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+
+<span class='comment'># ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+</span><span class='id identifier rubyid_row_number'>row_number</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>frame:</span> <span class='lbrace'>{</span> <span class='label'>rows:</span> <span class='lbracket'>[</span><span class='symbol'>:start</span><span class='comma'>,</span> <span class='symbol'>:current</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='rparen'>)</span>
+
+<span class='comment'># ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING
+</span><span class='id identifier rubyid_row_number'>row_number</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>frame:</span> <span class='lbrace'>{</span> <span class='label'>rows:</span> <span class='lbracket'>[</span><span class='symbol'>:current</span><span class='comma'>,</span> <span class='symbol'>:end</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='rparen'>)</span></code></pre>
+    
+      
+        <p class="example_title"><div class='inline'><p>frame shortcuts</p>
+</div></p>
+      
+      <pre class="example code"><code><span class='comment'># ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+</span><span class='id identifier rubyid_row_number'>row_number</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>frame:</span> <span class='symbol'>:all</span><span class='rparen'>)</span>
+
+<span class='comment'># ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+</span><span class='id identifier rubyid_row_number'>row_number</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>frame:</span> <span class='symbol'>:rows</span><span class='rparen'>)</span>
+
+<span class='comment'># RANGE BETWEEN CURRENT ROW AND CURRENT ROW
+</span><span class='id identifier rubyid_row_number'>row_number</span><span class='period'>.</span><span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>frame:</span> <span class='lbrace'>{</span> <span class='label'>range:</span> <span class='symbol'>:current</span><span class='rbrace'>}</span> <span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>:partition</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>a customizable set of options</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:order</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>a customizable set of options</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:frame</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>a customizable set of options</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    
+    
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="ROM::SQL::Function (class)">SQL::Function</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://www.postgresql.org/docs/9.6/static/tutorial-window.html" target="_parent" title="https://www.postgresql.org/docs/9.6/static/tutorial-window.html">https://www.postgresql.org/docs/9.6/static/tutorial-window.html</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+115
+116
+117</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom/sql/function.rb', line 115</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_over'>over</span><span class='lparen'>(</span><span class='label'>partition:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>order:</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='label'>frame:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>super</span><span class='lparen'>(</span><span class='label'>partition:</span> <span class='id identifier rubyid_partition'>partition</span><span class='comma'>,</span> <span class='label'>order:</span> <span class='id identifier rubyid_order'>order</span><span class='comma'>,</span> <span class='label'>frame:</span> <span class='const'>WINDOW_FRAMES</span><span class='lbracket'>[</span><span class='id identifier rubyid_frame'>frame</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Jan 25 19:18:18 2020 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.24 (ruby-2.6.5).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -57,14 +57,18 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'>
-<h1 id="label-rom-rails">rom-rails</h1>
+      <div id="content"><div id='filecontents'><h1>rom-rails</h1>
 
-<p><a href="https://rubygems.org/gems/rom-rails"><img src="https://badge.fury.io/rb/rom-rails.svg"></a> <a href="https://travis-ci.org/rom-rb/rom-rails"><img src="https://travis-ci.org/rom-rb/rom-rails.svg?branch=master"></a> <a href="https://gemnasium.com/rom-rb/rom-rails"><img src="https://gemnasium.com/rom-rb/rom-rails.png"></a> <a href="https://codeclimate.com/github/rom-rb/rom-rails"><img src="https://codeclimate.com/github/rom-rb/rom-rails/badges/gpa.svg"></a> <a href="https://codeclimate.com/github/rom-rb/rom-rails"><img src="https://codeclimate.com/github/rom-rb/rom-rails/badges/coverage.svg"></a> <a href="http://inch-ci.org/github/rom-rb/rom-rails"><img src="http://inch-ci.org/github/rom-rb/rom-rails.svg?branch=master"></a></p>
+<p><a href="https://rubygems.org/gems/rom-rails"><img src="https://badge.fury.io/rb/rom-rails.svg" alt="Gem Version"></a>
+<a href="https://travis-ci.org/rom-rb/rom-rails"><img src="https://travis-ci.org/rom-rb/rom-rails.svg?branch=master" alt="Build Status"></a>
+<a href="https://gemnasium.com/rom-rb/rom-rails"><img src="https://gemnasium.com/rom-rb/rom-rails.png" alt="Dependency Status"></a>
+<a href="https://codeclimate.com/github/rom-rb/rom-rails"><img src="https://codeclimate.com/github/rom-rb/rom-rails/badges/gpa.svg" alt="Code Climate"></a>
+<a href="https://codeclimate.com/github/rom-rb/rom-rails"><img src="https://codeclimate.com/github/rom-rb/rom-rails/badges/coverage.svg" alt="Test Coverage"></a>
+<a href="http://inch-ci.org/github/rom-rb/rom-rails"><img src="http://inch-ci.org/github/rom-rb/rom-rails.svg?branch=master" alt="Inline docs"></a></p>
 
 <p>Rails integration for <a href="https://github.com/rom-rb/rom">Ruby Object Mapper</a>.</p>
 
-<h2 id="label-Installation+and+setup">Installation and setup</h2>
+<h2>Installation and setup</h2>
 
 <p>In your Gemfile:</p>
 
@@ -72,17 +76,23 @@
 <span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rom-rails</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
 
-<h2 id="label-Schema">Schema</h2>
+<h2>Schema</h2>
 
-<p>Defining schema is only required for adapters that don&#39;t support inferring schema automatically. This means if you&#39;re using <code>rom-sql</code> you don&#39;t have to define the schema. In other cases the railtie expects the schema to be in <code>db/rom/schema.rb</code> which is loaded before relations and mappers.</p>
+<p>Defining schema is only required for adapters that don&#39;t support inferring schema
+automatically. This means if you&#39;re using <code>rom-sql</code> you don&#39;t have to define the schema.
+In other cases the railtie expects the schema to be in <code>db/rom/schema.rb</code> which
+is loaded before relations and mappers.</p>
 
-<h2 id="label-Relations+and+mappers">Relations and mappers</h2>
+<h2>Relations and mappers</h2>
 
-<p>The railtie automatically loads relations and mappers from <code>app/relations</code> and <code>app/mappers</code> and finalizes the environment afterwards. During the booting process rom&#39;s setup object is available via <code>Rails.application.config.rom.setup</code>.</p>
+<p>The railtie automatically loads relations and mappers from <code>app/relations</code> and
+<code>app/mappers</code> and finalizes the environment afterwards. During the booting process
+rom&#39;s setup object is available via <code>Rails.application.config.rom.setup</code>.</p>
 
-<h2 id="label-Relations+in+controllers">Relations in controllers</h2>
+<h2>Relations in controllers</h2>
 
-<p>The recommended way of using relations in controllers is to specify which relations are needed for particular actions using a DSL provided by the railtie:</p>
+<p>The recommended way of using relations in controllers is to specify which relations
+are needed for particular actions using a DSL provided by the railtie:</p>
 
 <pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>UsersController</span> <span class='op'>&lt;</span> <span class='const'>ApplicationController</span>
   <span class='id identifier rubyid_relation'>relation</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>users.index</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>only:</span> <span class='symbol'>:index</span>
@@ -98,34 +108,37 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<p>By doing this actions will have access to <code>users</code> which is also set as a helper method making it available in the views.</p>
+<p>By doing this actions will have access to <code>users</code> which is also set as a helper
+method making it available in the views.</p>
 
-<p>This means <strong>no database interaction will take place in the views or helpers</strong> as ROM materializes relations when “injecting” them into controller actions.</p>
+<p>This means <strong>no database interaction will take place in the views or helpers</strong>
+as ROM materializes relations when &quot;injecting&quot; them into controller actions.</p>
 
-<h2 id="label-Status">Status</h2>
+<h2>Status</h2>
 
-<p>This project is still in beta state. For examples of usage please take a look at <code>spec/dummy</code> app.</p>
+<p>This project is still in beta state. For examples of usage please take a look
+at <code>spec/dummy</code> app.</p>
 
 <p>Proper documentation will be added once the interface is stable.</p>
 
-<h2 id="label-Roadmap">Roadmap</h2>
+<h2>Roadmap</h2>
 
 <p>Please refer to <a href="https://github.com/rom-rb/rom-rails/issues">issues</a>.</p>
 
-<h2 id="label-Community">Community</h2>
-<ul><li>
-<p><a href="https://gitter.im/rom-rb/chat"><img src="https://badges.gitter.im/rom-rb/chat.png"></a></p>
-</li><li>
-<p><a href="https://groups.google.com/forum/#!forum/rom-rb">Ruby Object Mapper</a> mailing list</p>
-</li></ul>
+<h2>Community</h2>
 
-<h2 id="label-License">License</h2>
+<ul>
+<li><a href="https://gitter.im/rom-rb/chat"><img src="https://badges.gitter.im/rom-rb/chat.png" alt="Gitter chat"></a></li>
+<li><a href="https://groups.google.com/forum/#!forum/rom-rb">Ruby Object Mapper</a> mailing list</li>
+</ul>
+
+<h2>License</h2>
 
 <p>See <code>LICENSE</code> file.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Sat Jan 25 19:03:33 2020 by
+  Generated on Sat Jan 25 19:21:21 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.5).
 </div>

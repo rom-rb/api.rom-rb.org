@@ -57,16 +57,15 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'>
-<h1 id="label-rom-roda">rom-roda</h1>
+      <div id="content"><div id='filecontents'><h1>rom-roda</h1>
 
 <p>Roda plugin for <a href="https://github.com/rom-rb/rom">Ruby Object Mapper</a>.</p>
 
-<h2 id="label-Issues">Issues</h2>
+<h2>Issues</h2>
 
 <p>Please report any issues in the <a href="https://github.com/rom-rb/rom-roda/issues/new">issue tracker</a>.</p>
 
-<h2 id="label-Usage">Usage</h2>
+<h2>Usage</h2>
 
 <p>In your app file, require <code>rom-roda</code> and any additional adapter Gems needed to set up your data sources:</p>
 
@@ -74,7 +73,7 @@
 <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rom-sql</span><span class='tstring_end'>&#39;</span></span>
 </code></pre>
 
-<h3 id="label-Setup">Setup</h3>
+<h3>Setup</h3>
 
 <p>Embed a ROM environment in your Roda app using the <code>plugin</code> hook:</p>
 
@@ -90,7 +89,7 @@
 
 <p>Options passed to the environment under the <code>:setup</code> key are used to set up one or more adapters, using the <a href="http://www.rubydoc.info/gems/rom/ROM/Global#setup-instance_method">repository args format</a> supported by <code>ROM.setup</code>.</p>
 
-<p>Plugins passed to the environment under the <code>:plugins</code> key will be applied to the environment.</p>
+<p>Plugins passed to the environment under the <code>:plugins</code> key will be applied to the environment. </p>
 
 <p>To register a single <code>sql</code> repository with an Sqlite data source and use the <code>auto_registration</code> environment plugin:</p>
 
@@ -142,7 +141,7 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<h3 id="label-Loading+ROM+components">Loading ROM components</h3>
+<h3>Loading ROM components</h3>
 
 <p>Relations, commands and mappers need to be registered with the ROM environment before the environment is finalized (this can also be done via the <code>auto_registration</code> plugin). This means that these components must be required by the app in a specific order during setup.</p>
 
@@ -191,11 +190,11 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<h3 id="label-Using+ROM+in+Roda+routes">Using ROM in Roda routes</h3>
+<h3>Using ROM in Roda routes</h3>
 
 <p>With the ROM environment configured, the following instance methods are available in Roda routes:</p>
 
-<h4 id="label-rom">rom</h4>
+<h4>rom</h4>
 
 <p>Provides an instance of the ROM environment:</p>
 
@@ -205,7 +204,7 @@
 </span><span class='kw'>end</span>
 </code></pre>
 
-<h4 id="label-relation-28name-2C+environment+-3D+-3Adefault-29">relation(name, environment = :default)</h4>
+<h4>relation(name, environment = :default)</h4>
 
 <p>Provides an instance of the named relation:</p>
 
@@ -230,7 +229,7 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<h4 id="label-command-28name-2C+environment+-3D+-3Adefault-29">command(name, environment = :default)</h4>
+<h4>command(name, environment = :default)</h4>
 
 <p>Provides an instance of the named command:</p>
 
@@ -251,20 +250,20 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<h2 id="label-Community">Community</h2>
-<ul><li>
-<p><a href="https://gitter.im/rom-rb/chat"><img src="https://badges.gitter.im/rom-rb/chat.png"></a></p>
-</li><li>
-<p><a href="https://groups.google.com/forum/#!forum/rom-rb">Ruby Object Mapper</a> mailing list</p>
-</li></ul>
+<h2>Community</h2>
 
-<h2 id="label-License">License</h2>
+<ul>
+<li><a href="https://gitter.im/rom-rb/chat"><img src="https://badges.gitter.im/rom-rb/chat.png" alt="Gitter chat"></a></li>
+<li><a href="https://groups.google.com/forum/#!forum/rom-rb">Ruby Object Mapper</a> mailing list</li>
+</ul>
+
+<h2>License</h2>
 
 <p>See <code>LICENSE</code> file.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Sat Jan 25 19:03:54 2020 by
+  Generated on Sat Jan 25 19:21:25 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.5).
 </div>

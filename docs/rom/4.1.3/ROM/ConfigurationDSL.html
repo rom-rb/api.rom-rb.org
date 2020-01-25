@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: ROM::ConfigurationDSL
+  
+    &mdash; Documentation by YARD 0.9.24
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "ROM::ConfigurationDSL";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../ROM.html" title="ROM (module)">ROM</a></span></span>
+     &raquo; 
+    <span class="title">ConfigurationDSL</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: ROM::ConfigurationDSL
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+  <dl>
+    <dt>Included in:</dt>
+    <dd><span class='object_link'><a href="Configuration.html" title="ROM::Configuration (class)">Configuration</a></span></dd>
+  </dl>
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>core/lib/rom/configuration_dsl.rb<span class="defines">,<br />
+  core/lib/rom/configuration_dsl/command.rb,<br /> core/lib/rom/configuration_dsl/relation.rb,<br /> core/lib/rom/configuration_dsl/command_dsl.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>This extends Configuration class with the DSL methods</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ConfigurationDSL/Command.html" title="ROM::ConfigurationDSL::Command (class)">Command</a></span>, <span class='object_link'><a href="ConfigurationDSL/CommandDSL.html" title="ROM::ConfigurationDSL::CommandDSL (class)">CommandDSL</a></span>, <span class='object_link'><a href="ConfigurationDSL/Relation.html" title="ROM::ConfigurationDSL::Relation (class)">Relation</a></span>
+    
+  
+</p>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#commands-instance_method" title="#commands (instance method)">#<strong>commands</strong>(name, &amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Command definition DSL.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#plugin-instance_method" title="#plugin (instance method)">#<strong>plugin</strong>(adapter, spec, &amp;block)  &#x21d2; Plugin </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Configures a plugin for a specific adapter to be enabled for all relations.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#relation-instance_method" title="#relation (instance method)">#<strong>relation</strong>(name, options = EMPTY_HASH, &amp;block)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Relation definition DSL.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="commands-instance_method">
+  
+    #<strong>commands</strong>(name, &amp;block)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Command definition DSL</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_setup'>setup</span><span class='period'>.</span><span class='id identifier rubyid_commands'>commands</span><span class='lparen'>(</span><span class='symbol'>:users</span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:create</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_input'>input</span> <span class='const'>NewUserParams</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='symbol'>:one</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:update</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_input'>input</span> <span class='const'>UserParams</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='symbol'>:many</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:delete</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='symbol'>:many</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/configuration_dsl.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_commands'>commands</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_command'>register_command</span><span class='lparen'>(</span><span class='op'>*</span><span class='const'><span class='object_link'><a href="ConfigurationDSL/CommandDSL.html" title="ROM::ConfigurationDSL::CommandDSL (class)">CommandDSL</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_default_adapter'>default_adapter</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_command_classes'><span class='object_link'><a href="ConfigurationDSL/CommandDSL.html#command_classes-instance_method" title="ROM::ConfigurationDSL::CommandDSL#command_classes (method)">command_classes</a></span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="plugin-instance_method">
+  
+    #<strong>plugin</strong>(adapter, spec, &amp;block)  &#x21d2; <tt><span class='object_link'><a href="Plugin.html" title="ROM::Plugin (class)">Plugin</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Configures a plugin for a specific adapter to be enabled for all relations</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Configuration.html" title="ROM::Configuration (class)">Configuration</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:sql</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sqlite::memory</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+<span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_plugin'>plugin</span><span class='lparen'>(</span><span class='symbol'>:sql</span><span class='comma'>,</span> <span class='label'>relations:</span> <span class='symbol'>:instrumentation</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_p'>p</span><span class='op'>|</span>
+  <span class='id identifier rubyid_p'>p</span><span class='period'>.</span><span class='id identifier rubyid_notifications'>notifications</span> <span class='op'>=</span> <span class='const'>MyNotificationsBackend</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_plugin'>plugin</span><span class='lparen'>(</span><span class='symbol'>:sql</span><span class='comma'>,</span> <span class='label'>relations:</span> <span class='symbol'>:pagination</span><span class='rparen'>)</span></code></pre>
+    
+  </div>
+<p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>adapter</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The adapter identifier</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>spec</span>
+      
+      
+        <span class='type'>(<tt>Hash&lt;Symbol=&gt;Symbol&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Component identifier =&gt; plugin identifier</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Plugin.html" title="ROM::Plugin (class)">Plugin</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/configuration_dsl.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_plugin'>plugin</span><span class='lparen'>(</span><span class='id identifier rubyid_adapter'>adapter</span><span class='comma'>,</span> <span class='id identifier rubyid_spec'>spec</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_spec'>spec</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_plugin'>plugin</span> <span class='op'>=</span> <span class='id identifier rubyid_plugin_registry'>plugin_registry</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_adapter'>adapter</span><span class='lparen'>(</span><span class='id identifier rubyid_adapter'>adapter</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_plugin_registry'>plugin_registry</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='id identifier rubyid_plugin'>plugin</span><span class='period'>.</span><span class='id identifier rubyid_configure'>configure</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='id identifier rubyid_plugin'>plugin</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="relation-instance_method">
+  
+    #<strong>relation</strong>(name, options = EMPTY_HASH, &amp;block)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Relation definition DSL</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <p class="tag_title">Examples:</p>
+    
+      
+      <pre class="example code"><code><span class='id identifier rubyid_setup'>setup</span><span class='period'>.</span><span class='id identifier rubyid_relation'>relation</span><span class='lparen'>(</span><span class='symbol'>:users</span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_names'>names</span>
+    <span class='id identifier rubyid_project'>project</span><span class='lparen'>(</span><span class='symbol'>:name</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></code></pre>
+    
+  </div>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21
+22
+23
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'core/lib/rom/configuration_dsl.rb', line 19</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_relation'>relation</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='const'>EMPTY_HASH</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_klass_opts'>klass_opts</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>adapter:</span> <span class='id identifier rubyid_default_adapter'>default_adapter</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_klass'>klass</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ConfigurationDSL/Relation.html" title="ROM::ConfigurationDSL::Relation (class)">Relation</a></span></span><span class='period'>.</span><span class='id identifier rubyid_build_class'>build_class</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_klass_opts'>klass_opts</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_schema_opts'>schema_opts</span><span class='lparen'>(</span><span class='label'>dataset:</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='label'>relation:</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_klass'>klass</span><span class='period'>.</span><span class='id identifier rubyid_class_eval'>class_eval</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
+  <span class='id identifier rubyid_register_relation'>register_relation</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_klass'>klass</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Jan 25 19:13:34 2020 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.24 (ruby-2.6.5).
+</div>
+
+    </div>
+  </body>
+</html>
