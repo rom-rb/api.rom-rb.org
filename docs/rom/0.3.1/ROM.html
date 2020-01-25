@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: ROM
+  
+    &mdash; Documentation by YARD 0.9.24
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "ROM";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (R)</a> &raquo;
+    
+    
+    <span class="title">ROM</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: ROM
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/rom.rb<span class="defines">,<br />
+  lib/rom/ra.rb,<br /> lib/rom/env.rb,<br /> lib/rom/boot.rb,<br /> lib/rom/header.rb,<br /> lib/rom/mapper.rb,<br /> lib/rom/reader.rb,<br /> lib/rom/adapter.rb,<br /> lib/rom/version.rb,<br /> lib/rom/boot/dsl.rb,<br /> lib/rom/relation.rb,<br /> lib/rom/repository.rb,<br /> lib/rom/model_builder.rb,<br /> lib/rom/adapter/memory.rb,<br /> lib/rom/mapper_builder.rb,<br /> lib/rom/reader_builder.rb,<br /> lib/rom/boot/mapper_dsl.rb,<br /> lib/rom/boot/schema_dsl.rb,<br /> lib/rom/relation_builder.rb,<br /> lib/rom/support/registry.rb,<br /> lib/rom/boot/relation_dsl.rb,<br /> lib/rom/ra/operation/join.rb,<br /> lib/rom/ra/operation/wrap.rb,<br /> lib/rom/ra/operation/group.rb,<br /> lib/rom/boot/base_relation_dsl.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="ROM/RA.html" title="ROM::RA (module)">RA</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ROM/Adapter.html" title="ROM::Adapter (class)">Adapter</a></span>, <span class='object_link'><a href="ROM/Boot.html" title="ROM::Boot (class)">Boot</a></span>, <span class='object_link'><a href="ROM/Env.html" title="ROM::Env (class)">Env</a></span>, <span class='object_link'><a href="ROM/Header.html" title="ROM::Header (class)">Header</a></span>, <span class='object_link'><a href="ROM/Mapper.html" title="ROM::Mapper (class)">Mapper</a></span>, <span class='object_link'><a href="ROM/MapperBuilder.html" title="ROM::MapperBuilder (class)">MapperBuilder</a></span>, <span class='object_link'><a href="ROM/MapperDSL.html" title="ROM::MapperDSL (class)">MapperDSL</a></span>, <span class='object_link'><a href="ROM/ModelBuilder.html" title="ROM::ModelBuilder (class)">ModelBuilder</a></span>, <span class='object_link'><a href="ROM/Reader.html" title="ROM::Reader (class)">Reader</a></span>, <span class='object_link'><a href="ROM/ReaderBuilder.html" title="ROM::ReaderBuilder (class)">ReaderBuilder</a></span>, <span class='object_link'><a href="ROM/Registry.html" title="ROM::Registry (class)">Registry</a></span>, <span class='object_link'><a href="ROM/Relation.html" title="ROM::Relation (class)">Relation</a></span>, <span class='object_link'><a href="ROM/RelationBuilder.html" title="ROM::RelationBuilder (class)">RelationBuilder</a></span>, <span class='object_link'><a href="ROM/Repository.html" title="ROM::Repository (class)">Repository</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="EnvAlreadyFinalizedError-constant" class="">EnvAlreadyFinalizedError =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>StandardError</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="Schema-constant" class="">Schema =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="ROM/Registry.html" title="ROM::Registry (class)">Registry</a></span></span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="RelationRegistry-constant" class="">RelationRegistry =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="ROM/Registry.html" title="ROM::Registry (class)">Registry</a></span></span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="ReaderRegistry-constant" class="">ReaderRegistry =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="ROM/Registry.html" title="ROM::Registry (class)">Registry</a></span></span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0.3.1</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#setup-class_method" title="setup (class method)">.<strong>setup</strong>(options, &amp;block)  &#x21d2; Boot </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Starts the setup process for schema, relations and mappers.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="setup-class_method">
+  
+    .<strong>setup</strong>(options, &amp;block)  &#x21d2; <tt><span class='object_link'><a href="ROM/Boot.html" title="ROM::Boot (class)">Boot</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Starts the setup process for schema, relations and mappers</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>repository URIs</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="ROM/Boot.html" title="ROM::Boot (class)">Boot</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>boot object</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/rom.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_setup'>setup</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_adapters'>adapters</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_uri'>uri</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_hash'>hash</span><span class='op'>|</span>
+    <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ROM/Adapter.html" title="ROM::Adapter (class)">Adapter</a></span></span><span class='period'>.</span><span class='id identifier rubyid_setup'><span class='object_link'><a href="ROM/Adapter.html#setup-class_method" title="ROM::Adapter.setup (method)">setup</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_uri'>uri</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_repositories'>repositories</span> <span class='op'>=</span> <span class='id identifier rubyid_adapters'>adapters</span><span class='period'>.</span><span class='id identifier rubyid_each_with_object'>each_with_object</span><span class='lparen'>(</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_adapter'>adapter</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_hash'>hash</span><span class='op'>|</span>
+    <span class='id identifier rubyid_hash'>hash</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ROM/Repository.html" title="ROM::Repository (class)">Repository</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_adapter'>adapter</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_boot'>boot</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ROM/Boot.html" title="ROM::Boot (class)">Boot</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ROM/Boot.html#initialize-instance_method" title="ROM::Boot#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_repositories'>repositories</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_block'>block</span>
+    <span class='id identifier rubyid_boot'>boot</span><span class='period'>.</span><span class='id identifier rubyid_instance_exec'>instance_exec</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_boot'>boot</span><span class='period'>.</span><span class='id identifier rubyid_finalize'>finalize</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_boot'>boot</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Jan 25 18:48:24 2020 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.24 (ruby-2.6.5).
+</div>
+
+    </div>
+  </body>
+</html>

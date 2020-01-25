@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: ROM
+  
+    &mdash; Documentation by YARD 0.9.24
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "ROM";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (R)</a> &raquo;
+    
+    
+    <span class="title">ROM</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: ROM
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/version.rb<span class="defines">,<br />
+  lib/rom/mapper.rb,<br /> lib/rom/schema.rb,<br /> lib/rom/session.rb,<br /> lib/rom/relation.rb,<br /> lib/rom/constants.rb,<br /> lib/rom/repository.rb,<br /> lib/rom/environment.rb,<br /> lib/rom/mapper/header.rb,<br /> lib/rom/session/state.rb,<br /> lib/rom/mapper/builder.rb,<br /> lib/rom/schema/builder.rb,<br /> lib/rom/session/mapper.rb,<br /> lib/rom/session/tracker.rb,<br /> lib/rom/mapper/attribute.rb,<br /> lib/rom/session/relation.rb,<br /> lib/rom/schema/definition.rb,<br /> lib/rom/environment/builder.rb,<br /> lib/rom/session/environment.rb,<br /> lib/rom/session/identity_map.rb,<br /> lib/rom/mapper/loader_builder.rb,<br /> lib/rom/session/state/created.rb,<br /> lib/rom/session/state/deleted.rb,<br /> lib/rom/session/state/updated.rb,<br /> lib/rom/session/state/persisted.rb,<br /> lib/rom/session/state/transient.rb,<br /> lib/rom/mapper/builder/definition.rb,<br /> lib/rom/schema/definition/relation.rb,<br /> lib/rom/schema/definition/relation/base.rb</span>
+</dd>
+  </dl>
+  
+</div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="ROM/Environment.html" title="ROM::Environment (class)">Environment</a></span>, <span class='object_link'><a href="ROM/Mapper.html" title="ROM::Mapper (class)">Mapper</a></span>, <span class='object_link'><a href="ROM/Relation.html" title="ROM::Relation (class)">Relation</a></span>, <span class='object_link'><a href="ROM/Repository.html" title="ROM::Repository (class)">Repository</a></span>, <span class='object_link'><a href="ROM/Schema.html" title="ROM::Schema (class)">Schema</a></span>, <span class='object_link'><a href="ROM/Session.html" title="ROM::Session (class)">Session</a></span>
+    
+  
+</p>
+
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>0.2.0</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="NoTuplesError-constant" class="">NoTuplesError =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Raised when the returned tuples are unexpectedly empty</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>RuntimeError</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="ManyTuplesError-constant" class="">ManyTuplesError =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Raised when the returned tuples are unexpectedly too many</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>RuntimeError</span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="Undefined-constant" class="">Undefined =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Represent an undefined argument</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="EMPTY_HASH-constant" class="">EMPTY_HASH =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>An empty frozen Hash useful for parameter default values</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="EMPTY_ARRAY-constant" class="">EMPTY_ARRAY =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>An empty frozen Array useful for parameter default values</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='lbracket'>[</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Jan 25 18:48:21 2020 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.24 (ruby-2.6.5).
+</div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.24
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'>
+<h1 id="label-rom-factory">rom-factory</h1>
+
+<p><a href="https://rubygems.org/gems/rom-factory"><img src="https://badge.fury.io/rb/rom-factory.svg"></a> <a href="https://travis-ci.org/rom-rb/rom-factory"><img src="https://travis-ci.org/rom-rb/rom-factory.svg?branch=master"></a> <a href="https://gemnasium.com/rom-rb/rom-factory"><img src="https://gemnasium.com/rom-rb/rom-factory.svg"></a> <a href="https://codeclimate.com/github/rom-rb/rom-factory"><img src="https://codeclimate.com/github/rom-rb/rom-factory/badges/gpa.svg"></a> <a href="https://codeclimate.com/github/rom-rb/rom-factory"><img src="https://codeclimate.com/github/rom-rb/rom-factory/badges/coverage.svg"></a> <a href="http://inch-ci.org/github/rom-rb/rom-factory"><img src="http://inch-ci.org/github/rom-rb/rom-factory.svg?branch=master"></a></p>
+
+<p>Data generator with support for persistence backends, built on top of <a href="http://rom-rb.org">rom-rb</a> and <a href="http://dry-rb.org">dry-rb</a>.</p>
+
+<h2 id="label-Installation">Installation</h2>
+
+<p>Add this line to your application&#39;s Gemfile:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>rom-factory</span><span class='tstring_end'>&#39;</span></span>
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre class="code ruby"><code class="ruby">$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre class="code ruby"><code class="ruby">$ gem install rom-factory
+</code></pre>
+
+<h2 id="label-Configuration">Configuration</h2>
+
+<p>First, you have to define ROM container:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_rom'>rom</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ROM.html" title="ROM (module)">ROM</a></span></span><span class='period'>.</span><span class='id identifier rubyid_container'>container</span><span class='lparen'>(</span><span class='symbol'>:sql</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>sqlite::memory</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_conf'>conf</span><span class='op'>|</span>
+  <span class='id identifier rubyid_conf'>conf</span><span class='period'>.</span><span class='id identifier rubyid_default'>default</span><span class='period'>.</span><span class='id identifier rubyid_create_table'>create_table</span><span class='lparen'>(</span><span class='symbol'>:users</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_primary_key'>primary_key</span> <span class='symbol'>:id</span>
+    <span class='id identifier rubyid_column'>column</span> <span class='symbol'>:last_name</span><span class='comma'>,</span> <span class='const'>String</span><span class='comma'>,</span> <span class='label'>null:</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_column'>column</span> <span class='symbol'>:first_name</span><span class='comma'>,</span> <span class='const'>String</span><span class='comma'>,</span> <span class='label'>null:</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_column'>column</span> <span class='symbol'>:email</span><span class='comma'>,</span> <span class='const'>String</span><span class='comma'>,</span> <span class='label'>null:</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_column'>column</span> <span class='symbol'>:admin</span><span class='comma'>,</span> <span class='const'>TrueClass</span><span class='comma'>,</span> <span class='label'>null:</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_column'>column</span> <span class='symbol'>:created_at</span><span class='comma'>,</span> <span class='const'>Time</span><span class='comma'>,</span> <span class='label'>null:</span> <span class='kw'>false</span>
+    <span class='id identifier rubyid_column'>column</span> <span class='symbol'>:updated_at</span><span class='comma'>,</span> <span class='const'>Time</span><span class='comma'>,</span> <span class='label'>null:</span> <span class='kw'>false</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<blockquote>
+<p>Notice that if you&#39;re using ROM in your application, then simply set up factory using your existing ROM container</p>
+</blockquote>
+
+<p>Once that is done, you will have to specify which container ROM::Factory will use:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>Factory</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ROM.html" title="ROM (module)">ROM</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ROM/Factory.html" title="ROM::Factory (module)">Factory</a></span></span><span class='period'>.</span><span class='id identifier rubyid_configure'><span class='object_link'><a href="ROM/Factory.html#configure-class_method" title="ROM::Factory.configure (method)">configure</a></span></span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_config'>config</span><span class='op'>|</span>
+  <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_rom'>rom</span> <span class='op'>=</span> <span class='id identifier rubyid_rom'>rom</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>This returns a new factory ready to be used.</p>
+
+<h2 id="label-Simple+use+case">Simple use case</h2>
+
+<p>After configuration is done, you can define builders using your <code>Factory</code>:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>Factory</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Janis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_last_name'>last_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Miezitis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>janjiss@gmail.com</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>Then you can use it to generate data:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>Factory</span><span class='lbracket'>[</span><span class='symbol'>:user</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span> <span class='comment'>#=&gt; &quot;janjiss@gmail.com&quot;
+</span></code></pre>
+
+<h3 id="label-Callable+properties">Callable properties</h3>
+
+<p>You can easily define dynamic (callbale) properties if value needs to change every time it needs to be called. Anything that responds to <code>.call</code> can be a dynamic property.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>Factory</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Janis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_last_name'>last_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Miezitis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>janjiss@gmail.com</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_created_at'>created_at</span> <span class='lbrace'>{</span><span class='const'>Time</span><span class='period'>.</span><span class='id identifier rubyid_now'>now</span><span class='rbrace'>}</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>Factory</span><span class='lbracket'>[</span><span class='symbol'>:user</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_created_at'>created_at</span> <span class='comment'>#=&gt; 2016-08-27 18:17:08 -0500
+</span></code></pre>
+
+<h3 id="label-Sequencing">Sequencing</h3>
+
+<p>If you want attributes to be unique each time you generate data, you can use sequence to achieve that:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>Factory</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Janis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_last_name'>last_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Miezitis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_sequence'>sequence</span> <span class='symbol'>:email</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_n'>n</span><span class='op'>|</span>
+    <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>janjiss</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_n'>n</span><span class='embexpr_end'>}</span><span class='tstring_content'>@gmail.com</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_user1'>user1</span> <span class='op'>=</span> <span class='const'>Factory</span><span class='lbracket'>[</span><span class='symbol'>:user</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_user2'>user2</span> <span class='op'>=</span> <span class='const'>Factory</span><span class='lbracket'>[</span><span class='symbol'>:user</span><span class='rbracket'>]</span>
+
+<span class='id identifier rubyid_user1'>user1</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span> <span class='comment'>#=&gt; janjiss1@gmail.com
+</span><span class='id identifier rubyid_user2'>user2</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span> <span class='comment'>#=&gt; janjiss2@gmail.com
+</span></code></pre>
+
+<h3 id="label-Timestamps">Timestamps</h3>
+
+<p>There is a support for timestamps for <code>created_at</code> and <code>updated_at</code> attributes:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>Factory</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Janis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_last_name'>last_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Miezitis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>janjiss@gmail.com</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_timestamps'>timestamps</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>Factory</span><span class='lbracket'>[</span><span class='symbol'>:user</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_created_at'>created_at</span> <span class='comment'>#=&gt; 2016-08-27 18:17:08 -0500
+</span><span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_updated_at'>updated_at</span> <span class='comment'>#=&gt; 2016-08-27 18:17:10 -0500
+</span></code></pre>
+
+<h3 id="label-Associations">Associations</h3>
+
+<p>If you defined associations in your relations, you can use <code>association</code> builder:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_factories'>factories</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Jane</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_last_name'>last_name</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Doe</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>jane@doe.org</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_timestamps'>timestamps</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_factories'>factories</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:task</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_title'>title</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>A task</span><span class='tstring_end'>&#39;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_association'>association</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_task'>task</span> <span class='op'>=</span> <span class='id identifier rubyid_factories'>factories</span><span class='lbracket'>[</span><span class='symbol'>:task</span><span class='rbracket'>]</span>
+</code></pre>
+
+<blockquote>
+<p>Currently only <code>belongs_to</code> is supported</p>
+</blockquote>
+
+<h3 id="label-Fake+data+generator">Fake data generator</h3>
+
+<p>There&#39;s a builtin support for <a href="https://github.com/stympy/faker">Faker</a> gem with a <code>fake</code> shortcut in the DSL:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_factories'>factories</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_fake'>fake</span><span class='lparen'>(</span><span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:first_name</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_last_name'>last_name</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_fake'>fake</span><span class='lparen'>(</span><span class='symbol'>:name</span><span class='comma'>,</span> <span class='symbol'>:last_name</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_fake'>fake</span><span class='lparen'>(</span><span class='symbol'>:internet</span><span class='comma'>,</span> <span class='symbol'>:email</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_timestamps'>timestamps</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h3 id="label-Extending+existing+builders">Extending existing builders</h3>
+
+<p>You can create a hierarchy of builders easily, which is useful if you want to share data generation logic across multiple definitions:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>Factory</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Janis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_last_name'>last_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Miezitis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>janjiss@gmail.com</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_admin'>admin</span> <span class='kw'>false</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_timestamps'>timestamps</span>
+<span class='kw'>end</span>
+
+<span class='const'>Factory</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='label'>admin:</span> <span class='symbol'>:user</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_admin'>admin</span> <span class='kw'>true</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>Factory</span><span class='lbracket'>[</span><span class='symbol'>:admin</span><span class='rbracket'>]</span>
+
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_admin'>admin</span> <span class='comment'># true
+</span></code></pre>
+
+<h3 id="label-Setting+up+relation+backend+explicitly">Setting up relation backend explicitly</h3>
+
+<p>By default, relation is configured automatically based on the builder name. For example if your builder is called <code>:user</code>, then <code>:users</code> relation name will be inferred. If you want to set up a relation explicitly, use <code>:relation</code> option:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>Factory</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='comma'>,</span> <span class='label'>relation:</span> <span class='symbol'>:people</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Janis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_last_name'>last_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Miezitis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>janjiss@gmail.com</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_admin'>admin</span> <span class='kw'>false</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_timestamps'>timestamps</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h3 id="label-Generating+structs+without+persistence">Generating structs without persistence</h3>
+
+<p>You can generate struct objects without persisting them using <code>#structs</code> generator:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>Factory</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span><span class='lparen'>(</span><span class='symbol'>:user</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Janis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_last_name'>last_name</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Miezitis</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_email'>email</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>janjiss@gmail.com</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_admin'>admin</span> <span class='kw'>false</span>
+  <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_timestamps'>timestamps</span>
+<span class='kw'>end</span>
+
+<span class='id identifier rubyid_user'>user</span> <span class='op'>=</span> <span class='const'>Factory</span><span class='period'>.</span><span class='id identifier rubyid_structs'>structs</span><span class='lbracket'>[</span><span class='symbol'>:user</span><span class='rbracket'>]</span>
+
+<span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='comment'># auto-generated fake PK
+</span><span class='id identifier rubyid_user'>user</span><span class='period'>.</span><span class='id identifier rubyid_first_name'>first_name</span> <span class='comment'># &quot;Janis&quot;
+</span></code></pre>
+
+<h2 id="label-Credits">Credits</h2>
+
+<p>This project was originally created by <a href="https://github.com/janjiss">Jānis Miezītis</a> and eventually moved to <code>rom-rb</code> organization.</p>
+
+<h2 id="label-License">License</h2>
+
+<p>See <code>LICENSE.txt</code> file.</p>
+</div></div>
+
+      <div id="footer">
+  Generated on Sat Jan 25 18:50:54 2020 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.24 (ruby-2.6.5).
+</div>
+
+    </div>
+  </body>
+</html>
