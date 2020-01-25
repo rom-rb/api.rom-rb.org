@@ -9,28 +9,36 @@ root = Pathname(__dir__).join('..').realpath
 clone_to = root.join('gems')
 projects = YAML.load_file("data/projects.yml").map { |p| p['name'] }
 
-projects.each do |project|
-  target_dir = clone_to.join(project)
-  if target_dir.exist?
-    puts "Updating #{target_dir}"
-    system "cd #{target_dir} && git pull &> /dev/null"
-  else
-    puts "Cloning #{project} to #{target_dir}"
-    system "git clone #{gh_url % { project: project }} #{target_dir} &> /dev/null"
-  end
+def generate_docs(root, project, version, doc_output_dir: nil)
+  project_dir = root.join("gems/#{project}")
+  doc_output_dir = doc_output_dir || root.join('docs').join(project).join(version.gsub(/^v/, ''))
+
+  FileUtils.mkdir_p(doc_output_dir) unless doc_output_dir.exist?
+
+  puts "Generating docs for #{project} #{version} to #{doc_output_dir}"
+  system "cd #{project_dir} && git checkout #{version} &> /dev/null && yard -o #{doc_output_dir} -p #{root.join('templates')} && cd #{root}"
 end
 
-projects.each do |project|
-  project_dir = root.join("gems/#{project}")
+# projects.each do |project|
+#   target_dir = clone_to.join(project)
+#   if target_dir.exist?
+#     puts "Updating #{target_dir}"
+#     system "cd #{target_dir} && git pull &> /dev/null"
+#   else
+#     puts "Cloning #{project} to #{target_dir}"
+#     system "git clone #{gh_url % { project: project }} #{target_dir} &> /dev/null"
+#   end
+# end
 
+projects.each do |project|
   versions = `cd gems/#{project} && git tag`.split("\n").reject { |v| v =~ /rc|beta/ }.sort.reverse
 
-  versions.each do |version|
-    doc_output_dir = root.join('docs').join(project).join(version.gsub(/^v/, ''))
+  latest_version = versions.shift
 
-    FileUtils.mkdir_p(doc_output_dir) unless doc_output_dir.exist?
+  generate_docs(root, project, latest_version, doc_output_dir: root.join('docs').join(project))
 
-    puts "Generating docs for #{project} #{version} to #{doc_output_dir}"
-    system "cd #{project_dir} && git checkout #{version} &> /dev/null && yard -o #{doc_output_dir} -p #{root.join('templates')} && cd #{root}"
-  end
+  # TODO: figure out how to handle old versions
+  # versions.each do |version|
+  #   generate_docs(root, project, version)
+  # end
 end
