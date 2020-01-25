@@ -16,16 +16,21 @@ projects.each do |project|
     system "cd #{target_dir} && git pull > /dev/null"
   else
     puts "Cloning #{project} to #{target_dir}"
-    system "git clone #{gh_url % { project: project }} #{target_dir} > /dev/null"
+    system "git clone #{gh_url % { project: project }} #{target_dir} 1> /dev/null"
   end
 end
 
 projects.each do |project|
-  doc_output_dir = root.join('docs').join(project)
   project_dir = root.join("gems/#{project}")
 
-  FileUtils.mkdir_p(doc_output_dir) unless doc_output_dir.exist?
+  versions = `cd gems/#{project} && git tag`.split("\n").reject { |v| v =~ /rc|beta/ }.sort
 
-  puts "Generating docs for #{project} to #{doc_output_dir}"
-  system "cd #{project_dir} && yard -o #{doc_output_dir} -p #{root.join('templates')} > /dev/null && cd #{root}"
+  versions.each do |version|
+    doc_output_dir = root.join('docs').join(project).join(version.gsub(/^v/, ''))
+
+    FileUtils.mkdir_p(doc_output_dir) unless doc_output_dir.exist?
+
+    puts "Generating docs for #{project} #{version} to #{doc_output_dir}"
+    system "cd #{project_dir} && git checkout #{version} &> /dev/null && yard -o #{doc_output_dir} -p #{root.join('templates')} 1> /dev/null && cd #{root}"
+  end
 end
