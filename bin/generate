@@ -7,7 +7,7 @@ require 'yaml'
 gh_url = "https://github.com/rom-rb/%{project}.git"
 root = Pathname(__dir__).join('..').realpath
 clone_to = root.join('gems')
-projects = YAML.load_file("data/projects.yaml").map { |p| p['name'] }
+projects = YAML.load_file("data/projects.yml").map { |p| p['name'] }
 
 projects.each do |project|
   target_dir = clone_to.join(project)
