@@ -13,17 +13,17 @@ projects.each do |project|
   target_dir = clone_to.join(project)
   if target_dir.exist?
     puts "Updating #{target_dir}"
-    system "cd #{target_dir} && git pull > /dev/null"
+    system "cd #{target_dir} && git pull &> /dev/null"
   else
     puts "Cloning #{project} to #{target_dir}"
-    system "git clone #{gh_url % { project: project }} #{target_dir} 1> /dev/null"
+    system "git clone #{gh_url % { project: project }} #{target_dir} &> /dev/null"
   end
 end
 
 projects.each do |project|
   project_dir = root.join("gems/#{project}")
 
-  versions = `cd gems/#{project} && git tag`.split("\n").reject { |v| v =~ /rc|beta/ }.sort
+  versions = `cd gems/#{project} && git tag`.split("\n").reject { |v| v =~ /rc|beta/ }.sort.reverse
 
   versions.each do |version|
     doc_output_dir = root.join('docs').join(project).join(version.gsub(/^v/, ''))
@@ -31,6 +31,6 @@ projects.each do |project|
     FileUtils.mkdir_p(doc_output_dir) unless doc_output_dir.exist?
 
     puts "Generating docs for #{project} #{version} to #{doc_output_dir}"
-    system "cd #{project_dir} && git checkout #{version} &> /dev/null && yard -o #{doc_output_dir} -p #{root.join('templates')} 1> /dev/null && cd #{root}"
+    system "cd #{project_dir} && git checkout #{version} &> /dev/null && yard -o #{doc_output_dir} -p #{root.join('templates')} && cd #{root}"
   end
 end
